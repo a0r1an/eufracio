@@ -1,0 +1,19 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Eufrac.io
+email: eufracioadrian@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  My name is Adrian and I am a Front-End Developer. I love creating web products/things. This is a hub for all my creations and and a place where I can share my knowledge.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://adrian.io" # the base hostname & protocol for your site
+twitter_username: adrianeufracio
+github_username:  a0r1an
+
+# Build settings
+markdown: kramdown
