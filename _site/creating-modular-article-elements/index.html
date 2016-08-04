@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Creating Modular Article Elements</title>
+  <meta name="description" content="Creating a modular code base is key to the extensibility of any web app. A modular code base requires involvement from both the design team and the developme...">
+  <link href='https://fonts.googleapis.com/css?family=Lora|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://adrian.io/creating-modular-article-elements/">
+  <link rel="alternate" type="application/rss+xml" title="Eufrac.io" href="http://adrian.io/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Eufrac.io</a>
+
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Creating Modular Article Elements</h1>
+    <p class="post-meta"><time datetime="2016-02-03T01:04:59-08:00" itemprop="datePublished">Feb 3, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Adrian Eufracio</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Creating a modular code base is key to the extensibility of any web app. A modular code base requires involvement from both the design team and the development team as the interface should be designed in a way that promotes modularity. Today I will show you how to create a modular HTML and CSS component that is seen throughout the web.</p>
+
+<h2 id="i-classcode-termarticlei-element"><i class="code-term">article</i> Element</h2>
+
+<p><i class="code-term">article</i> is an HTML5 element that can be found all over the web. It represents an independent item section of content. It’s often used as an element to represent blog post teasers among other things. These blog teasers can come in many sizes and shapes. This is exactly where modular components shine.</p>
+
+<h2 id="going-modular">Going Modular</h2>
+
+<p>If the design team gives us three types of article layouts it is our job as Front End Developers to dissect the design and look for ways to create modular components.</p>
+
+<p><img src="http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock.jpg" alt="A three article design mock" width="1000" height="600" class="alignnone size-full wp-image-557" srcset="http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock-300x180.jpg 300w, http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock-768x461.jpg 768w, http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock-460x276.jpg 460w, http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock-240x144.jpg 240w, http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock.jpg 1000w" sizes="(max-width: 1000px) 100vw, 1000px" /></p>
+
+<p>As you can see these three article layouts share the same design elements. A title, a post date, an author byline and an article image. The best way to code these components is by creating a HTML and CSS architecture that can be reused. There are many CSS naming conventions which I described in my <a href="http://adrianeufracio.com/go-modular-with-your-css/" target="_blank">article regarding modular CSS</a>, but for this tutorial I will use a naming convention that resembles BEM.</p>
+
+<h2 id="lets-start">Lets start!</h2>
+
+<p>When you look at this design you can start seeing the individual elements as Lego pieces that are used to comprise the entire component. With this mentality, lets start coding out our component and learn as we go.</p>
+
+<p data-height="400" data-theme-id="20621" data-slug-hash="vLazxj" data-default-tab="result" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/vLazxj/">Modular Component</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p>We have created our first component pretty easily using the article element. If another developer or designer looks at our HTML and CSS markup, they will be able to understand what they mean since it is written in a semantic manner. Our next task will be to create our second component using the same HTML structure while adding CSS classes when needed to help modify the look of the element.</p>
+
+<p data-height="400" data-theme-id="20621" data-slug-hash="obMaBm" data-default-tab="result" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/obMaBm/">Modular Component 2</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p>As you can see, just by adding a one class to our existing element, <i class="code-term">.article-medium</i>, we can alter the appearance of our component to create the modified component. Lets do the same for our last component.</p>
+
+<p data-height="350" data-theme-id="20621" data-slug-hash="GoBYYo" data-default-tab="result" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/GoBYYo/">Modular Component 3</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p>This component was just as easy to make. Using the BEM inspired methodology it is a breeze to create modularized components. To wrap this tutorial up, I will place all the elements together and use the section element to help with the layout.</p>
+
+<p data-height="500" data-theme-id="20621" data-slug-hash="mVjQwW" data-default-tab="result" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/mVjQwW/">Modular Component Complete</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<h2 id="modular-resources">Modular Resources</h2>
+
+<ul>
+  <li><a href="https://en.bem.info/" target="_blank">BEM</a></li>
+  <li><a href="http://www.lego.com/en-us/" target="_blank">LEGO</a></li>
+  <li><a href="https://smacss.com/" target="_blank">SMACSS</a></li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+        <p>My name is Adrian and I am a Front-End Developer. I love creating web products/things. This is a hub for all my creations and and a place where I can share my knowledge.
+</p>
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/a0r1an"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">a0r1an</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:eufracioadrian@gmail.com">eufracioadrian@gmail.com</a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/adrianeufracio"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">adrianeufracio</span></a>
+
+          </li>
+          
+        </ul>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

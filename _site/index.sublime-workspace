@@ -1,0 +1,233 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"font-weight"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 342.0,
+		"last_filter": "pac",
+		"selected_items":
+		[
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"upg",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"insa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 503.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/adrianeufracio/Desktop/optimize-assets/properties/ah/src_static_assets/mobile-form/styles.less",
+		"/Users/adrianeufracio/Desktop/optimize-assets/gulpfile.js",
+		"/Users/adrianeufracio/Library/Application Support/Sublime Text 3/Packages/Less2Css/less2css.sublime-settings",
+		"/Users/adrianeufracio/Library/Application Support/Sublime Text 3/Packages/User/less2css.sublime-settings",
+		"/Users/adrianeufracio/Desktop/optimize-assets/properties/gif/variations/564f7e791762a1fb7206b89d/styles.less",
+		"/Users/adrianeufracio/Desktop/optimize-assets/properties/gif/components/ConnectingModal/css/ConnectingModal.less",
+		"/Users/adrianeufracio/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/adrianeufracio/Library/Application Support/Sublime Text 3/Packages/AdvancedNewFile/README.md",
+		"/Users/adrianeufracio/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/adrianeufracio/Desktop/optimize-assets/properties/eh/offers/561d44c8ab57ec7944000001/561ea405ab57ecf641000000/index.html",
+		"/Users/adrianeufracio/Desktop/optimize-assets/properties/gif/components/MobileMicroSteps/form.js",
+		"/Users/adrianeufracio/Desktop/optimize-assets/properties/ah/offers/template/creative/index.html",
+		"/Users/adrianeufracio/Desktop/optimize-assets/properties/ah/offers/56da035dddbd131c62000000_737/56da0377ddbd13fc61000004/index.html",
+		"/Users/adrianeufracio/Desktop/optimize-assets/properties/ah/offers/56d9fb61ddbd132230000019_1456/56d9fb72ddbd132730000020/index.html",
+		"/Users/adrianeufracio/Desktop/script-test/index.html",
+		"/Users/adrianeufracio/Desktop/params/dist/index.html",
+		"/Users/adrianeufracio/Desktop/optimize-assets/facebook-landers/dog/styles/bootstrap.css",
+		"/Users/adrianeufracio/Library/Application Support/Sublime Text 3/Packages/User/View In Browser.sublime-settings",
+		"/Users/adrianeufracio/Desktop/optimize-assets/facebook-landers/dog/index.html",
+		"/Users/adrianeufracio/Library/Application Support/Sublime Text 3/Packages/View In Browser/View In Browser.sublime-settings",
+		"/Users/adrianeufracio/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/adrianeufracio/Desktop/optimize-assets/credentials.js",
+		"/Users/adrianeufracio/Desktop/optimize-assets/tests/fixtures/dist/manifest.json",
+		"/Users/adrianeufracio/Desktop/offer-preview-tool/README.md",
+		"/usr/local/etc/nginx/nginx-backup.conf",
+		"//usr/local/etc/nginx/nginx.conf"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 94.0,
+		"where_history":
+		[
+			"/Users/adrianeufracio/Desktop/optimize-assets/properties"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"mixin",
+			"adva",
+			"js-MedicalGuardian376-iframe",
+			".js-",
+			"js"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 28.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 304.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

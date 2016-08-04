@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Deliver Your Site Faster With Critical CSS</title>
+  <meta name="description" content="The modern day web experience is much more complicated and robust then it was ten years ago which means are CSS stylesheets have grown in size. A large CSS f...">
+  <link href='https://fonts.googleapis.com/css?family=Lora|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://adrian.io/deliver-your-site-faster-with-critical-css/">
+  <link rel="alternate" type="application/rss+xml" title="Eufrac.io" href="http://adrian.io/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Eufrac.io</a>
+
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Deliver Your Site Faster With Critical CSS</h1>
+    <p class="post-meta"><time datetime="2016-01-20T01:00:43-08:00" itemprop="datePublished">Jan 20, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Adrian Eufracio</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>The modern day web experience is much more complicated and robust then it was ten years ago which means are CSS stylesheets have grown in size. A large CSS file will slow down a site but we need this CSS to create the user interface.</p>
+
+<p><img src="http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1.png" alt="A user interface" width="400" class="alignnone size-full wp-image-508" srcset="http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1-300x200.png 300w, http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1-419x279.png 419w, http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1-460x307.png 460w, http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1-240x160.png 240w, http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1.png 600w" sizes="(max-width: 600px) 100vw, 600px" /></p>
+
+<p>But do we need an entire CSS file to create the user interface. What about the rest of the UI that isn’t visible to the user? Like the UI as you scroll down the page or the UI on a completely different page. We are loading CSS to create UI components that are not needed when a page loads. CSS is a render blocking resource which means that the entire CSS file needs to be parsed before the browser can load anything else. Loading a large resource where only part of it is needed creates a web experience that is begging for a solution. Wouldn’t it be better to load the necessary, critical CSS that is visible to the user and load the rest when it’s needed. While this solution is not achievable, there is a something we can do to create a similar experience. Instead we can load the CSS that is needed to compose the initial user interface and then load the rest of the CSS asynchronously. This way we render the visible user interface quickly while avoiding a render blocking resource. We can do this with two tools that are available today, <strong>Critical</strong> and <strong>loadCSS</strong>.</p>
+
+<h2 id="critical">Critical</h2>
+
+<p><a href="https://github.com/addyosmani/critical" target="_blank">Critical</a>, created by <a href="https://addyosmani.com/">Addy Osmani</a>, is a node.js package that uses <a href="http://casperjs.org/" target="_blank">CasperJS</a> to scan a page of your website and returns an output of the necessary CSS for the page.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//lets take a look at the code
+critical.&lt;span class="blue"&gt;generate&lt;/span&gt;({
+    base: '&lt;span class="orange"&gt;test/&lt;/span&gt;',
+    src: '&lt;span class="orange"&gt;index.html&lt;/span&gt;',
+    dest: '&lt;span class="orange"&gt;styles/critical.css&lt;/span&gt;',
+    width: 1300,
+    height: 900
+});
+</code></pre>
+</div>
+
+<p>The above code looks for <i class="code-term">index.html</i>, scans it using <a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;ie=UTF-8#q=phantomjs">Phantomjs</a>, and returns <i class="code-term">critical.css</i> in the styles folder which is the CSS that is necessary for the user interface to render properly. The UI is defined with width and height parameters of 1300 x 900. All we need to do now is remove our <i class="code-term">main.css</i> from the head of our web document and place <i class="code-term">critical.css</i> in the head.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;head&gt;
+&lt;link href="styles/critical.css" rel="stylesheet"&gt;
+...
+...
+&lt;/head&gt;
+</code></pre>
+</div>
+
+<h2 id="loadcss">loadCSS</h2>
+
+<p>We still need to find a way to load our <i class="code-term">main.css</i> asynchronously. This is where <a href="https://github.com/filamentgroup/loadCSS">loadCSS</a> comes into play. loadCSS is a JavaScript function, created by <a href="https://www.filamentgroup.com/" target="_blank">Filament Group</a>, that loads CSS asynchronously. All we need to do is place the function in the head of the document and then pass our <i class="code-term">main.css</i> as an argument in that function.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;head&gt;
+&lt;script&gt;
+  // include loadCSS here...
+  &lt;span class="blue"&gt;function loadCSS&lt;/span&gt;( href, before, media ){ ... }
+  // load a file
+  &lt;span class="blue"&gt;loadCSS&lt;/span&gt;( "&lt;span class="orange"&gt;styles/style.css&lt;/span&gt;" );
+&lt;/script&gt;
+&lt;head&gt;
+</code></pre>
+</div>
+
+<h2 id="going-a-little-further">Going A Little further</h2>
+
+<p>It is recommended to inline the critical CSS that is generated using Critical in the head of the web document as it eliminates a round-trip for the server. So instead of this…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;head&gt;
+&lt;link href="styles/critical.css" rel="stylesheet"&gt;
+...
+...
+&lt;/head&gt;
+</code></pre>
+</div>
+
+<p>We do this…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;head&gt;
+&lt;style&gt;
+body{line-height:1}ol,ul{list-style:none}....
+&lt;/style&gt;
+...
+...
+&lt;/head&gt;
+</code></pre>
+</div>
+
+<p>Also it is safe to assume that the layout for the home page looks different then the layout for the about page. For this reason it would be best to have a different critical stylesheet for each of these pages. I use grunt and a grunt plugin called grunt-critical to produce these results.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// in our gruntfile.js, install grunt critical via cli
+npm install grunt-critical --save-dev
+
+//Add the critical task for multiple pages
+criticalcss: {
+      home: {
+        options: {
+          url: '&lt;span class="orange"&gt;index.html&lt;/span&gt;',
+          width: 1200,
+          height: 736,
+          filename: '&lt;span class="orange"&gt;css/style.css&lt;/span&gt;',
+          outputfile: '&lt;span class="orange"&gt;css/critical-home.min.css&lt;/span&gt;',
+          //add some minification magic :)
+          minify: &lt;span class="green"&gt;true&lt;/span&gt;
+        }
+      },
+      about: {
+        options: {
+          url: '&lt;span class="orange"&gt;about.html&lt;/span&gt;',
+          width: 1200,
+          height: 736,
+          filename: '&lt;span class="orange"&gt;css/style.css&lt;/span&gt;',
+          outputfile: '&lt;span class="orange"&gt;css/critical-about.min.css&lt;/span&gt;',
+          //add some minification magic :)
+          minify: &lt;span class="green"&gt;true&lt;/span&gt;
+        }
+      }
+    }
+//Load our grunt-critical dependency
+grunt.loadNpmTasks('&lt;span class="orange"&gt;grunt-critical&lt;/span&gt;');
+</code></pre>
+</div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>It is best to implement and test your results with Critical. As noted by <a href="https://chrisruppel.com/" target="_blank">Chris Ruppel</a> over at <a href="http://fourkitchens.com/" target="_blank">Four Kitchens</a>, the inlined css should not exceed 10kb due to HTTP packet size restrictions. An interface that loads quickly is the end result of implementing Critical which yields major benefits. Adding Critical to your ever expanding workflow is a tool vital tool in a webdev toolkit.</p>
+
+<h2 id="critical-resources">Critical Resources</h2>
+
+<ul>
+  <li><a href="http://fourkitchens.com/blog/article/use-gulp-automate-your-critical-path-css" target="_blank">Use Gulp Automate Your Critical Path CSS By Four Kitchens</a></li>
+  <li><a href="https://github.com/addyosmani/critical" target="_blank">Critical By Addy Osmani</a></li>
+  <li><a href="https://github.com/bezoerb/grunt-critical" target="_blank">Grunt Plugin CriticalCSS</a></li>
+  <li><a href="https://www.smashingmagazine.com/2015/08/understanding-critical-css/" target="_blank">Understanding Critical CSS By Dean Hume</a></li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+        <p>My name is Adrian and I am a Front-End Developer. I love creating web products/things. This is a hub for all my creations and and a place where I can share my knowledge.
+</p>
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/a0r1an"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">a0r1an</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:eufracioadrian@gmail.com">eufracioadrian@gmail.com</a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/adrianeufracio"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">adrianeufracio</span></a>
+
+          </li>
+          
+        </ul>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

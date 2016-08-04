@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eufrac.io</title>
+    <description>My name is Adrian and I am a Front-End Developer. I love creating web products/things. This is a hub for all my creations and and a place where I can share my knowledge.
+</description>
+    <link>http://adrian.io/</link>
+    <atom:link href="http://adrian.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 28 Jul 2016 22:01:45 -0700</pubDate>
+    <lastBuildDate>Thu, 28 Jul 2016 22:01:45 -0700</lastBuildDate>
+    <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Loading Content In With Ajax</title>
+        <description>&lt;p&gt;When a page initially loads, many requests are made to the browser. Content, Images, and JavaScript Files are just some of the types of requests made to the browser. Of course, the more assets we request from the server, the slower our website will be. For websites that require lots of content and images, it is best to delay the requests for these assets until they need to be displayed. Asynchronous JavaScript and XML gives developers the tools to do just that. Asynchronous JavaScript and XML thankfully has a shorter name it goes by called Ajax. It enables developers with the ability to update parts of a web page asynchronously without having to reload the page. This feature has many use cases that can be implemented on a website that craves speed.&lt;/p&gt;
+
+&lt;h2 id=&quot;load-on-hover&quot;&gt;Load on Hover&lt;/h2&gt;
+
+&lt;p&gt;Online publications like &lt;a href=&quot;http://mashable.com/&quot; target=&quot;_blank&quot;&gt;Mashable&lt;/a&gt; have a tremendous amount of content that needs to be pulled from their servers and displayed to their users. As part of their navigation, there dropdown menu contains article images and titles for each category. The dropdown is not seen until you hover over any of the links in the navigation, making it unnecessary for them to load the content until the user hovers on a link. This makes it a perfect use case for Ajax. I will recreate a similar scenario with my own page.&lt;/p&gt;
+
+&lt;p data-height=&quot;500&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;GowOMJ&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/GowOMJ/&quot;&gt;AJAX HOVER PART 1&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;Here we have a webpage with an element with a class of &lt;i class=&quot;code-term&quot;&gt;.menu&lt;/i&gt;. When hovering over &lt;i class=&quot;code-term&quot;&gt;.menu&lt;/i&gt;, the &lt;i class=&quot;code-term&quot;&gt;.menu-submenu&lt;/i&gt; element will appear. There isn’t any content inside &lt;i class=&quot;code-term&quot;&gt;.menu-submenu&lt;/i&gt; but we will load the content in using Ajax.&lt;/p&gt;
+
+&lt;p data-height=&quot;500&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;adQVLR&quot; data-default-tab=&quot;js&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/adQVLR/&quot;&gt;AJAX HOVER PART 2&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;Using jQuery and the Ajax function, we retrieve the content within &lt;i class=&quot;code-term&quot;&gt;content.html&lt;/i&gt; and insert it in the &lt;i class=&quot;code-term&quot;&gt;.menu-submenu&lt;/i&gt;. This creates a faster initial load with virtually the same web experience.&lt;/p&gt;
+
+&lt;h2 id=&quot;load-on-click&quot;&gt;Load On Click&lt;/h2&gt;
+
+&lt;p&gt;Another common predicament that large blogs have is displaying multiple blog post teasers. Displaying many blog post on a page will increase the load time of a website. Easily fixable with Ajax! Instead of loading all your content on the initial load, lets load it when clicking a button.&lt;/p&gt;
+
+&lt;p data-height=&quot;500&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;gPQXjr&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/gPQXjr/&quot;&gt;AJAX CLICK PART 1&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;We start with a simple webpage with a button at the bottom of it. Now lets add our JavaScript that will load content in when the button with an &lt;i class=&quot;code-term&quot;&gt;ID&lt;/i&gt; of &lt;i class=&quot;code-term&quot;&gt;#load-more&lt;/i&gt; is clicked.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;$&amp;lt;/span&amp;gt;(&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;#load-more&amp;lt;/span&amp;gt;&quot;).click(&amp;lt;span class=&quot;blue&quot;&amp;gt;function&amp;lt;/span&amp;gt;(){
+	&amp;lt;span class=&quot;pink&quot;&amp;gt;$&amp;lt;/span&amp;gt;.ajax({
+		url: &quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;content.html&amp;lt;/span&amp;gt;&quot;,
+		cache: &amp;lt;span class=&quot;green&quot;&amp;gt;false&amp;lt;/span&amp;gt;
+	})
+  	.done(&amp;lt;span class=&quot;blue&quot;&amp;gt;function&amp;lt;/span&amp;gt;( html ) {
+    	$( &quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;.content&amp;lt;/span&amp;gt;&quot; ).append( html );
+    	$(&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;#load-more&amp;lt;/span&amp;gt;&quot;).css(&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;display&amp;lt;/span&amp;gt;&quot;,&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;none&amp;lt;/span&amp;gt;&quot;);
+  	});
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This was just as easy as the hover example but lets make it easier for the users so they don’t have to click on anything to load the rest of the content. All they have to do is reach the bottom of the page.&lt;/p&gt;
+
+&lt;p data-height=&quot;500&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;pgQdZp&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/pgQdZp/&quot;&gt;AJAX SCROLL&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;Using the scroll function, we check whenever the user scrolls if they have reached a point where they have scrolled the height of the web page. Once they have reach the bottom, we load the content into the page.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;As you can see these are basic examples, but when dealing with large websites these simple Ajax requests can help create a faster web experience. Faster is better. It is important to note that Ajax is dependent on JavaScript so make sure to create a fallback to alternatively load content when there is no JavaScript available.&lt;/p&gt;
+
+&lt;h2 id=&quot;ajax-resources&quot;&gt;Ajax Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://api.jquery.com/jquery.ajax/&quot; target=&quot;_blank&quot;&gt;jQuery.ajax()&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started&quot; target=&quot;_blank&quot;&gt;AJAX | MDN&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sitepoint.com/use-jquerys-ajax-function/&quot; target=&quot;_blank&quot;&gt;How to Use jQuery’s $.ajax() Function&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 10 Feb 2016 01:00:57 -0800</pubDate>
+        <link>http://adrian.io/loading-content-in-with-ajax/</link>
+        <guid isPermaLink="true">http://adrian.io/loading-content-in-with-ajax/</guid>
+        
+        
+        <category>javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>Creating Modular Article Elements</title>
+        <description>&lt;p&gt;Creating a modular code base is key to the extensibility of any web app. A modular code base requires involvement from both the design team and the development team as the interface should be designed in a way that promotes modularity. Today I will show you how to create a modular HTML and CSS component that is seen throughout the web.&lt;/p&gt;
+
+&lt;h2 id=&quot;i-classcode-termarticlei-element&quot;&gt;&lt;i class=&quot;code-term&quot;&gt;article&lt;/i&gt; Element&lt;/h2&gt;
+
+&lt;p&gt;&lt;i class=&quot;code-term&quot;&gt;article&lt;/i&gt; is an HTML5 element that can be found all over the web. It represents an independent item section of content. It’s often used as an element to represent blog post teasers among other things. These blog teasers can come in many sizes and shapes. This is exactly where modular components shine.&lt;/p&gt;
+
+&lt;h2 id=&quot;going-modular&quot;&gt;Going Modular&lt;/h2&gt;
+
+&lt;p&gt;If the design team gives us three types of article layouts it is our job as Front End Developers to dissect the design and look for ways to create modular components.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock.jpg&quot; alt=&quot;A three article design mock&quot; width=&quot;1000&quot; height=&quot;600&quot; class=&quot;alignnone size-full wp-image-557&quot; srcset=&quot;http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock-300x180.jpg 300w, http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock-768x461.jpg 768w, http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock-460x276.jpg 460w, http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock-240x144.jpg 240w, http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock.jpg 1000w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see these three article layouts share the same design elements. A title, a post date, an author byline and an article image. The best way to code these components is by creating a HTML and CSS architecture that can be reused. There are many CSS naming conventions which I described in my &lt;a href=&quot;http://adrianeufracio.com/go-modular-with-your-css/&quot; target=&quot;_blank&quot;&gt;article regarding modular CSS&lt;/a&gt;, but for this tutorial I will use a naming convention that resembles BEM.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-start&quot;&gt;Lets start!&lt;/h2&gt;
+
+&lt;p&gt;When you look at this design you can start seeing the individual elements as Lego pieces that are used to comprise the entire component. With this mentality, lets start coding out our component and learn as we go.&lt;/p&gt;
+
+&lt;p data-height=&quot;400&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;vLazxj&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/vLazxj/&quot;&gt;Modular Component&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;We have created our first component pretty easily using the article element. If another developer or designer looks at our HTML and CSS markup, they will be able to understand what they mean since it is written in a semantic manner. Our next task will be to create our second component using the same HTML structure while adding CSS classes when needed to help modify the look of the element.&lt;/p&gt;
+
+&lt;p data-height=&quot;400&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;obMaBm&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/obMaBm/&quot;&gt;Modular Component 2&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;As you can see, just by adding a one class to our existing element, &lt;i class=&quot;code-term&quot;&gt;.article-medium&lt;/i&gt;, we can alter the appearance of our component to create the modified component. Lets do the same for our last component.&lt;/p&gt;
+
+&lt;p data-height=&quot;350&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;GoBYYo&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/GoBYYo/&quot;&gt;Modular Component 3&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;This component was just as easy to make. Using the BEM inspired methodology it is a breeze to create modularized components. To wrap this tutorial up, I will place all the elements together and use the section element to help with the layout.&lt;/p&gt;
+
+&lt;p data-height=&quot;500&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;mVjQwW&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/mVjQwW/&quot;&gt;Modular Component Complete&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;modular-resources&quot;&gt;Modular Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.bem.info/&quot; target=&quot;_blank&quot;&gt;BEM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.lego.com/en-us/&quot; target=&quot;_blank&quot;&gt;LEGO&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://smacss.com/&quot; target=&quot;_blank&quot;&gt;SMACSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 03 Feb 2016 01:04:59 -0800</pubDate>
+        <link>http://adrian.io/creating-modular-article-elements/</link>
+        <guid isPermaLink="true">http://adrian.io/creating-modular-article-elements/</guid>
+        
+        
+        <category>css</category>
+        
+      </item>
+    
+      <item>
+        <title>SVG Circle Line Animation</title>
+        <description>&lt;p&gt;SVG is an incredibly useful web element that can take many forms and sizes. Whether you want to create a complex chart or a simple shape. SVG can also be animated! Today I will show you how to do exactly that by drawing a circle using a little CSS and some JavaScript to help us out.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-make-a-circle&quot;&gt;Lets make a circle!&lt;/h2&gt;
+
+&lt;p&gt;We will start off by creating an SVG element within our HTML document. The code below will create an SVG that is compatible with most modern browsers.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;svg xml:space=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;preserve&amp;lt;/span&amp;gt;&quot; xmlns=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;http://www.w3.org/2000/svg&amp;lt;/span&amp;gt;&quot;&amp;gt;&amp;lt;/svg&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Next we will add the width and height attributes to our SVG that will help us define our circle.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;svg viewBox=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;0 0 220 220&amp;lt;/span&amp;gt;&quot; xml:space=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;preserve&amp;lt;/span&amp;gt;&quot; xmlns=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;http://www.w3.org/2000/svg&amp;lt;/span&amp;gt;&quot;
+width=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;220&amp;lt;/span&amp;gt;&quot; height=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;220&amp;lt;/span&amp;gt;&quot;&amp;gt;
+&amp;lt;/svg&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With the svg out of our way we can go ahead and create our circle element within the SVG.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;circle&amp;gt;&amp;lt;/circle&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Lets start spicing up the circle with some additional attributes. We will add an &lt;i class=&quot;code-term&quot;&gt;id&lt;/i&gt; name for styling purposes and for some JavaScript we will use later on. We will also add &lt;i class=&quot;code-term&quot;&gt;cx&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;cy&lt;/i&gt; values. These will set the coordinates of the circle within the SVG. To center the circle within the SVG I divided the width and height by 2 and placed the value within the &lt;i class=&quot;code-term&quot;&gt;cx&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;cy&lt;/i&gt; attributes, which in this case is &lt;i class=&quot;code-term&quot;&gt;110&lt;/i&gt;. Finally, we will add a radius of &lt;i class=&quot;code-term&quot;&gt;100&lt;/i&gt; using the &lt;i class=&quot;code-term&quot;&gt;r&lt;/i&gt; attribute.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;circle id=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;path&amp;lt;/span&amp;gt;&quot; cx=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;110&amp;lt;/span&amp;gt;&quot; cy=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;110&amp;lt;/span&amp;gt;&quot; r=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;100&amp;lt;/span&amp;gt;&quot;&amp;gt;&amp;lt;/circle&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now we can start styling the circle. For our example, we need a &lt;i class=&quot;code-term&quot;&gt;stroke&lt;/i&gt; and we will set a &lt;i class=&quot;code-term&quot;&gt;stroke-width&lt;/i&gt; of 10 for the circle.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;circle id=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;path&amp;lt;/span&amp;gt;&quot; class=&quot;&quot; cx=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;110&amp;lt;/span&amp;gt;&quot; cy=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;110&amp;lt;/span&amp;gt;&quot; r=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;100&amp;lt;/span&amp;gt;&quot; stroke=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;#000000&amp;lt;/span&amp;gt;&quot; fill=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;none&amp;lt;/span&amp;gt;&quot; stroke-width=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;10&amp;lt;/span&amp;gt;&quot;&amp;gt;&amp;lt;/circle&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;draw-it&quot;&gt;Draw it&lt;/h2&gt;
+
+&lt;p&gt;We finally have our complete circle but now comes the tricky part. &lt;a href=&quot;https://twitter.com/chriscoyier&quot; target=&quot;_blank&quot;&gt;Chris Coyier&lt;/a&gt; has a great &lt;a href=&quot;https://css-tricks.com/svg-line-animation-works/&quot; target=&quot;_blank&quot;&gt;article&lt;/a&gt; on how line animation works so I suggest you go read that but for now I will give you a brief explanation. What we need is to animate the stroke on circle element. To do this we need to create a dash that is long enough to hide and reveal our stroke. To figure out the dash length we need to figure out the stroke length of our circle. This is where JavaScript will help us.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// collect our radius value
+&amp;lt;span class=&quot;pink&quot;&amp;gt;var&amp;lt;/span&amp;gt; radius = document.&amp;lt;span class=&quot;blue&quot;&amp;gt;getElementById&amp;lt;/span&amp;gt;(&#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;path&amp;lt;/span&amp;gt;&#39;).&amp;lt;span class=&quot;blue&quot;&amp;gt;getAttribute&amp;lt;/span&amp;gt;(&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;r&amp;lt;/span&amp;gt;&quot;);
+// collect circle length value using basic math
+&amp;lt;span class=&quot;pink&quot;&amp;gt;var&amp;lt;/span&amp;gt; circleLength = 2 * Math.PI * radius;
+// output length some where we can see it
+document.&amp;lt;span class=&quot;blue&quot;&amp;gt;getElementById&amp;lt;/span&amp;gt;(&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;length-container&amp;lt;/span&amp;gt;&quot;).innerHTML = circleLength;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now we should have something like this&lt;/p&gt;
+
+&lt;p data-height=&quot;450&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;yeEJEB&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/yeEJEB/&quot;&gt;SVG DRAW CIRCLE step 1&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;Now we use css3 to create our animation. As I mentioned before we needed to create a dash that is long enough to hide and reveal our stroke. We can set the dash length equal to the circle length.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;#path&amp;lt;/span&amp;gt; {
+  stroke-dasharray: &amp;lt;span class=&quot;orange&quot;&amp;gt;628.3185307179587&amp;lt;/span&amp;gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This will hide our circle completely. To reveal it we need to animiate the position of our dash. We do this by creating a keyframe that changes the dash position from its original position of &lt;i class=&quot;code-term&quot;&gt;628.3185307179587&lt;/i&gt; to &lt;i class=&quot;code-term&quot;&gt;&lt;/i&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;@keyframes dash&amp;lt;/span&amp;gt; {
+  &amp;lt;span class=&quot;pink&quot;&amp;gt;from&amp;lt;/span&amp;gt; {
+    stroke-dashoffset: &amp;lt;span class=&quot;orange&quot;&amp;gt;628.3185307179587&amp;lt;/span&amp;gt;;
+  }
+  &amp;lt;span class=&quot;pink&quot;&amp;gt;to&amp;lt;/span&amp;gt; {
+    stroke-dashoffset: &amp;lt;span class=&quot;orange&quot;&amp;gt;0&amp;lt;/span&amp;gt;;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now to finish up we add this keyframe animation to our #path.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;#path&amp;lt;/span&amp;gt; {
+  stroke-dasharray: &amp;lt;span class=&quot;orange&quot;&amp;gt;628.3185307179587&amp;lt;/span&amp;gt;;
+  animation: &amp;lt;span class=&quot;orange&quot;&amp;gt;dash 5s linear forwards&amp;lt;/span&amp;gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;our-final-product&quot;&gt;Our final product&lt;/h2&gt;
+
+&lt;p data-height=&quot;450&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;LGrZBL&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/LGrZBL/&quot;&gt;SVG DRAW CIRCLE step 2&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;This is a cool little element you can use on a website and extend to your requirements. Here is the same element with some added functionality.&lt;/p&gt;
+
+&lt;p data-height=&quot;600&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;zrjzqr&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/zrjzqr/&quot;&gt;SVG DRAW CIRCLE&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;svg-animation-resources&quot;&gt;SVG Animation Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://css-tricks.com/svg-line-animation-works/&quot; target=&quot;_blank&quot;&gt;How SVG Line Animation Works&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jakearchibald.com/2013/animated-line-drawing-svg/&quot; target=&quot;_blank&quot;&gt;Animated line drawing in SVG&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sarasoueidan.com/tags/svg/index.html&quot; target=&quot;_blank&quot;&gt;Sara Soueidan’s SVG Articles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 29 Jan 2016 09:00:38 -0800</pubDate>
+        <link>http://adrian.io/svg-circle-line-animation/</link>
+        <guid isPermaLink="true">http://adrian.io/svg-circle-line-animation/</guid>
+        
+        
+        <category>css</category>
+        
+      </item>
+    
+      <item>
+        <title>Deliver Your Site Faster With Critical CSS</title>
+        <description>&lt;p&gt;The modern day web experience is much more complicated and robust then it was ten years ago which means are CSS stylesheets have grown in size. A large CSS file will slow down a site but we need this CSS to create the user interface.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1.png&quot; alt=&quot;A user interface&quot; width=&quot;400&quot; class=&quot;alignnone size-full wp-image-508&quot; srcset=&quot;http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1-300x200.png 300w, http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1-419x279.png 419w, http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1-460x307.png 460w, http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1-240x160.png 240w, http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1.png 600w&quot; sizes=&quot;(max-width: 600px) 100vw, 600px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But do we need an entire CSS file to create the user interface. What about the rest of the UI that isn’t visible to the user? Like the UI as you scroll down the page or the UI on a completely different page. We are loading CSS to create UI components that are not needed when a page loads. CSS is a render blocking resource which means that the entire CSS file needs to be parsed before the browser can load anything else. Loading a large resource where only part of it is needed creates a web experience that is begging for a solution. Wouldn’t it be better to load the necessary, critical CSS that is visible to the user and load the rest when it’s needed. While this solution is not achievable, there is a something we can do to create a similar experience. Instead we can load the CSS that is needed to compose the initial user interface and then load the rest of the CSS asynchronously. This way we render the visible user interface quickly while avoiding a render blocking resource. We can do this with two tools that are available today, &lt;strong&gt;Critical&lt;/strong&gt; and &lt;strong&gt;loadCSS&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;critical&quot;&gt;Critical&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/addyosmani/critical&quot; target=&quot;_blank&quot;&gt;Critical&lt;/a&gt;, created by &lt;a href=&quot;https://addyosmani.com/&quot;&gt;Addy Osmani&lt;/a&gt;, is a node.js package that uses &lt;a href=&quot;http://casperjs.org/&quot; target=&quot;_blank&quot;&gt;CasperJS&lt;/a&gt; to scan a page of your website and returns an output of the necessary CSS for the page.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//lets take a look at the code
+critical.&amp;lt;span class=&quot;blue&quot;&amp;gt;generate&amp;lt;/span&amp;gt;({
+    base: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;test/&amp;lt;/span&amp;gt;&#39;,
+    src: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;index.html&amp;lt;/span&amp;gt;&#39;,
+    dest: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;styles/critical.css&amp;lt;/span&amp;gt;&#39;,
+    width: 1300,
+    height: 900
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The above code looks for &lt;i class=&quot;code-term&quot;&gt;index.html&lt;/i&gt;, scans it using &lt;a href=&quot;https://www.google.com/webhp?sourceid=chrome-instant&amp;amp;ion=1&amp;amp;espv=2&amp;amp;ie=UTF-8#q=phantomjs&quot;&gt;Phantomjs&lt;/a&gt;, and returns &lt;i class=&quot;code-term&quot;&gt;critical.css&lt;/i&gt; in the styles folder which is the CSS that is necessary for the user interface to render properly. The UI is defined with width and height parameters of 1300 x 900. All we need to do now is remove our &lt;i class=&quot;code-term&quot;&gt;main.css&lt;/i&gt; from the head of our web document and place &lt;i class=&quot;code-term&quot;&gt;critical.css&lt;/i&gt; in the head.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;head&amp;gt;
+&amp;lt;link href=&quot;styles/critical.css&quot; rel=&quot;stylesheet&quot;&amp;gt;
+...
+...
+&amp;lt;/head&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;loadcss&quot;&gt;loadCSS&lt;/h2&gt;
+
+&lt;p&gt;We still need to find a way to load our &lt;i class=&quot;code-term&quot;&gt;main.css&lt;/i&gt; asynchronously. This is where &lt;a href=&quot;https://github.com/filamentgroup/loadCSS&quot;&gt;loadCSS&lt;/a&gt; comes into play. loadCSS is a JavaScript function, created by &lt;a href=&quot;https://www.filamentgroup.com/&quot; target=&quot;_blank&quot;&gt;Filament Group&lt;/a&gt;, that loads CSS asynchronously. All we need to do is place the function in the head of the document and then pass our &lt;i class=&quot;code-term&quot;&gt;main.css&lt;/i&gt; as an argument in that function.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;head&amp;gt;
+&amp;lt;script&amp;gt;
+  // include loadCSS here...
+  &amp;lt;span class=&quot;blue&quot;&amp;gt;function loadCSS&amp;lt;/span&amp;gt;( href, before, media ){ ... }
+  // load a file
+  &amp;lt;span class=&quot;blue&quot;&amp;gt;loadCSS&amp;lt;/span&amp;gt;( &quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;styles/style.css&amp;lt;/span&amp;gt;&quot; );
+&amp;lt;/script&amp;gt;
+&amp;lt;head&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;going-a-little-further&quot;&gt;Going A Little further&lt;/h2&gt;
+
+&lt;p&gt;It is recommended to inline the critical CSS that is generated using Critical in the head of the web document as it eliminates a round-trip for the server. So instead of this…&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;head&amp;gt;
+&amp;lt;link href=&quot;styles/critical.css&quot; rel=&quot;stylesheet&quot;&amp;gt;
+...
+...
+&amp;lt;/head&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We do this…&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;head&amp;gt;
+&amp;lt;style&amp;gt;
+body{line-height:1}ol,ul{list-style:none}....
+&amp;lt;/style&amp;gt;
+...
+...
+&amp;lt;/head&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Also it is safe to assume that the layout for the home page looks different then the layout for the about page. For this reason it would be best to have a different critical stylesheet for each of these pages. I use grunt and a grunt plugin called grunt-critical to produce these results.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// in our gruntfile.js, install grunt critical via cli
+npm install grunt-critical --save-dev
+
+//Add the critical task for multiple pages
+criticalcss: {
+      home: {
+        options: {
+          url: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;index.html&amp;lt;/span&amp;gt;&#39;,
+          width: 1200,
+          height: 736,
+          filename: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;css/style.css&amp;lt;/span&amp;gt;&#39;,
+          outputfile: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;css/critical-home.min.css&amp;lt;/span&amp;gt;&#39;,
+          //add some minification magic :)
+          minify: &amp;lt;span class=&quot;green&quot;&amp;gt;true&amp;lt;/span&amp;gt;
+        }
+      },
+      about: {
+        options: {
+          url: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;about.html&amp;lt;/span&amp;gt;&#39;,
+          width: 1200,
+          height: 736,
+          filename: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;css/style.css&amp;lt;/span&amp;gt;&#39;,
+          outputfile: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;css/critical-about.min.css&amp;lt;/span&amp;gt;&#39;,
+          //add some minification magic :)
+          minify: &amp;lt;span class=&quot;green&quot;&amp;gt;true&amp;lt;/span&amp;gt;
+        }
+      }
+    }
+//Load our grunt-critical dependency
+grunt.loadNpmTasks(&#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;grunt-critical&amp;lt;/span&amp;gt;&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;It is best to implement and test your results with Critical. As noted by &lt;a href=&quot;https://chrisruppel.com/&quot; target=&quot;_blank&quot;&gt;Chris Ruppel&lt;/a&gt; over at &lt;a href=&quot;http://fourkitchens.com/&quot; target=&quot;_blank&quot;&gt;Four Kitchens&lt;/a&gt;, the inlined css should not exceed 10kb due to HTTP packet size restrictions. An interface that loads quickly is the end result of implementing Critical which yields major benefits. Adding Critical to your ever expanding workflow is a tool vital tool in a webdev toolkit.&lt;/p&gt;
+
+&lt;h2 id=&quot;critical-resources&quot;&gt;Critical Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://fourkitchens.com/blog/article/use-gulp-automate-your-critical-path-css&quot; target=&quot;_blank&quot;&gt;Use Gulp Automate Your Critical Path CSS By Four Kitchens&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/addyosmani/critical&quot; target=&quot;_blank&quot;&gt;Critical By Addy Osmani&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/bezoerb/grunt-critical&quot; target=&quot;_blank&quot;&gt;Grunt Plugin CriticalCSS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2015/08/understanding-critical-css/&quot; target=&quot;_blank&quot;&gt;Understanding Critical CSS By Dean Hume&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 20 Jan 2016 01:00:43 -0800</pubDate>
+        <link>http://adrian.io/deliver-your-site-faster-with-critical-css/</link>
+        <guid isPermaLink="true">http://adrian.io/deliver-your-site-faster-with-critical-css/</guid>
+        
+        
+        <category>css</category>
+        
+      </item>
+    
+      <item>
+        <title>Caching With Expires Headers</title>
+        <description>&lt;p&gt;Caching is the process of storing data for future use in the cache’s memory. The stored data is used to serve the same data even faster for future requests. On the web we can store our websites CSS, JavaScript, Images, fonts and many more file types to the browsers cache. The browser won’t request the same file over and over again from the server if the file is stored in the cache. Configuring browser caching can be done within your &lt;i class=&quot;code-term&quot;&gt;.htaccess&lt;/i&gt; file on Apache servers using &lt;strong&gt;Expires Headers&lt;/strong&gt;. You can modify the code below to increase the length of time the files are stored and the types of files that are stored.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# ----------------------------------------------------------------------
+# | Expires headers                                                    |
+# ----------------------------------------------------------------------
+
+&amp;lt;IfModule mod_expires.c&amp;gt;
+
+    ExpiresActive on
+    ExpiresDefault                                      &quot;access plus 1 month&quot;
+
+  # CSS
+    ExpiresByType text/css                              &quot;access plus 1 year&quot;
+
+  # HTML
+    ExpiresByType text/html                             &quot;access plus 0 seconds&quot;
+
+  # JavaScript
+    ExpiresByType application/javascript                &quot;access plus 1 year&quot;
+    ExpiresByType application/x-javascript              &quot;access plus 1 year&quot;
+    ExpiresByType text/javascript                       &quot;access plus 1 year&quot;
+
+  # Media files
+
+    ExpiresByType audio/ogg                             &quot;access plus 1 month&quot;
+    ExpiresByType image/bmp                             &quot;access plus 1 month&quot;
+    ExpiresByType image/gif                             &quot;access plus 1 month&quot;
+    ExpiresByType image/jpeg                            &quot;access plus 1 month&quot;
+    ExpiresByType image/png                             &quot;access plus 1 month&quot;
+    ExpiresByType image/svg+xml                         &quot;access plus 1 month&quot;
+    ExpiresByType image/webp                            &quot;access plus 1 month&quot;
+    ExpiresByType video/mp4                             &quot;access plus 1 month&quot;
+    ExpiresByType video/ogg                             &quot;access plus 1 month&quot;
+    ExpiresByType video/webm                            &quot;access plus 1 month&quot;
+
+
+  # Web fonts
+
+    # Embedded OpenType (EOT)
+    ExpiresByType application/vnd.ms-fontobject         &quot;access plus 1 month&quot;
+    ExpiresByType font/eot                              &quot;access plus 1 month&quot;
+    # OpenType
+    ExpiresByType font/opentype                         &quot;access plus 1 month&quot;
+    # TrueType
+    ExpiresByType application/x-font-ttf                &quot;access plus 1 month&quot;
+    # Web Open Font Format (WOFF) 1.0
+    ExpiresByType application/font-woff                 &quot;access plus 1 month&quot;
+    ExpiresByType application/x-font-woff               &quot;access plus 1 month&quot;
+    ExpiresByType font/woff                             &quot;access plus 1 month&quot;
+
+    # Web Open Font Format (WOFF) 2.0
+    ExpiresByType application/font-woff2                &quot;access plus 1 month&quot;
+
+&amp;lt;/IfModule&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;implement-and-audit&quot;&gt;Implement and Audit&lt;/h2&gt;
+
+&lt;p&gt;As always, it’s best to audit the performance of your site once you implement new code. Some file types can be cached longer than others if they don’t change regularly where as files that do change regularly, like stylesheets and JavaScript files, should be cached for a shorter amount of time.&lt;/p&gt;
+
+&lt;h2 id=&quot;caching-resources&quot;&gt;Caching Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching&quot; target=&quot;_blank&quot;&gt;HTTP Caching&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gtmetrix.com/add-expires-headers.html&quot; target=&quot;_blank&quot;&gt;Add Expires Headers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/h5bp/server-configs-apache/blob/master/dist/.htaccess&quot; target=&quot;_blank&quot;&gt;H5BP’S Server Configs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 06 Jan 2016 01:00:16 -0800</pubDate>
+        <link>http://adrian.io/caching-with-expires-headers/</link>
+        <guid isPermaLink="true">http://adrian.io/caching-with-expires-headers/</guid>
+        
+        
+        <category>tooling</category>
+        
+      </item>
+    
+      <item>
+        <title>Gzip Compression Engaged!</title>
+        <description>&lt;p&gt;As Front-End Developers, we need to always focus on creating web apps that are fast. Speed kills on the web and it is our duty to provide the fastest experience possible. There are many tasks that go into creating this experience, one of them being Gzip compression.&lt;/p&gt;
+
+&lt;h2 id=&quot;gzip-compression&quot;&gt;GZIP Compression&lt;/h2&gt;
+
+&lt;p&gt;Gzip enables HTTP compression by compressing most file types. Compressing files using Gzip has proven to reduce files sizes up to 70%! Most browsers support Gzip and it’s extremely simple to set-up. The code below can be copied and pasted into your &lt;i class=&quot;code-term&quot;&gt;.htaccess file&lt;/i&gt; which is located in the root folder of your project.&lt;/p&gt;
+
+&lt;h2 id=&quot;for-apache-servers-13-up-to-20&quot;&gt;For Apache Servers 1.3 up to 2.0&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;ifModule mod_gzip.c&amp;gt;
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+&amp;lt;/ifModule&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;for-apache-servers-20-and-above&quot;&gt;For Apache Servers 2.0 and above&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;IfModule mod_filter.c&amp;gt;
+        AddOutputFilterByType DEFLATE &quot;application/atom+xml&quot; \
+                                      &quot;application/javascript&quot; \
+                                      &quot;application/json&quot; \
+                                      &quot;application/ld+json&quot; \
+                                      &quot;application/manifest+json&quot; \
+                                      &quot;application/rdf+xml&quot; \
+                                      &quot;application/rss+xml&quot; \
+                                      &quot;application/schema+json&quot; \
+                                      &quot;application/vnd.geo+json&quot; \
+                                      &quot;application/vnd.ms-fontobject&quot; \
+                                      &quot;application/x-font-ttf&quot; \
+                                      &quot;application/x-javascript&quot; \
+                                      &quot;application/x-web-app-manifest+json&quot; \
+                                      &quot;application/xhtml+xml&quot; \
+                                      &quot;application/xml&quot; \
+                                      &quot;font/eot&quot; \
+                                      &quot;font/opentype&quot; \
+                                      &quot;image/bmp&quot; \
+                                      &quot;image/svg+xml&quot; \
+                                      &quot;image/vnd.microsoft.icon&quot; \
+                                      &quot;image/x-icon&quot; \
+                                      &quot;text/cache-manifest&quot; \
+                                      &quot;text/css&quot; \
+                                      &quot;text/html&quot; \
+                                      &quot;text/javascript&quot; \
+                                      &quot;text/plain&quot; \
+                                      &quot;text/vcard&quot; \
+                                      &quot;text/vnd.rim.location.xloc&quot; \
+                                      &quot;text/vtt&quot; \
+                                      &quot;text/x-component&quot; \
+                                      &quot;text/x-cross-domain-policy&quot; \
+                                      &quot;text/xml&quot;
+    &amp;lt;/IfModule&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;for-nginx-servers&quot;&gt;For Nginx Servers&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gzip on;
+gzip_buffers 16 8k;
+gzip_comp_level 2;
+gzip_min_length 1100;
+gzip_http_version 1.0;
+gzip_proxied any;
+gzip_types text/plain text/html text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+# Disable for IE &amp;lt; 6 due to compatibility issues
+gzip_disable &quot;MSIE [1-6].(?!.*SV1)&quot;;
+gzip_vary on;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Gzip is a standard practice for websites but it’s not uncommon to see websites that don’t use this great tool. Your just a &lt;i class=&quot;code-term&quot;&gt;Ctrl+C&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;Ctrl+V&lt;/i&gt; away from starting to see some major performance improvements.&lt;/p&gt;
+
+&lt;h2 id=&quot;gzip-resources&quot;&gt;Gzip Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Gzip&quot; target=&quot;_blank&quot;&gt;Gzip&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.google.com/speed/docs/insights/EnableCompression&quot; target=&quot;_blank&quot;&gt;Google’s Enable Compression&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://varvy.com/pagespeed/enable-compression.html&quot; target=&quot;_blank&quot;&gt;Varvy’s Enable Gzip compression&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 30 Dec 2015 01:00:55 -0800</pubDate>
+        <link>http://adrian.io/gzip-compression-engaged/</link>
+        <guid isPermaLink="true">http://adrian.io/gzip-compression-engaged/</guid>
+        
+        
+        <category>tooling</category>
+        
+      </item>
+    
+      <item>
+        <title>The Right Way To Load Web Fonts</title>
+        <description>&lt;p&gt;Fonts are a crucial design element for any website. In the beginning of the web, if we wanted a certain font family or font style that was not available, we were forced to use an image of a font. More images meant more server requests causing a slower web experience. The web has grown and with that has come the ability to use fonts that were previously unattainable via resources such as Google Fonts and Typekit as well as the &lt;i class=&quot;code-term&quot;&gt;@font-face&lt;/i&gt; css rule. This has allowed designers and developers to incorporate fonts that were previously unattainable on websites, creating an experience that relied less on images which in turn helps with the load time.&lt;/p&gt;
+
+&lt;h2 id=&quot;web-fonts-are-a-resource-too&quot;&gt;Web Fonts Are A Resource Too&lt;/h2&gt;
+
+&lt;p&gt;Loading a web font is a gazillion times better than loading images of fonts but in the never ending world of web page optimization we are constantly looking for ways to make the web experience even faster. Ultimately, web fonts are loaded from a CSS file which is another resource. Depending on how large the file size of your web font, you will find that your website will take a performance hit. Let me take a step back, back in college, in HTML 101 class, we learned to load our CSS in the head of our web page. This is all peaches and cream until your CSS file size is getting increasingly large. This caused Google to recommend ‘eliminating render blocking CSS’ to speed up load time. CSS, by design, has to be completely parsed before the browser can render the html and load additional resources. This prevents the user from seeing any un-styled elements. So the question now is how can we load our web font without block the rendering of the rest of the web page.&lt;/p&gt;
+
+&lt;h2 id=&quot;going-async&quot;&gt;Going Async!&lt;/h2&gt;
+
+&lt;p&gt;Async is usually a term we hear with JavaScript but fret not as the geniuses at Google and Typekit have given us the ability to load our web fonts async as well. Web Font Loader is a 12kb JavaScript file that gives developers more control over the fonts they load with the ability to load asynchronously. Lets start by creating our async solution.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;WebFontConfig = {
+          typekit: { &amp;lt;span class=&quot;green&quot;&amp;gt;id&amp;lt;/span&amp;gt;: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;xxxxxx&amp;lt;/span&amp;gt;’ },
+          google: {
+               &amp;lt;span class=&quot;green&quot;&amp;gt;families&amp;lt;/span&amp;gt;: [‘&amp;lt;span class=&quot;orange&quot;&amp;gt;Droid Sans&amp;lt;/span&amp;gt;’]
+          },
+          custom: {
+               &amp;lt;span class=&quot;green&quot;&amp;gt;families&amp;lt;/span&amp;gt;: [‘&amp;lt;span class=&quot;orange&quot;&amp;gt;My Font&amp;lt;/span&amp;gt;&#39;],
+               &amp;lt;span class=&quot;green&quot;&amp;gt;url&amp;lt;/span&amp;gt;: [‘&amp;lt;span class=&quot;orange&quot;&amp;gt;/fonts.css&amp;lt;/span&amp;gt;’];
+          } 
+     };
+
+   (function(d) {
+      &amp;lt;span class=&quot;pink&quot;&amp;gt;var&amp;lt;/span&amp;gt; wf = d.createElement(&#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;script&amp;lt;/span&amp;gt;&#39;), s = d.scripts[0];
+      wf.src = &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js&amp;lt;/span&amp;gt;&#39;;
+      s.parentNode.insertBefore(wf, s);
+   })(document);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Adding this code to the head of our web page will load the web font without blocking the rendering of the web page whether the font is a Typekit font, Google font or our own web font. Seems simple enough until we see our page load.&lt;/p&gt;
+
+&lt;h2 id=&quot;fout&quot;&gt;FOUT&lt;/h2&gt;
+
+&lt;p&gt;When are page loads we witness something strange, a Flash Of Un-styled Text or what developers call FOUT. FOUT is caused by the asynchronous load of our web fonts. Since the fonts are rendered async with the rest of the page we are creating a situation where the browser searches and uses a fallback font since the web font is not loaded. Once loaded, the web font replaces the default font, or un-styled text, to achieve the intended font style.&lt;/p&gt;
+
+&lt;h2 id=&quot;fight-against-fout&quot;&gt;Fight Against FOUT&lt;/h2&gt;
+
+&lt;p&gt;Web Font Loader combats FOUT by applying classes while your webpage is loading the web fonts. These classes are applied to the html element of your webpage.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-loading&amp;lt;/span&amp;gt; // when fonts are requested, this class will be applied
+&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-active&amp;lt;/span&amp;gt; // when fonts have been rendered, this class will be applied
+&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-inactive&amp;lt;/span&amp;gt; // when fonts fail to render, this class will be applied
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If our &lt;i class=&quot;code-term&quot;&gt;html&lt;/i&gt; element has a class of &lt;i class=&quot;code-term&quot;&gt;.wf-loading&lt;/i&gt;, we can apply styles that will minimize the FOUT. For example, if we are using the Google font Playfair Display, we would use use the &lt;i class=&quot;code-term&quot;&gt;.wf-loading&lt;/i&gt; class to apply a fallback font that looks similar to Playfair Display. Then once the &lt;i class=&quot;code-term&quot;&gt;.wf-loading&lt;/i&gt; class is replaced with &lt;i class=&quot;code-term&quot;&gt;.wf-active&lt;/i&gt; class, we would see our intended styles roll through.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-loading&amp;lt;/span&amp;gt; {
+     font-family: &amp;lt;span class=&quot;orange&quot;&amp;gt;georgia&amp;lt;/span&amp;gt;;
+}
+&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-active&amp;lt;/span&amp;gt; {
+     font-family: &amp;lt;span class=&quot;orange&quot;&amp;gt;&#39;playfair display&#39;&amp;lt;/span&amp;gt;;
+}
+&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-loading h1&amp;lt;/span&amp;gt; {
+     font-size: &amp;lt;span class=&quot;orange&quot;&amp;gt;20px&amp;lt;/span&amp;gt;;
+}
+&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-active h1&amp;lt;/span&amp;gt; {
+     font-size: &amp;lt;span class=&quot;orange&quot;&amp;gt;24px&amp;lt;/span&amp;gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We can utilize &lt;i class=&quot;code-term&quot;&gt;.wf-inactive&lt;/i&gt; class to apply a more reliable fallback experience&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-inactive&amp;lt;/span&amp;gt; {
+     font-family: &amp;lt;span class=&quot;orange&quot;&amp;gt;georgia&amp;lt;/span&amp;gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For web pages that are requesting multiple font families, there are classes that specifically state the current status of a font family.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-&amp;lt;familyname&amp;gt;-&amp;lt;fvd&amp;gt;-loading&amp;lt;/span&amp;gt; // when this font is requested, this class will be applied
+&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-&amp;lt;familyname&amp;gt;-&amp;lt;fvd&amp;gt;-active&amp;lt;/span&amp;gt; // when this font has been rendered, this class will be applied
+&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-&amp;lt;familyname&amp;gt;-&amp;lt;fvd&amp;gt;-inactive&amp;lt;/span&amp;gt; // when this font fails to render, this class will be applied
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;i class=&quot;code-term&quot;&gt;&lt;familyname&gt;&amp;lt;/i&amp;gt; would be the font family and &lt;i class=&quot;code-term&quot;&gt;&lt;fvd&gt;&amp;lt;/i&amp;gt; would be the font style and font weight of the given font.&lt;/fvd&gt;&lt;/i&gt;&lt;/familyname&gt;&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;When using Web Font Loader, it is imperative to collaborate with your designer to find a well supported fallback font that looks as close to the web font as possible. It is important to do this as it prevents the user from seeing the jarring web experience that FOUT causes. Web fonts are a great asset for designers and developers alike that come with their own quirks and caveats. Our goal as developers is to minimize these quirks and we can do just that with Web Font Loader.&lt;/p&gt;
+
+&lt;h2 id=&quot;web-font-resources&quot;&gt;Web Font Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/typekit/webfontloader&quot; target=&quot;_blank&quot;&gt;Web Font Loader&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.google.com/fonts&quot; target=&quot;_blank&quot;&gt;Google Fonts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://typekit.com/&quot; target=&quot;_blank&quot;&gt;TypeKit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 23 Dec 2015 01:00:39 -0800</pubDate>
+        <link>http://adrian.io/the-right-way-to-load-web-fonts/</link>
+        <guid isPermaLink="true">http://adrian.io/the-right-way-to-load-web-fonts/</guid>
+        
+        
+        <category>javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>A Few Things I Have Learned</title>
+        <description>&lt;p&gt;I have been working at a small digital agency for a little over three years now. My knowledge of the web and the web industry has grown leaps and bounds. When I started this job I referred to myself as a web designer and today I call myself a Front-End Developer. To say that I have learned a lot since starting here is a gross understatement. The funny thing is that I feel like I learned in an unconventional way. A way were you I was required to want to learn rather than forced to learn.&lt;/p&gt;
+
+&lt;p&gt;At this digital agency, I will call it Joe’s to keep their privacy, we have a full stack developer, a designer and myself. I was hired as a web designer but as time went on the owner realized I had a knack for code and that I purposely shy away from design work. Something that became evident within the first couple of months is that my knowledge regarding HTML, CSS and emerging web technologies was superior then my coworkers. My coworkers came from a print background and a networking background. At first, my knowledge gave me confidence but it didn’t take long for me to see things differently.&lt;/p&gt;
+
+&lt;p&gt;My skills also came with its own set of responsibilities. See, when you are at bigger agency with more than one developer, it is typical to have another developer look at your code for quality. They might make a suggestion on how to create cleaner code, give requirements on how fast the page should load, and other best practices for web development. I did not have that kind of supervision. If I didn’t feel like creating a clean code base then I didn’t have to. As long as the website worked I did not have to worry about being reprimanded. Sites were not tested on devices other than desktop browsers and not required to be responsive. By no way is this me bashing Joe’s but with a small team on tight deadlines and a targeted user base it was clear why they followed this manner of creating websites. So at the end of the day, if I wanted to create a clean code base, a responsive website or use a new web technology, it would be at my discretion.&lt;/p&gt;
+
+&lt;h2 id=&quot;choosing-to-be-better&quot;&gt;Choosing To Be Better&lt;/h2&gt;
+
+&lt;p&gt;I could of gone two different ways with this responsibility. I could either turn in mediocre work that just got the job done or I could push myself to create the best product possible. Thankfully I went with the latter option. I wanted to create things that were cool and that I was proud of. Without that feeling, I didn’t see the purpose. Taking this responsibility meant that I had to do many things on my own.&lt;/p&gt;
+
+&lt;h2 id=&quot;always-learning&quot;&gt;Always Learning&lt;/h2&gt;
+
+&lt;p&gt;The web, whatever that means, has been growing constantly every year. This means new standards to use and new ways to make your website faster and work better. I learned some stuff in college but the real learning come after college. If I stopped learning after college I would have no chance to keep making modern websites. To create websites that are up-to-date it would be up to me learn the latest technology. This is not as easy as it seems. It takes motivation to learn and to grow your skills. I had to push myself at work to learn for both my personal interest and my companies interest. So that is what I did. I learned about css preprocessors, responsive design, task runners, modern front-end workflows, optimizing page load speed and everything else I can get my hands on.&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-better-on-my-own&quot;&gt;Getting Better On My Own&lt;/h2&gt;
+
+&lt;p&gt;My team is small and we are expected to finish projects quick. This often led to sub-par code. One thing that became a habit was going back into projects and refactoring my HTML, CSS, and JavaScript. Cleaning up code is not a pretty job but it is necessary. Reducing code bloat in css and modularizing javascript is something that became second nature to me.&lt;/p&gt;
+
+&lt;h2 id=&quot;empathy&quot;&gt;Empathy&lt;/h2&gt;
+
+&lt;p&gt;The hardest time to show empathy is when no one shows empathy. Empathy can be applied to anything as long as you can see and create a connection it. With any of my projects I attach a certain level of empathy. I acknowledge that it is a representative of my own empathy and skills. Both of these matter deeply to me. By taking on these projects as micro-representations of myself, my effort and motivation to create the best product has been relentless.&lt;/p&gt;
+
+&lt;h2 id=&quot;tl--dr-8211-learn-and-grow&quot;&gt;TL ; DR – Learn And Grow&lt;/h2&gt;
+
+&lt;p&gt;My job is a constant reminder of a simple fact that I must always try to learn and grow. There is an ego that comes from having more knowledge than your coworkers but I take it more as a responsibility. I have learned that there is always room to grow and different ways to grow. Even though that statement has been said millions of times, most people don’t try to get better. I can’t see a world were I would find this acceptable for myself so hopefully this encourages someone to start looking at things in a new perspective.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 16 Dec 2015 01:00:32 -0800</pubDate>
+        <link>http://adrian.io/a-few-things-i-have-learned/</link>
+        <guid isPermaLink="true">http://adrian.io/a-few-things-i-have-learned/</guid>
+        
+        
+        <category>Thoughts</category>
+        
+      </item>
+    
+      <item>
+        <title>Responsive Images Today</title>
+        <description>&lt;p&gt;Is your idea of responsive images &lt;i class=&quot;code-term&quot;&gt;max-width: 100%&lt;/i&gt;? That’s all it takes for your images to look somewhat decent on all devices but there is much much more to responsive images. Responsive images on web apps is a complicated subject that if done right can positively effect your sites aesthetics and performance.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;/h2&gt;
+
+&lt;p&gt;While max-width:100% is an effective way to make images resize according to the images container, it does not fix some of the problems developers have encountered since the advent of smartphones and high resolution devices. When we insert an image that is a resolution of 1000px X 500px like so&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;img src=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;raptor.jpg&amp;lt;/span&amp;gt;&quot; width=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;1000&amp;lt;/span&amp;gt;&quot; height=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;500&amp;lt;/span&amp;gt;&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We have to take into account that we are also serving this image to devices that have a viewport smaller than 1000px. iPhones, Android phones, tablets all come in sizes less than 1000px. Why serve a 1000px image when certain devices only need a 320px image? What if you want to accommodate users with high resolution displays? Ever since the introduction of Retina Display by Apple, high resolution displays have become an industry standard. The need for high resolution images has given web developers another riddle to solve.&lt;/p&gt;
+
+&lt;h2 id=&quot;solution8230-put-a-srcset-on-it&quot;&gt;Solution… Put a srcset on it&lt;/h2&gt;
+
+&lt;p&gt;HTML5.1 introduces &lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt; into the our web standards. &lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt; is an attribute applied on the img tag that takes a comma separated list of images with a description of the image. The description can be either a pixel ratio descriptor or a width descriptor. Using the pixel ratio descriptor, we can tell the browser what image to display depending on the pixel ratio of the current device.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;img src=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;dino.jpg&amp;lt;/span&amp;gt;&quot; alt=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;dino&amp;lt;/span&amp;gt;&quot; srcset=“&amp;lt;span class=&quot;orange&quot;&amp;gt;dino.jpg, dino-hr.jpg 2x&amp;lt;/span&amp;gt;&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt; contains strings seperated by commas. Strings are comprised of two values; one being the url of the image and the other being the pixel ratio this image should be displayed at. In this img tag, &lt;i class=&quot;code-term&quot;&gt;dino.jpg&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;dino-hr.jpg&lt;/i&gt; are image locations and 2x signifies the image is meant for devices with a twice the amount of pixels.&lt;/p&gt;
+
+&lt;p&gt;The browser sees the img tag, determines the pixel ratio of the viewport and then determines which image to use. If the user is on a high resolution device, the browser will serve the 2x image, &lt;i class=&quot;code-term&quot;&gt;dino-hr.jpg&lt;/i&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is a straight-forward syntax that offers instant functionality however it does not take into account changing widths of the viewport. Therefore this syntax should only be used for fixed width images.&lt;/p&gt;
+
+&lt;h2 id=&quot;images-come-in-different-width-and-sizes&quot;&gt;Images Come In Different Width And Sizes&lt;/h2&gt;
+
+&lt;p&gt;A better solution for truly responsive images is a combination of the &lt;strong&gt;width descriptor&lt;/strong&gt; and the &lt;strong&gt;sizes&lt;/strong&gt; attribute. The width descriptor like the pixel descriptor is applied to the end of a string in the srcset attribute. Its value is the actual width of the image. For example, I have an image large.jpg which is 1024 x 500 pixels so we apply the width descriptor of 1024w. The w always follows the width of the image.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;large.jpg 1024w
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So now we can pass srcset something like this that includes smaller versions of our original large.jpg&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;srcset=“&amp;lt;span class=&quot;orange&quot;&amp;gt;large.jpg 1024w, medium.jpg 640w, small.jpg 320w&amp;lt;/span&amp;gt;&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now that we offer the browser a set of images it can choose from, we can now provide even more information that will help the browser select the best possible option. This is possible using the &lt;strong&gt;sizes&lt;/strong&gt; attribute. &lt;strong&gt;sizes&lt;/strong&gt; takes a set of strings separated by commas. Each string contains a &lt;i class=&quot;code-term&quot;&gt;media condition&lt;/i&gt; and a &lt;i class=&quot;code-term&quot;&gt;length&lt;/i&gt; value. The &lt;i class=&quot;code-term&quot;&gt;media condition&lt;/i&gt; is the same syntax that is used in a media query.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(min-width: 800px)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;i class=&quot;code-term&quot;&gt;length&lt;/i&gt; value is the size the image in regards to the viewport. Since the size is in relation to the viewport, it’s best to apply a length value using the &lt;i class=&quot;code-term&quot;&gt;vw&lt;/i&gt; viewport unit. &lt;i class=&quot;code-term&quot;&gt;vw&lt;/i&gt; is the viewport width where &lt;i class=&quot;code-term&quot;&gt;1vw&lt;/i&gt; is equal to one percent of the viewport and &lt;i class=&quot;code-term&quot;&gt;33vw&lt;/i&gt; is equal to 33 percent of the viewport. Thus a string can look like this…&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(max-width:800px) 33vw
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This string says at 800px and below, the image take up 33% of the viewport width. Our sizes attribute will look like…&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sizes=“&amp;lt;span class=&quot;orange&quot;&amp;gt;(max-width:320px) 100vw, (max-width:800px) 33vw, 279px&amp;lt;/span&amp;gt;&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The final string omits the media condition and gives a default length of an image. Now pulling all our code together to create the final img element.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;img srcset=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;large.jpg 1024w, medium.jpg 640w, small.jpg 320w&amp;lt;/span&amp;gt;&quot;
+     sizes=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;(min-width: 320em) 100vw,(max-width:800px) 33vw, 279px&amp;lt;/span&amp;gt;&quot;
+     src=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;small.jpg&amp;lt;/span&amp;gt;&quot;
+&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now the browser has three image choices with a defined width to each. It also has the size of the image at different viewport widths. Using this information the browser will pick an image that best suits the user depending on the pixel density, zoom level and also the network connection of the user.&lt;/p&gt;
+
+&lt;h2 id=&quot;srcset-browser-support&quot;&gt;srcset Browser Support&lt;/h2&gt;
+
+&lt;p&gt;&lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt; is part of the HTML 5.1 working draft which means it will soon be a standardized part of HTML 5. There is wide support for &lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt; among newer browsers but it lacks support in all versions of IE. Therefore all img elements are recommended to have the &lt;i class=&quot;code-term&quot;&gt;src&lt;/i&gt; attribute as a fallback. For more information regarding browser support visit &lt;a href=&quot;http://caniuse.com/#search=srcset&quot; target=&quot;_blank&quot;&gt;caniuse.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;picture-element&quot;&gt;picture element&lt;/h2&gt;
+
+&lt;p&gt;Using the &lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;sizes&lt;/i&gt; attributes give the browser the option on the best image for the user. But what if you want to provide a specific image for the user at a certain breakpoint? This is called the art direction conundrum. Thankfully there is an element that lets developers do exactly this, the &lt;i class=&quot;code-term&quot;&gt;picture&lt;/i&gt; element. The &lt;i class=&quot;code-term&quot;&gt;picture&lt;/i&gt; element is a container for the &lt;i class=&quot;code-term&quot;&gt;source&lt;/i&gt; element and an &lt;i class=&quot;code-term&quot;&gt;img&lt;/i&gt; element.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;picture&amp;gt;
+&amp;lt;source&amp;gt;
+&amp;lt;img&amp;gt;
+&amp;lt;/picture&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;i class=&quot;code-term&quot;&gt;source&lt;/i&gt; element has two attributes; &lt;i class=&quot;code-term&quot;&gt;media&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt;. The &lt;i class=&quot;code-term&quot;&gt;media&lt;/i&gt; attribute takes a media condition&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;source media=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;(min-width: 45em)&amp;lt;/span&amp;gt;&quot; &amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The srcset attribute is just like the srcset attribute for the img element.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//these are all valid values for srcset in the picture element.
+&amp;lt;source media=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;(min-width: 45em)&amp;lt;/span&amp;gt;&quot; srcset=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;large.jpg&amp;lt;/span&amp;gt;&quot; &amp;gt;
+&amp;lt;source  media=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;(min-width: 32em)&amp;lt;/span&amp;gt;&quot; srcset=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;med.jpg&amp;lt;/span&amp;gt;&quot; &amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Finally, we can provide a fallback img element.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;img src=&quot;small.jpg&quot; alt=&quot;A small image.&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;All in all, are picture element will look like this&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;picture&amp;gt;
+  &amp;lt;source media=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;(min-width: 45em)&amp;lt;/span&amp;gt;&quot; srcset=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;large.jpg&amp;lt;/span&amp;gt;&quot;&amp;gt;
+  &amp;lt;source media=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;(min-width: 32em)&amp;lt;/span&amp;gt;&quot; srcset=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;med.jpg&amp;lt;/span&amp;gt;&quot;&amp;gt;
+  &amp;lt;img src=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;small.jpg&amp;lt;/span&amp;gt;&quot; alt=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;A small image&amp;lt;/span&amp;gt;&quot;&amp;gt;
+&amp;lt;/picture&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;picture-browser-support&quot;&gt;picture Browser Support&lt;/h2&gt;
+
+&lt;p&gt;The picture element is also part of the HTML 5.1 working draft and the browsers that don’t except the picture will fallback nicely to the img element.&lt;/p&gt;
+
+&lt;h2 id=&quot;implement-and-test&quot;&gt;Implement And Test&lt;/h2&gt;
+
+&lt;p&gt;&lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt;, &lt;i class=&quot;code-term&quot;&gt;sizes&lt;/i&gt;, and &lt;i class=&quot;code-term&quot;&gt;pictur&lt;/i&gt;e element gets us one step closer to a solution for responsive images. Try implementing this in your next project and test what works. You have to consider what images should use the &lt;i class=&quot;code-term&quot;&gt;img&lt;/i&gt; element rather than the &lt;i class=&quot;code-term&quot;&gt;picture&lt;/i&gt; element. Also make note of your web apps breakpoints and the variety of images you need to create to accommodate those breakpoints. As I said before, responsive images are not an easy task but implementing and testing will get you on the right track.&lt;/p&gt;
+
+&lt;h2 id=&quot;responsive-image-resources&quot;&gt;Responsive Image Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://responsiveimages.org/&quot; target=&quot;_blank&quot;&gt;Responsiveimages.org&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://alistapart.com/article/using-responsive-images-now&quot; target=&quot;_blank&quot;&gt;A List Apart’s Using Responsive Images Now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.cloudfour.com/responsive-images-101-part-4-srcset-width-descriptors/&quot; target=&quot;_blank&quot;&gt;Cloudfour’s Responsive Image 101&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-picture-element&quot; target=&quot;_blank&quot;&gt;W3C HTML 5.1 Working Draft&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 09 Dec 2015 12:59:01 -0800</pubDate>
+        <link>http://adrian.io/responsive-images-today/</link>
+        <guid isPermaLink="true">http://adrian.io/responsive-images-today/</guid>
+        
+        
+        <category>html</category>
+        
+      </item>
+    
+      <item>
+        <title>My Git Cheat Sheet</title>
+        <description>&lt;p&gt;Git is god. Not really but it is a powerful Version Control System (VCS). VCS’s can be hard to manage and understand but Git makes this relatively easy. On web projects, Git can be both a handy tool and a lifesaver in a developers arsenal . It is also a must have for any project with multiple collaborators. Git can be used right in the Command Line Interface. Here is my cheat sheet to start using git today.&lt;/p&gt;
+
+&lt;h2 id=&quot;git-terminology&quot;&gt;Git Terminology&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Repository&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A Repository, often called a repo, is basically the folder containing all of the projects files.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Staging Area&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The Staging Area is a file in git that contains the information that will be added to your next commit.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Commit&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A commit is a save to your project that takes a snapshot of all your projects files and records it with a unique ID. This makes it possible to go back in time if you need to make changes or revert to older version of your project.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Branch&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A branch is a replicated repository. Branches make it possible to alter files without effecting the master branch or primary branch, creating something like an alternate reality of that repo. Branches come in handy when you want to experiment on a project or when adding a new feature to a product.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Merge&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Merging grabs the changes from one branch and applies them to another. Once your branch is ready to make it to the big time, merging will add all your changes to your project to the primary branch.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Push&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Push refers to uploading your local repository to your remote repository. Remote repositories are hosted on sites like &lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot;&gt;github.com&lt;/a&gt;, &lt;a href=&quot;https://bitbucket.org/&quot; target=&quot;_blank&quot;&gt;bitbucket.com&lt;/a&gt;, or &lt;a href=&quot;http://beanstalkapp.com/&quot; target=&quot;_blank&quot;&gt;beanstalkapp.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Pull&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Pull refers to pulling down any changes from a remote repository and merging them in to your local repository. Pulling is common when you have changes being pushed to the remote repository and you need to add those changes to your local repository.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Fetch&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Fetch pulls the latest changes in a remote repository but does not merge them into your local repository. Instead of merging you can compare the changes made on the remote and integrate them when ready.&lt;/p&gt;
+
+&lt;h2 id=&quot;git-commands&quot;&gt;Git Commands&lt;/h2&gt;
+
+&lt;p&gt;Initializes git in project folder&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Returns files that are in/out of staging area&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Returns list of commits&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The way to add files to the staging area. Add file by typing file name at the end of the command &lt;i class=&quot;code-term&quot;&gt;git add text.html&lt;/i&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The way to remove files from the project. Remove file by typing file name at the end of the command &lt;i class=&quot;code-term&quot;&gt;git rm text.html&lt;/i&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git rm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Takes a snapshot of current staging area and saves it with a unique ID.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Performs &lt;i class=&quot;code-term&quot;&gt;git add&lt;/i&gt; on all changed files while making a commit.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -a
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Adding &lt;i class=&quot;code-term&quot;&gt;-m&lt;/i&gt; with text in parenthesis leaves a message that describes why this commit is being made.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -m &quot;Message goes here&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Display history of commits&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Lists branches&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Creates a branch with the name passed at the end of the command&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Switches to branch with the name passed at the end of the command. Can also be used to revert to older commits &lt;i class=&quot;code-term&quot;&gt;git checkout &lt;commit&gt;&amp;lt;/i&amp;gt;&lt;/commit&gt;&lt;/i&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Create and switch to branch with the name passed at the end of the command&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout -b &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Deletes the branch that is passed at the end of the command&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch -D &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Undoes a commit. It undoes the changes that are associated with that commit while creating a new commit acknowledging the revert&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git revert
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Undoes changes and resets project to the last commit. It is similar to git revert but it does not create a commit which makes it impossible to keep track of this reset or go bring back a file to a previous state if need be.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git reset
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Removes untracked files from directory.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clean
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Merges the branch that is passed at the end of the command to the branch you are currently in.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git merge &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Duplicates an existing repository. The repository is located by the url passed at the end of the command&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone &amp;lt;url&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;List all remote repo associated with the current repo, can also add, &lt;i class=&quot;code-term&quot;&gt;git remote add &lt;name&gt;&amp;lt;/i&amp;gt;, and remove, &lt;i class=&quot;code-term&quot;&gt;git remote rm &lt;name&gt;&amp;lt;/i&amp;gt;, remote repos from project.&lt;/name&gt;&lt;/i&gt;&lt;/name&gt;&lt;/i&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Pulls the latest changes in a remote repository but does not merge them into your local repository&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git fetch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Pulls the latest changes in a remote repository and merges them into your local repository&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git pull
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Uploading your local repository to your remote repository&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Git has many more commands that can be used in your project but these should be enough to get you started. I will be posting an article soon on proper git workflow with multiple collaborators.&lt;/p&gt;
+
+&lt;h2 id=&quot;git-resources&quot;&gt;Git Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://git-scm.com/&quot; target=&quot;_blank&quot;&gt;Official Git Website&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.atlassian.com/git/tutorials&quot; target=&quot;_blank&quot;&gt;Atlassian Git Tutorials&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/github-glossary/&quot; target=&quot;_blank&quot;&gt;Github’s Git Glossary&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 02 Dec 2015 01:00:09 -0800</pubDate>
+        <link>http://adrian.io/my-git-cheat-sheet/</link>
+        <guid isPermaLink="true">http://adrian.io/my-git-cheat-sheet/</guid>
+        
+        
+        <category>tooling</category>
+        
+      </item>
+    
+  </channel>
+</rss>

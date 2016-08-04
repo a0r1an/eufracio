@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Responsive Images Today</title>
+  <meta name="description" content="Is your idea of responsive images max-width: 100%? That’s all it takes for your images to look somewhat decent on all devices but there is much much more to ...">
+  <link href='https://fonts.googleapis.com/css?family=Lora|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://adrian.io/responsive-images-today/">
+  <link rel="alternate" type="application/rss+xml" title="Eufrac.io" href="http://adrian.io/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Eufrac.io</a>
+
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Responsive Images Today</h1>
+    <p class="post-meta"><time datetime="2015-12-09T12:59:01-08:00" itemprop="datePublished">Dec 9, 2015</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Adrian Eufracio</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Is your idea of responsive images <i class="code-term">max-width: 100%</i>? That’s all it takes for your images to look somewhat decent on all devices but there is much much more to responsive images. Responsive images on web apps is a complicated subject that if done right can positively effect your sites aesthetics and performance.</p>
+
+<h2 id="the-problem">The Problem</h2>
+
+<p>While max-width:100% is an effective way to make images resize according to the images container, it does not fix some of the problems developers have encountered since the advent of smartphones and high resolution devices. When we insert an image that is a resolution of 1000px X 500px like so</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;img src="&lt;span class="orange"&gt;raptor.jpg&lt;/span&gt;" width="&lt;span class="orange"&gt;1000&lt;/span&gt;" height="&lt;span class="orange"&gt;500&lt;/span&gt;" /&gt;
+</code></pre>
+</div>
+
+<p>We have to take into account that we are also serving this image to devices that have a viewport smaller than 1000px. iPhones, Android phones, tablets all come in sizes less than 1000px. Why serve a 1000px image when certain devices only need a 320px image? What if you want to accommodate users with high resolution displays? Ever since the introduction of Retina Display by Apple, high resolution displays have become an industry standard. The need for high resolution images has given web developers another riddle to solve.</p>
+
+<h2 id="solution8230-put-a-srcset-on-it">Solution… Put a srcset on it</h2>
+
+<p>HTML5.1 introduces <i class="code-term">srcset</i> into the our web standards. <i class="code-term">srcset</i> is an attribute applied on the img tag that takes a comma separated list of images with a description of the image. The description can be either a pixel ratio descriptor or a width descriptor. Using the pixel ratio descriptor, we can tell the browser what image to display depending on the pixel ratio of the current device.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;img src="&lt;span class="orange"&gt;dino.jpg&lt;/span&gt;" alt="&lt;span class="orange"&gt;dino&lt;/span&gt;" srcset=“&lt;span class="orange"&gt;dino.jpg, dino-hr.jpg 2x&lt;/span&gt;"&gt;
+</code></pre>
+</div>
+
+<p><i class="code-term">srcset</i> contains strings seperated by commas. Strings are comprised of two values; one being the url of the image and the other being the pixel ratio this image should be displayed at. In this img tag, <i class="code-term">dino.jpg</i> and <i class="code-term">dino-hr.jpg</i> are image locations and 2x signifies the image is meant for devices with a twice the amount of pixels.</p>
+
+<p>The browser sees the img tag, determines the pixel ratio of the viewport and then determines which image to use. If the user is on a high resolution device, the browser will serve the 2x image, <i class="code-term">dino-hr.jpg</i>.</p>
+
+<p>This is a straight-forward syntax that offers instant functionality however it does not take into account changing widths of the viewport. Therefore this syntax should only be used for fixed width images.</p>
+
+<h2 id="images-come-in-different-width-and-sizes">Images Come In Different Width And Sizes</h2>
+
+<p>A better solution for truly responsive images is a combination of the <strong>width descriptor</strong> and the <strong>sizes</strong> attribute. The width descriptor like the pixel descriptor is applied to the end of a string in the srcset attribute. Its value is the actual width of the image. For example, I have an image large.jpg which is 1024 x 500 pixels so we apply the width descriptor of 1024w. The w always follows the width of the image.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>large.jpg 1024w
+</code></pre>
+</div>
+
+<p>So now we can pass srcset something like this that includes smaller versions of our original large.jpg</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>srcset=“&lt;span class="orange"&gt;large.jpg 1024w, medium.jpg 640w, small.jpg 320w&lt;/span&gt;"
+</code></pre>
+</div>
+
+<p>Now that we offer the browser a set of images it can choose from, we can now provide even more information that will help the browser select the best possible option. This is possible using the <strong>sizes</strong> attribute. <strong>sizes</strong> takes a set of strings separated by commas. Each string contains a <i class="code-term">media condition</i> and a <i class="code-term">length</i> value. The <i class="code-term">media condition</i> is the same syntax that is used in a media query.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>(min-width: 800px)
+</code></pre>
+</div>
+
+<p>The <i class="code-term">length</i> value is the size the image in regards to the viewport. Since the size is in relation to the viewport, it’s best to apply a length value using the <i class="code-term">vw</i> viewport unit. <i class="code-term">vw</i> is the viewport width where <i class="code-term">1vw</i> is equal to one percent of the viewport and <i class="code-term">33vw</i> is equal to 33 percent of the viewport. Thus a string can look like this…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>(max-width:800px) 33vw
+</code></pre>
+</div>
+
+<p>This string says at 800px and below, the image take up 33% of the viewport width. Our sizes attribute will look like…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sizes=“&lt;span class="orange"&gt;(max-width:320px) 100vw, (max-width:800px) 33vw, 279px&lt;/span&gt;"
+</code></pre>
+</div>
+
+<p>The final string omits the media condition and gives a default length of an image. Now pulling all our code together to create the final img element.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;img srcset="&lt;span class="orange"&gt;large.jpg 1024w, medium.jpg 640w, small.jpg 320w&lt;/span&gt;"
+     sizes="&lt;span class="orange"&gt;(min-width: 320em) 100vw,(max-width:800px) 33vw, 279px&lt;/span&gt;"
+     src="&lt;span class="orange"&gt;small.jpg&lt;/span&gt;"
+&gt;
+</code></pre>
+</div>
+
+<p>Now the browser has three image choices with a defined width to each. It also has the size of the image at different viewport widths. Using this information the browser will pick an image that best suits the user depending on the pixel density, zoom level and also the network connection of the user.</p>
+
+<h2 id="srcset-browser-support">srcset Browser Support</h2>
+
+<p><i class="code-term">srcset</i> is part of the HTML 5.1 working draft which means it will soon be a standardized part of HTML 5. There is wide support for <i class="code-term">srcset</i> among newer browsers but it lacks support in all versions of IE. Therefore all img elements are recommended to have the <i class="code-term">src</i> attribute as a fallback. For more information regarding browser support visit <a href="http://caniuse.com/#search=srcset" target="_blank">caniuse.com</a>.</p>
+
+<h2 id="picture-element">picture element</h2>
+
+<p>Using the <i class="code-term">srcset</i> and <i class="code-term">sizes</i> attributes give the browser the option on the best image for the user. But what if you want to provide a specific image for the user at a certain breakpoint? This is called the art direction conundrum. Thankfully there is an element that lets developers do exactly this, the <i class="code-term">picture</i> element. The <i class="code-term">picture</i> element is a container for the <i class="code-term">source</i> element and an <i class="code-term">img</i> element.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;picture&gt;
+&lt;source&gt;
+&lt;img&gt;
+&lt;/picture&gt;
+</code></pre>
+</div>
+
+<p>The <i class="code-term">source</i> element has two attributes; <i class="code-term">media</i> and <i class="code-term">srcset</i>. The <i class="code-term">media</i> attribute takes a media condition</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;source media="&lt;span class="orange"&gt;(min-width: 45em)&lt;/span&gt;" &gt;
+</code></pre>
+</div>
+
+<p>The srcset attribute is just like the srcset attribute for the img element.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//these are all valid values for srcset in the picture element.
+&lt;source media="&lt;span class="orange"&gt;(min-width: 45em)&lt;/span&gt;" srcset="&lt;span class="orange"&gt;large.jpg&lt;/span&gt;" &gt;
+&lt;source  media="&lt;span class="orange"&gt;(min-width: 32em)&lt;/span&gt;" srcset="&lt;span class="orange"&gt;med.jpg&lt;/span&gt;" &gt;
+</code></pre>
+</div>
+
+<p>Finally, we can provide a fallback img element.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;img src="small.jpg" alt="A small image."&gt;
+</code></pre>
+</div>
+
+<p>All in all, are picture element will look like this</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;picture&gt;
+  &lt;source media="&lt;span class="orange"&gt;(min-width: 45em)&lt;/span&gt;" srcset="&lt;span class="orange"&gt;large.jpg&lt;/span&gt;"&gt;
+  &lt;source media="&lt;span class="orange"&gt;(min-width: 32em)&lt;/span&gt;" srcset="&lt;span class="orange"&gt;med.jpg&lt;/span&gt;"&gt;
+  &lt;img src="&lt;span class="orange"&gt;small.jpg&lt;/span&gt;" alt="&lt;span class="orange"&gt;A small image&lt;/span&gt;"&gt;
+&lt;/picture&gt;
+</code></pre>
+</div>
+
+<h2 id="picture-browser-support">picture Browser Support</h2>
+
+<p>The picture element is also part of the HTML 5.1 working draft and the browsers that don’t except the picture will fallback nicely to the img element.</p>
+
+<h2 id="implement-and-test">Implement And Test</h2>
+
+<p><i class="code-term">srcset</i>, <i class="code-term">sizes</i>, and <i class="code-term">pictur</i>e element gets us one step closer to a solution for responsive images. Try implementing this in your next project and test what works. You have to consider what images should use the <i class="code-term">img</i> element rather than the <i class="code-term">picture</i> element. Also make note of your web apps breakpoints and the variety of images you need to create to accommodate those breakpoints. As I said before, responsive images are not an easy task but implementing and testing will get you on the right track.</p>
+
+<h2 id="responsive-image-resources">Responsive Image Resources</h2>
+
+<ul>
+  <li><a href="http://responsiveimages.org/" target="_blank">Responsiveimages.org</a></li>
+  <li><a href="http://alistapart.com/article/using-responsive-images-now" target="_blank">A List Apart’s Using Responsive Images Now</a></li>
+  <li><a href="http://blog.cloudfour.com/responsive-images-101-part-4-srcset-width-descriptors/" target="_blank">Cloudfour’s Responsive Image 101</a></li>
+  <li><a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-picture-element" target="_blank">W3C HTML 5.1 Working Draft</a></li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+        <p>My name is Adrian and I am a Front-End Developer. I love creating web products/things. This is a hub for all my creations and and a place where I can share my knowledge.
+</p>
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/a0r1an"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">a0r1an</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:eufracioadrian@gmail.com">eufracioadrian@gmail.com</a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/adrianeufracio"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">adrianeufracio</span></a>
+
+          </li>
+          
+        </ul>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>
