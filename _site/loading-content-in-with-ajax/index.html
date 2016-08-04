@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Loading Content In With Ajax</title>
+  <meta name="description" content="When a page initially loads, many requests are made to the browser. Content, Images, and JavaScript Files are just some of the types of requests made to the ...">
+  <link href='https://fonts.googleapis.com/css?family=Lora|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://adrian.io/loading-content-in-with-ajax/">
+  <link rel="alternate" type="application/rss+xml" title="Eufrac.io" href="http://adrian.io/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Eufrac.io</a>
+
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Loading Content In With Ajax</h1>
+    <p class="post-meta"><time datetime="2016-02-10T01:00:57-08:00" itemprop="datePublished">Feb 10, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Adrian Eufracio</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>When a page initially loads, many requests are made to the browser. Content, Images, and JavaScript Files are just some of the types of requests made to the browser. Of course, the more assets we request from the server, the slower our website will be. For websites that require lots of content and images, it is best to delay the requests for these assets until they need to be displayed. Asynchronous JavaScript and XML gives developers the tools to do just that. Asynchronous JavaScript and XML thankfully has a shorter name it goes by called Ajax. It enables developers with the ability to update parts of a web page asynchronously without having to reload the page. This feature has many use cases that can be implemented on a website that craves speed.</p>
+
+<h2 id="load-on-hover">Load on Hover</h2>
+
+<p>Online publications like <a href="http://mashable.com/" target="_blank">Mashable</a> have a tremendous amount of content that needs to be pulled from their servers and displayed to their users. As part of their navigation, there dropdown menu contains article images and titles for each category. The dropdown is not seen until you hover over any of the links in the navigation, making it unnecessary for them to load the content until the user hovers on a link. This makes it a perfect use case for Ajax. I will recreate a similar scenario with my own page.</p>
+
+<p data-height="500" data-theme-id="20621" data-slug-hash="GowOMJ" data-default-tab="result" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/GowOMJ/">AJAX HOVER PART 1</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p>Here we have a webpage with an element with a class of <i class="code-term">.menu</i>. When hovering over <i class="code-term">.menu</i>, the <i class="code-term">.menu-submenu</i> element will appear. There isn’t any content inside <i class="code-term">.menu-submenu</i> but we will load the content in using Ajax.</p>
+
+<p data-height="500" data-theme-id="20621" data-slug-hash="adQVLR" data-default-tab="js" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/adQVLR/">AJAX HOVER PART 2</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p>Using jQuery and the Ajax function, we retrieve the content within <i class="code-term">content.html</i> and insert it in the <i class="code-term">.menu-submenu</i>. This creates a faster initial load with virtually the same web experience.</p>
+
+<h2 id="load-on-click">Load On Click</h2>
+
+<p>Another common predicament that large blogs have is displaying multiple blog post teasers. Displaying many blog post on a page will increase the load time of a website. Easily fixable with Ajax! Instead of loading all your content on the initial load, lets load it when clicking a button.</p>
+
+<p data-height="500" data-theme-id="20621" data-slug-hash="gPQXjr" data-default-tab="result" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/gPQXjr/">AJAX CLICK PART 1</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p>We start with a simple webpage with a button at the bottom of it. Now lets add our JavaScript that will load content in when the button with an <i class="code-term">ID</i> of <i class="code-term">#load-more</i> is clicked.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;span class="pink"&gt;$&lt;/span&gt;("&lt;span class="orange"&gt;#load-more&lt;/span&gt;").click(&lt;span class="blue"&gt;function&lt;/span&gt;(){
+	&lt;span class="pink"&gt;$&lt;/span&gt;.ajax({
+		url: "&lt;span class="orange"&gt;content.html&lt;/span&gt;",
+		cache: &lt;span class="green"&gt;false&lt;/span&gt;
+	})
+  	.done(&lt;span class="blue"&gt;function&lt;/span&gt;( html ) {
+    	$( "&lt;span class="orange"&gt;.content&lt;/span&gt;" ).append( html );
+    	$("&lt;span class="orange"&gt;#load-more&lt;/span&gt;").css("&lt;span class="orange"&gt;display&lt;/span&gt;","&lt;span class="orange"&gt;none&lt;/span&gt;");
+  	});
+});
+</code></pre>
+</div>
+
+<p>This was just as easy as the hover example but lets make it easier for the users so they don’t have to click on anything to load the rest of the content. All they have to do is reach the bottom of the page.</p>
+
+<p data-height="500" data-theme-id="20621" data-slug-hash="pgQdZp" data-default-tab="result" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/pgQdZp/">AJAX SCROLL</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p>Using the scroll function, we check whenever the user scrolls if they have reached a point where they have scrolled the height of the web page. Once they have reach the bottom, we load the content into the page.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>As you can see these are basic examples, but when dealing with large websites these simple Ajax requests can help create a faster web experience. Faster is better. It is important to note that Ajax is dependent on JavaScript so make sure to create a fallback to alternatively load content when there is no JavaScript available.</p>
+
+<h2 id="ajax-resources">Ajax Resources</h2>
+
+<ul>
+  <li><a href="http://api.jquery.com/jquery.ajax/" target="_blank">jQuery.ajax()</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started" target="_blank">AJAX | MDN</a></li>
+  <li><a href="http://www.sitepoint.com/use-jquerys-ajax-function/" target="_blank">How to Use jQuery’s $.ajax() Function</a></li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+        <p>My name is Adrian and I am a Front-End Developer. I love creating web products/things. This is a hub for all my creations and and a place where I can share my knowledge.
+</p>
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/a0r1an"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">a0r1an</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:eufracioadrian@gmail.com">eufracioadrian@gmail.com</a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/adrianeufracio"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">adrianeufracio</span></a>
+
+          </li>
+          
+        </ul>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

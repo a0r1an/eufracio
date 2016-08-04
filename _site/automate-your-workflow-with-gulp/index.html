@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Automate Your Workflow With Gulp</title>
+  <meta name="description" content="As Front-End Developers, we are sometimes overcome with the amount of work that goes into building a simple website. It is amazing all the tasks that go into...">
+  <link href='https://fonts.googleapis.com/css?family=Lora|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://adrian.io/automate-your-workflow-with-gulp/">
+  <link rel="alternate" type="application/rss+xml" title="Eufrac.io" href="http://adrian.io/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Eufrac.io</a>
+
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Automate Your Workflow With Gulp</h1>
+    <p class="post-meta"><time datetime="2015-11-18T01:00:21-08:00" itemprop="datePublished">Nov 18, 2015</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Adrian Eufracio</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>As Front-End Developers, we are sometimes overcome with the amount of work that goes into building a simple website. It is amazing all the tasks that go into a website to make it function properly and look good on the many devices available. Whether it be optimizing images, creating sprites or minifying files These tasks are often done more than once. This contradicts with the DRY principle of not repeating ourselves. How can we automate time-consuming tasks in our development workflow.</p>
+
+<h2 id="introducing-gulp">Introducing Gulp</h2>
+
+<p><a href="http://gulpjs.com/" target="_blank">Gulp</a> quenches our thirst for an automated task workflow. It provides developers the toolbox to automate the tasks in their workflow. Gulp can compile CSS, optimize images, transpile JavaScript, minify files, and concatenate files just to name a few. Gulp can do this and more thanks to the developer community of <a href="https://www.npmjs.com/" target="_blank">NPM</a>, Node Package Manager. With Gulp, it is easy to add and remove tasks to a project depending on the projects end goal.</p>
+
+<h2 id="get-started">Get Started</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// file structure for this article
+&lt;span class="pink"&gt;index.html&lt;/span&gt;
+scss/
+scss/&lt;span class="pink"&gt;style.scss&lt;/span&gt;
+// Leave the css folder empty for now
+css/
+</code></pre>
+</div>
+
+<p>Before you start using Gulp you need to <a href="https://nodejs.org/en/">install</a> Node.js, a JavaScript runtime. Node.js comes with NPM, a package ecosystem. We will use NPM to install Gulp. To do this open your CLI, Command Line Interface, and type in <i class="code-term">npm install –global gulp</i>. This will install Gulp globally on your computer. Navigate to your projects folder with CLI and type <i class="code-term">npm init</i>. You will be prompted to fill out the information that will be saved into a <strong>package.json</strong> in your directory. <strong>package.json</strong> will hold all your projects dependencies. Now we can install Gulp as a dependency in your project by typing this in your CLI<i class="code-term">npm install –save-dev gulp</i>. <strong>package.json</strong> file should look something like this.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// Note: name and version are the only required fields to have package.json work properly
+{
+  "name": "adrian",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
+</code></pre>
+</div>
+
+<p>Notice how Gulp was added to your devDependencies and also how a <strong>node_modules</strong> folder was also created in your directory. <strong>node_modules</strong> holds all the devDependencies files. Last thing before we start coding is to create a <strong>gulpfile.js</strong> inside our project directory. <strong>gruntfile.js</strong> contains the code that creates our automated tasks. At a minimum it will contain this code.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// gruntfile.js
+// Load our gulp module
+&lt;span class="pink"&gt;var&lt;/span&gt; gulp = require('&lt;span class="orange"&gt;gulp&lt;/span&gt;');
+// Task is a gulp function that defines our task
+gulp.task('&lt;span class="orange"&gt;default&lt;/span&gt;', &lt;span class="blue"&gt;function&lt;/span&gt;() {
+  // code goes here
+});
+</code></pre>
+</div>
+
+<p><i class="code-term">gulp.task</i> takes three arguments <i class="code-term">name</i>, <i class="code-term">deps</i>, and <i class="code-term">function</i>. <i class="code-term">name</i> is the name of the task and can be anything but cannot include spaces. <i class="code-term">deps</i> is an optional array that contains all of the tasks that will run and complete before your task runs. <i class="code-term">function</i> executes the task’s code. Here is a simple example of a Gulp task that will log to your CLI.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// gruntfile.js
+&lt;span class="pink"&gt;var&lt;/span&gt; gulp = require('&lt;span class="orange"&gt;gulp&lt;/span&gt;');
+&lt;span class="pink"&gt;var&lt;/span&gt; gutil = require(‘&lt;span class="orange"&gt;gutil&lt;/span&gt;’);
+gulp.task('&lt;span class="orange"&gt;default&lt;/span&gt;', &lt;span class="blue"&gt;function&lt;/span&gt;() {
+   return gutil.&lt;span class="blue"&gt;log&lt;/span&gt;(’&lt;span class="orange"&gt;You created a task that says you created a task!&lt;/span&gt;');
+});
+</code></pre>
+</div>
+
+<p>This code is well and good but we want to create a useful task. A task that will save us time and do the work for us.</p>
+
+<h2 id="convert-sass-to-css-with-gulp">Convert Sass To CSS With Gulp</h2>
+
+<p>One of the most common tasks a Front-End Dev does is compile their Sass to CSS. Lets have Gulp do this for us! First we must add the Gulp plugin for Sass as a devDependency. We do this by installing the Sass package. <i class="code-term">npm install gulp-sass –save-dev</i> Now Sass is installed as a devDependency! For Sass to be accessed through Gulp, we must call it in the form of the <i class="code-term">require()</i> function.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;span class="pink"&gt;var&lt;/span&gt; gulp = require('&lt;span class="orange"&gt;gulp&lt;/span&gt;');
+&lt;span class="pink"&gt;var&lt;/span&gt; sass = require('&lt;span class="orange"&gt;gulp-sass&lt;/span&gt;');
+</code></pre>
+</div>
+
+<p>The <i class="code-term">require()</i> function is part of the Node syntax and it gives us access to our modules, devDependencies. Now that we have access to Sass we can create the task.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;span class="pink"&gt;var&lt;/span&gt; gulp = require('&lt;span class="orange"&gt;gulp&lt;/span&gt;');
+&lt;span class="pink"&gt;var&lt;/span&gt; sass = require('&lt;span class="orange"&gt;gulp-sass&lt;/span&gt;');
+gulp.task('&lt;span class="orange"&gt;sass&lt;/span&gt;', &lt;span class="blue"&gt;function&lt;/span&gt; () {
+  gulp.src('&lt;span class="orange"&gt;./scss/*.scss&lt;/span&gt;')
+    .pipe(sass().on('&lt;span class="orange"&gt;error&lt;/span&gt;', sass.logError))
+    .pipe(gulp.dest('&lt;span class="orange"&gt;./css&lt;/span&gt;'));
+});
+</code></pre>
+</div>
+
+<p><i class="code-term">gulp.task()</i> is named sass and returns a function that does three things. It defines what files to convert using the <i class="code-term">gulp.src()</i> function. <i class="code-term">gulp.src()</i> can be a string or array that tells the task what files to use. In the example above, I am telling Gulp to look inside of <strong>/scss/</strong> for any files with a file extension of <i class="code-term">.scss</i>. Then we use the <i class="code-term">pipe()</i> function to log a an error if Sass notices one. <i class="code-term">pipe()</i> function is also part of the Node syntax that reads and writes data. We then chain off <i class="code-term">gulp.src()</i> again and use the <i class="code-term">pipe()</i> function to pass another function called <i class="code-term">gulp.dest()</i>. <i class="code-term">gulp.dest()</i> function takes all the data that has been passed so far in our function and spits it out into the path you wish. In our example, it takes the the Sass files we targeted with <i class="code-term">gulp.src()</i> and inserts them in <strong>/css/</strong>.</p>
+
+<p>Now in our CLI, we can tell Gulp to run the sass task … <i class="code-term">gulp sass</i>. Check your <strong>css</strong> folder and you have a shiny new stylesheet called <strong>style.css</strong>. You just created your first Gulp task but how can we make this task even more of a time saver. Wouldn’t it be nice to have <strong>style.css</strong> update whenever <strong>style.scss</strong> updates?</p>
+
+<h2 id="even-more-automated">Even More Automated</h2>
+
+<p>We start by creating another task. This time we will name the task default.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gulp.task('&lt;span class="orange"&gt;default&lt;/span&gt;', &lt;span class="blue"&gt;function&lt;/span&gt;() {
+// we will add our code here
+});
+</code></pre>
+</div>
+
+<p>The benefit of naming the task default is that Gulp recognizes this name and in the CLI you simply type <i class="code-term">gulp</i> and anything in your default Gulp task will be executed. Now we will add a <i class="code-term">gulp.watch()</i> function and provide it two values. The first value will tell the function which files to watch for changes and the second task will be the task that runs when the files that are being watched change.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gulp.watch('&lt;span class="orange"&gt;./scss/*.scss&lt;/span&gt;', ['&lt;span class="orange"&gt;sass&lt;/span&gt;']);
+</code></pre>
+</div>
+
+<p><i class="code-term">gulp.watch()</i> watches all files in the <strong>scss</strong> folder with a <strong>.scss</strong> extension and runs the sass task that we created above. Now when we run <i class="code-term">gulp</i> in our CLI, Gulp will constantly watch our sass files for changes and update <strong>style.css</strong> leaving us free to code.</p>
+
+<h2 id="handy-automated-tasks">Handy Automated Tasks</h2>
+
+<p>Here are some more handy tasks you can add to your gulp file.</p>
+
+<h2 id="compress-and-optimize-images-and-svgs">Compress and Optimize Images And SVGs</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// CLI
+npm install --save-dev gulp-imagemin
+
+// gulpfile.js
+&lt;span class="pink"&gt;var&lt;/span&gt; imagemin = require('&lt;span class="orange"&gt;gulp-imagemin&lt;/span&gt;');
+&lt;span class="pink"&gt;var&lt;/span&gt; pngquant = require('&lt;span class="orange"&gt;imagemin-pngquant&lt;/span&gt;');
+gulp.task(‘&lt;span class="orange"&gt;imagemin&lt;/span&gt;', () =&gt; {
+    return gulp.src('&lt;span class="orange"&gt;images/*&lt;/span&gt;')
+        .pipe(imagemin({
+            progressive: &lt;span class="green"&gt;true&lt;/span&gt;,
+            svgoPlugins: [{removeViewBox: &lt;span class="green"&gt;false&lt;/span&gt;}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest(‘&lt;span class="orange"&gt;img&lt;/span&gt;'));
+});
+</code></pre>
+</div>
+
+<h2 id="minify-javascript-files">Minify Javascript Files</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// CLI
+npm install --save-dev gulp-uglify
+
+// gulpfile.js
+&lt;span class="pink"&gt;var&lt;/span&gt; uglify = require('&lt;span class="orange"&gt;gulp-uglify&lt;/span&gt;');
+gulp.task('&lt;span class="orange"&gt;compress&lt;/span&gt;', &lt;span class="blue"&gt;function&lt;/span&gt;() {
+  return gulp.src('&lt;span class="orange"&gt;lib/*.js&lt;/span&gt;')
+    .pipe(uglify())
+    .pipe(gulp.dest('&lt;span class="orange"&gt;dist&lt;/span&gt;'));
+});
+</code></pre>
+</div>
+
+<h2 id="convert-images-to-a-sprite">Convert Images To A Sprite</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// CLI
+npm install --save-dev gulp.spritesmith
+
+// gulpfile.js
+&lt;span class="pink"&gt;var&lt;/span&gt; spritesmith = require('&lt;span class="orange"&gt;gulp.spritesmith&lt;/span&gt;');
+gulp.task('&lt;span class="orange"&gt;sprite&lt;/span&gt;', &lt;span class="blue"&gt;function&lt;/span&gt;() {
+  var spriteData = gulp.src('&lt;span class="orange"&gt;images/*.png&lt;/span&gt;').pipe(spritesmith({
+    imgName: '&lt;span class="orange"&gt;sprite.png&lt;/span&gt;',
+    cssName: '&lt;span class="orange"&gt;sprite.css&lt;/span&gt;'
+  }));
+  return spriteData.pipe(gulp.dest('&lt;span class="orange"&gt;path/to/output/&lt;/span&gt;'));
+});
+</code></pre>
+</div>
+
+<h2 id="final-gulpfilejs">Final gulpfile.js</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;span class="pink"&gt;var&lt;/span&gt; gulp = require('&lt;span class="orange"&gt;gulp&lt;/span&gt;');
+&lt;span class="pink"&gt;var&lt;/span&gt; sass = require('&lt;span class="orange"&gt;gulp-sass&lt;/span&gt;');
+&lt;span class="pink"&gt;var&lt;/span&gt; imagemin = require('&lt;span class="orange"&gt;gulp-imagemin&lt;/span&gt;');
+&lt;span class="pink"&gt;var&lt;/span&gt; pngquant = require('&lt;span class="orange"&gt;imagemin-pngquant&lt;/span&gt;');
+&lt;span class="pink"&gt;var&lt;/span&gt; uglify = require('&lt;span class="orange"&gt;gulp-uglify&lt;/span&gt;');
+&lt;span class="pink"&gt;var&lt;/span&gt; spritesmith = require('&lt;span class="orange"&gt;gulp.spritesmith&lt;/span&gt;');
+
+gulp.task('&lt;span class="orange"&gt;default&lt;/span&gt;', &lt;span class="blue"&gt;function&lt;/span&gt;() {
+  gulp.watch('&lt;span class="orange"&gt;./scss/*.scss&lt;/span&gt;', ['&lt;span class="orange"&gt;sass&lt;/span&gt;']);
+});
+gulp.task('&lt;span class="orange"&gt;sass&lt;/span&gt;', &lt;span class="blue"&gt;function&lt;/span&gt; () {
+  gulp.src('&lt;span class="orange"&gt;./scss/*.scss&lt;/span&gt;')
+    .pipe(sass().on('&lt;span class="orange"&gt;error&lt;/span&gt;', sass.logError))
+    .pipe(gulp.dest('&lt;span class="orange"&gt;./css&lt;/span&gt;'));
+});
+gulp.task(‘&lt;span class="orange"&gt;imagemin&lt;/span&gt;', () =&gt; {
+    return gulp.src('&lt;span class="orange"&gt;images/*&lt;/span&gt;')
+        .pipe(imagemin({
+            progressive: &lt;span class="green"&gt;true&lt;/span&gt;,
+            svgoPlugins: [{removeViewBox: &lt;span class="green"&gt;false&lt;/span&gt;}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest(‘&lt;span class="orange"&gt;img&lt;/span&gt;'));
+});
+gulp.task('&lt;span class="orange"&gt;compress&lt;/span&gt;', &lt;span class="blue"&gt;function&lt;/span&gt;() {
+  return gulp.src('&lt;span class="orange"&gt;lib/*.js&lt;/span&gt;')
+    .pipe(uglify())
+    .pipe(gulp.dest('&lt;span class="orange"&gt;dist&lt;/span&gt;'));
+});
+gulp.task('&lt;span class="orange"&gt;sprite&lt;/span&gt;', &lt;span class="blue"&gt;function&lt;/span&gt;() {
+  var spriteData = gulp.src('&lt;span class="orange"&gt;images/*.png&lt;/span&gt;').pipe(spritesmith({
+    imgName: '&lt;span class="orange"&gt;sprite.png&lt;/span&gt;',
+    cssName: '&lt;span class="orange"&gt;sprite.css&lt;/span&gt;'
+  }));
+  return spriteData.pipe(gulp.dest('&lt;span class="orange"&gt;path/to/output/&lt;/span&gt;'));
+});
+</code></pre>
+</div>
+
+<h2 id="conclusion8230-not-really">Conclusion… Not Really</h2>
+
+<p>Now you can copy and paste your <strong>gulpfile.js</strong> and <strong>package.json</strong> in your other projects and in your CLI type in <i class="code-term">npm install</i> and all the packages in your <strong>package.json</strong> file will be installed. You are now on the road to having an optimized Front-End workflow. Many of the plugins I have mentioned above have their own options and settings that can be configured to your likely. I highly encourage you to checkout their documentation to further your optimization skills.</p>
+
+<h2 id="gulp-resources">Gulp Resources</h2>
+
+<ul>
+  <li><a href="http://gulpjs.com/" target="_blank">Gulp</a></li>
+  <li><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank">Gulp API</a></li>
+  <li><a href="https://nodejs.org/en/docs/" target="_blank">Node API</a></li>
+  <li><a href="https://www.npmjs.com/package/gulp-sass" target="_blank">Sass for Gulp</a></li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+        <p>My name is Adrian and I am a Front-End Developer. I love creating web products/things. This is a hub for all my creations and and a place where I can share my knowledge.
+</p>
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/a0r1an"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">a0r1an</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:eufracioadrian@gmail.com">eufracioadrian@gmail.com</a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/adrianeufracio"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">adrianeufracio</span></a>
+
+          </li>
+          
+        </ul>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

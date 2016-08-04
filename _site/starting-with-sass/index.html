@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Starting With Sass</title>
+  <meta name="description" content="The world wide web first came into existence in 1989 thanks to the almighty Tim Berners-Lee. Since then, the web has grown leaps and bounds. Websites are not...">
+  <link href='https://fonts.googleapis.com/css?family=Lora|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://adrian.io/starting-with-sass/">
+  <link rel="alternate" type="application/rss+xml" title="Eufrac.io" href="http://adrian.io/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Eufrac.io</a>
+
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Starting With Sass</h1>
+    <p class="post-meta"><time datetime="2015-11-11T01:00:59-08:00" itemprop="datePublished">Nov 11, 2015</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Adrian Eufracio</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>The world wide web first came into existence in 1989 thanks to the almighty Tim Berners-Lee. Since then, the web has grown leaps and bounds. Websites are not just blogs and simple static websites. We have seen the growth of web apps in the past decade and more recently we see these web apps compete with native apps for overall usage. But do not get it twisted, we still use HTML and CSS to create our layouts! CSS is an awesome and easy way to style websites but sometimes it is lacking in features that current developers are in desperate need for. How do we solve this predicament.</p>
+
+<h2 id="introducing-sass">Introducing Sass</h2>
+
+<p>Sass is a scripting language that is interpreted into CSS. Sass provides features that CSS doesn’t like Variables, Mixins, Operators and other functionality that is available in other object-orientated languages. These features makes CSS more dynamic and capable to create the complex web apps that are pertinent on the web today.</p>
+
+<h2 id="installing-sass">Installing Sass</h2>
+
+<p>Sass was built on top of Ruby, a programming language. That means we need to have Ruby installed into our OS to begin your journey with Sass.</p>
+
+<p><strong>Mac Users</strong></p>
+
+<p>Ruby is already pre-installed on Mac. If you want a quick and dirty way to install Sass, type the following in your terminal application.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo gem install sass
+</code></pre>
+</div>
+
+<p>For security reasons, this way of installing packages is not recommended. Instead install <a href="http://brew.sh/" target="_blank">Homebrew</a>, a package manager that lets you install packages safely, by typing the following in terminal.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</code></pre>
+</div>
+
+<p>Now we can use Homebrew to install Sass by typing this into your terminal.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install sass
+</code></pre>
+</div>
+
+<p><strong>Window Users</strong></p>
+
+<p>Window users need to install Ruby. This can be done easily by using <a href="http://rubyinstaller.org/" target="_blank">RubyInstaller</a>. Once downloaded and installed, open your command prompt and type in the following.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gem install sass
+</code></pre>
+</div>
+
+<h2 id="lets-play-with-sass">Let’s Play With Sass!</h2>
+
+<p>Now that we have our development environment ready, we can start using Sass in our projects. Hopefully you have a CSS folder within your projects folder .In that folder, create a <i class="code-term">.scss</i> file. Look at the structure below for an example.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* project folder */
+- &lt;span class="pink"&gt;index.html&lt;/span&gt;
+- images/
+- css/
+- css/&lt;span class="pink"&gt;style.scss&lt;/span&gt;
+</code></pre>
+</div>
+
+<p>We must navigate to the CSS folder’s location in your terminal/command prompt. Once there, we run this command</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sass style.scss style.css
+</code></pre>
+</div>
+
+<p>This will grab your Sass file, style.scss, and convert it into a CSS file called style.css. Note: You can name your Sass file anything you want as long as it has the <i class="code-term">.scss</i> extension at the end. Likewise your outputted CSS file can be named anything you want as long as it has a <i class="code-term">.css</i> extension at the end. For example…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* This will work but obviously dont do this. */
+sass fish.scss sushi.css
+</code></pre>
+</div>
+
+<p>Sass can also watch your file for changes and output an updated CSS file when done. This is done by typing this in your terminal/command prompt</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sass —watch style.scss:output.css
+</code></pre>
+</div>
+
+<p>CSS files can be pretty large and it is an industry standard to minimize CSS files when pushing them to a production environment. There are many third-party minifiers but Sass cuts out the middle man and uses its own minifier. Earlier in the article, I mentioned converting your Sass file into a CSS file by typing <i class="code-term">sass style.scss style.css</i> in your terminal/command prompt. To output a minified CSS file, type this into your terminal/command prompt.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sass style.scss style.css:compressed
+</code></pre>
+</div>
+
+<h2 id="what-does-a-sass-file-look-like">What Does A Sass File Look Like?</h2>
+
+<p>Sass does not overcomplicate the syntax. It uses the same syntax as CSS with some additional syntax additions that are easy to understand and similar to other programming languages. But we don’t want to go through the whole process of installing Sass to write plain ol’ css! Lets go ahead and make use of the tricks that Sass provides.</p>
+
+<h2 id="nesting">Nesting</h2>
+
+<p>Nesting is exactly what it sounds like. With nesting, we can nest selectors within selectors. This gives our code a better visual hierarchy.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* Sass */
+&lt;span class="pink"&gt;.a&lt;/span&gt; {
+ &lt;span class="pink"&gt;.b&lt;/span&gt; {
+  font-size: &lt;span class="orange"&gt;1em&lt;/span&gt;; 
+ }
+} 
+/* This will output the css below */
+/* CSS */
+&lt;span class="pink"&gt;.a .b&lt;/span&gt; {
+ font-size: &lt;span class="orange"&gt;1em&lt;/span&gt;;
+}
+</code></pre>
+</div>
+
+<p>What nesting also affords us is the ability to reference the parent selector using the <i class="code-term">&amp;</i> symbol.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* Sass */
+&lt;span class="pink"&gt;.selector&lt;/span&gt; {
+ background: &lt;span class="orange"&gt;green&lt;/span&gt;;
+ &lt;span class="pink"&gt;&amp;:hover&lt;/span&gt; {
+  background: &lt;span class="orange"&gt;red&lt;/span&gt;;
+ }
+}
+/* This will output the css below */
+/* CSS */
+&lt;span class="pink"&gt;.selector&lt;/span&gt; {
+ background: &lt;span class="orange"&gt;green&lt;/span&gt;;
+}
+&lt;span class="pink"&gt;.selector:hover&lt;/span&gt; {
+ background: &lt;span class="orange"&gt;red&lt;/span&gt;;
+}
+</code></pre>
+</div>
+
+<p>Keep in mind that you don’t want to nest every bit of code that you have since this can cause css specificity problems. I would advise to be cautious of where and how you nest.</p>
+
+<h2 id="variables">Variables</h2>
+
+<p>One of the most requested features for CSS is Variables. Variables can be found in every programming language. They make it easy to store values to a specific string. With Sass we can now use variables.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$green : &lt;span class="orange"&gt;#dafadf&lt;/span&gt;;
+&lt;span class="pink"&gt;.a&lt;/span&gt; {
+ color: &lt;span class="orange"&gt;$green&lt;/span&gt;;
+}
+</code></pre>
+</div>
+
+<p>This is a really simple example but lets analyze what this allows us to do. Now that we have a hex value assigned to this <i class="code-term">$green</i> variable we can now call the variable, <i class="code-term">$green</i>, anywhere in our Sass file and it will give us the exact green we are looking for without worrying if we have the correct color. Lets see a more common example.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$primary color : &lt;span class="orange"&gt;#acacac&lt;/span&gt;;
+$secondary color : &lt;span class="orange"&gt;#333333&lt;/span&gt;;
+$primaryfont : &lt;span class="orange"&gt;arial, sans-serif&lt;/span&gt;;
+$secondary font : &lt;span class="orange"&gt;georgia, serif&lt;/span&gt;;
+</code></pre>
+</div>
+
+<p>With variables we can assure consistency by storing reusable code in handy and easy to read variables. This makes standardizing CSS much more manageable which is imperative in large, complex projects.</p>
+
+<h2 id="mixins">Mixins</h2>
+
+<p>With CSS, it is common to reuse styles from one element to another. Wouldn’t it be nice to group some of these often used styles and insert them into other elements. Mixins provide a way for us to reuse styles in a more semantic manner.</p>
+
+<p data-height="268" data-theme-id="20621" data-slug-hash="VvVZJM" data-default-tab="css" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/VvVZJM/">Basic CSS</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p>Lets refactor this code using mixins!</p>
+
+<p data-height="268" data-theme-id="20621" data-slug-hash="QjJLXP" data-default-tab="css" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/QjJLXP/">Mixin Example</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p>This code immediately becomes more semantic and manageable. Now we can reuse the <i class="code-term">big-text</i> mixin and incorporate the styles attributed to it easily. Mixins also take arguments making them even more handy and powerful.</p>
+
+<p data-height="268" data-theme-id="20621" data-slug-hash="EVOxYg" data-default-tab="css" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/EVOxYg/">More Mixins</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p><strong>Bonus Mixin!</strong></p>
+
+<p>My last <a href="http://adrianeufracio.com/flexbox-101/">article on flexbox</a> describes the need for prefixing your css properties. This is where something like a mixin comes in handy. In the below example we will create a Mixin that turns an element to a flex container and adds all the necessary prefixes to make the flex container work properly on as many devices as possible.</p>
+
+<p data-height="268" data-theme-id="20621" data-slug-hash="GpwJax" data-default-tab="css" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/GpwJax/">Flexbox Mixin</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p>Web Design Weekly provides a <a href="https://web-design-weekly.com/2013/05/12/handy-sass-mixins/" target="_blank">list</a> of Mixins that you can use in your own development.</p>
+
+<h2 id="extends">Extends</h2>
+
+<p>Extend allows developers to reuse styles from one css selector to another.</p>
+
+<p data-height="268" data-theme-id="20621" data-slug-hash="WQYNbW" data-default-tab="css" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/WQYNbW/">Extend Example</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p>Extends does provide us with extra functionality but it does cause some drawbacks. Extends could cause code bloat when extending a already extended selector.</p>
+
+<p data-height="268" data-theme-id="20621" data-slug-hash="OyaJVa" data-default-tab="css" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/OyaJVa/">Over Extend</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<p>The above code will output this lengthy CSS selector.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;span class="pink"&gt;.header, .header2, .header2 .inlineheader, .header4&lt;/span&gt; {
+  font-family: &lt;span class="orange"&gt;arial&lt;/span&gt;;
+  font-size: &lt;span class="orange"&gt;18px&lt;/span&gt;;
+  color: &lt;span class="orange"&gt;#000&lt;/span&gt;;
+  font-weight: &lt;span class="orange"&gt;bold&lt;/span&gt;;
+}
+&lt;span class="pink"&gt;.header2, .header2 .inlineheader&lt;/span&gt; {
+  padding: &lt;span class="orange"&gt;20px&lt;/span&gt;;
+  float: &lt;span class="orange"&gt;left&lt;/span&gt;;
+}
+</code></pre>
+</div>
+
+<p>Using Extends could also inadvertently link together selectors that have no relationship with one another.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* Sass */
+&lt;span class="pink"&gt;.bold&lt;/span&gt; {
+font-weight: &lt;span class="orange"&gt;bold&lt;/span&gt;;
+}
+...
+&lt;span class="pink"&gt;h1&lt;/span&gt; {
+@extend &lt;span class="orange"&gt;.bold&lt;/span&gt;;
+}
+...
+&lt;span class="pink"&gt;.button&lt;/span&gt; {
+ @extend &lt;span class="orange"&gt;.bold&lt;/span&gt;;
+}
+...
+&lt;span class="pink"&gt;.header-text&lt;/span&gt; {
+ @extend &lt;span class="orange"&gt;.bold&lt;/span&gt;;
+}
+/* This will output the css below */
+/* CSS */
+&lt;span class="pink"&gt;.bold,h1,.button,.header-text&lt;/span&gt; {
+ font-weight: &lt;span class="orange"&gt;bold&lt;/span&gt;;
+}
+</code></pre>
+</div>
+
+<p>Each selector can be hundreds of lines apart and creating a relationship between elements leads to non-semantic, unorganized code. Also Extend cannot be used inside of media queries.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@media (max-width:1000px) {
+ &lt;span class="pink"&gt;.b&lt;/span&gt; {
+  @extend &lt;span class="orange"&gt;.a&lt;/span&gt;;
+ }
+}
+</code></pre>
+</div>
+
+<p>This will cause Sass to throw an error. For these reasons it is recommended to use Mixins in place of Extends as they have the same functionality but no drawbacks.</p>
+
+<h2 id="operators">Operators</h2>
+
+<p>Sass provides developers with the ability to use operators. With basic arithmetic operators we are able to add, subtract, multiply, and divide inside of our Sass file.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;span class="pink"&gt;h2&lt;/span&gt; {
+     width: &lt;span class="orange"&gt;5px * 5 + 5px&lt;/span&gt;; // 30px
+     width: &lt;span class="orange"&gt;6 * (5px + 5px)&lt;/span&gt;; // 60px
+     width: &lt;span class="orange"&gt;7px + (6px / 2) * 3&lt;/span&gt;; // 16px
+ }
+</code></pre>
+</div>
+
+<h2 id="control-directives">Control Directives</h2>
+
+<p>Developers are also able to use Control Directives to create conditional statements making our Sass files even more dynamic. With Control Directives we can add, assign or remove CSS properties to elements dynamically.</p>
+
+<p data-height="268" data-theme-id="20621" data-slug-hash="LpXYXr" data-default-tab="css" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/LpXYXr/">Control Directives</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<h2 id="functions">Functions</h2>
+
+<p>Functions are fairly similar to Mixins as they take arguments that output code but the are unique by allowing developers to removing reusable logic.</p>
+
+<p data-height="268" data-theme-id="20621" data-slug-hash="ojQNra" data-default-tab="css" data-user="adrianeufracio" class="codepen">
+  See the Pen <a href="http://codepen.io/adrianeufracio/pen/ojQNra/">Sassy Functions</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.
+</p>
+
+<h2 id="import">Import</h2>
+
+<p>Probably my favorite feature of Sass is the ability to import Sass files into each other. This is possible with CSS but it creates multiple HTTP Requests causing a slower overall load time of your web application. Sass solves this issue by enabling developers to combine as many sass files with only a single HTTP Request. This means we can create a maintainable code base. To do this Sass introduces Partials. Partials are Sass files with a leading underscore ex. _reset.scss. This tells Sass not to generate a stylesheet for the Partial. Instead we can now import the Partial into our main Sass file and that will generate a single stylesheet. This is what a file structure that incorporates Partials looks like.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;span class="pink"&gt;index.html&lt;/span&gt;
+css/
+css/&lt;span class="pink"&gt;style.scss&lt;/span&gt;
+css/&lt;span class="pink"&gt;_reset.scss&lt;/span&gt;
+css/&lt;span class="pink"&gt;_variables.scss&lt;/span&gt;
+css/&lt;span class="pink"&gt;_main.scss&lt;/span&gt;
+images/
+</code></pre>
+</div>
+
+<p>And inside <i class="code-term">style.scss</i> we import all of our Partials.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@import ‘reset’, ’variables’, ’main’;
+</code></pre>
+</div>
+
+<p>With the introduction of Partials, we have seen an emphasis on Sass file structure. There are many different methodologies you can use to create an organized architecture with Sass but most methodologies incorporate folders within the main CSS folder. The name of the folders identifies what kind of Sass files are inside the folder.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>css/
+css/&lt;span class="pink"&gt;style.scss&lt;/span&gt;
+css/base/
+css/components/
+css/templates/
+</code></pre>
+</div>
+
+<p>The base folder could have basic elements styles, mixins and variables. The components folder could have the styles for elements that comprise larger sections of the user interface like the header, footer, sidebar. The templates folder would have styles that combine the components styles to create complete user interfaces. Remember, there are many ways you can structure your Sass files. Your decision should be based on what works with your team of developers and your web app. Check my resource list on the bottom of this article to learn more about Sass file structure.</p>
+
+<h2 id="lastly8230">Lastly…</h2>
+
+<p>Not all websites are meant to be full-blown web apps and CSS by itself can be used to create the same things you can with Sass. If your site is a relatively small project, it might not be useful to incorporate Sass. For myself I like to use Sass for all my projects whether big or small. This lets me create projects with an architecture that can scale with ease.</p>
+
+<h2 id="sass-resources">Sass Resources</h2>
+
+<ul>
+  <li><a href="http://sass-lang.com/" target="_blank">Sass Official Website</a></li>
+  <li><a href="http://thesassway.com/" target="_blank">The Sass Way</a></li>
+  <li><a href="https://web-design-weekly.com/2013/05/12/handy-sass-mixins/" target="_blank">Web Design Weekly | Handy Sass Mixins</a></li>
+  <li><a href="http://bradfrost.com/blog/post/atomic-web-design/" target="_blank">Brad Frost | Atomic Web Design</a></li>
+  <li><a href="https://smacss.com/" target="_blank">SMACSS | Scalable and Modular Architecture for CSS</a></li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+        <p>My name is Adrian and I am a Front-End Developer. I love creating web products/things. This is a hub for all my creations and and a place where I can share my knowledge.
+</p>
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/a0r1an"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">a0r1an</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:eufracioadrian@gmail.com">eufracioadrian@gmail.com</a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/adrianeufracio"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">adrianeufracio</span></a>
+
+          </li>
+          
+        </ul>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>
