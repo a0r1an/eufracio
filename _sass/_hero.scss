@@ -1,0 +1,20 @@
+.hero {
+    width: 100%;
+    background: #ffb081;
+    background: linear-gradient(to bottom,  #ffb081 1%,#fe7277 100%);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 260px;
+    .headline {
+        font-weight: bold;
+        text-align: center;
+        font-size: 36px;
+        color: #ffffff;
+        text-transform: uppercase;
+        line-height: 55px;
+        margin: 0;
+        font-family: $sans-font-family;
+    }
+}

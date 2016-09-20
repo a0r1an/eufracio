@@ -6,17 +6,19 @@
 
 
 // Our variables
+//delete
 $serif-font-family: 'Lora', serif;
+
+$fancy-font-family: 'Bungee', sans-serif;
 $sans-font-family: 'Montserrat', sans-serif;
 $base-font-size:   10px;
 $base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 $spacing-unitx2:   60px;
 $text-color:       #111;
-$background-color: #fdfdfd;
+$background-color: #F3F3F3;
 $brand-color:      #ff0094;
 
 $grey-color:       #828282;
@@ -25,7 +27,7 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    800px;
+$content-width:    900px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
@@ -51,5 +53,8 @@ $on-laptop:        800px;
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "hero",
+        "header",
+        "feed"
 ;
