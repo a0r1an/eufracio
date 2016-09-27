@@ -1,20 +1,18 @@
 ---
-layout: default
+layout: home
 ---
 
 <div class="home">
 
 
-  <ul class="post-list">
+  <ul class="feed">
     {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      <li class="feedItem">
+        <h2 class="headline">
+          <a class="link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
-        <p>{{ post.description }}</p>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">READ MORE</a>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <p class="text">{{ post.description }}</p>
       </li>
     {% endfor %}
   </ul>
