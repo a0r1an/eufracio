@@ -3,53 +3,20 @@
 ---
 @charset "utf-8";
 
+@import "mixins";
+@import "syntax-highlighting";
+@import "base";
 
+// remove later
+@import "layout";
+//
 
-// Our variables
-$serif-font-family: 'Lora', serif;
-$sans-font-family: 'Montserrat', sans-serif;
-$base-font-size:   10px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+@import "bootstrap";
 
-$spacing-unit:     30px;
-$spacing-unitx2:   60px;
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #ff0094;
+@import "components/header";
 
-$grey-color:       #828282;
-$black:            #000000;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+@import "components/hero";
+@import "components/feed";
+@import "components/post";
 
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-
-
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+@import "components/footer";

@@ -1,0 +1,54 @@
+.feed {
+    margin: 20px 0;
+    list-style: none;
+    text-align: center;
+    .feedItem {
+        text-align: left;
+        padding: $spacing-unit / 2;
+        margin-bottom: $spacing-unit;
+        border: 1px solid lighten($black, 90%);
+        background: $white;
+    }
+    .headline{
+        font-size: 2em;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: $font-family-1;
+        margin: 0 0 10px;
+        .link {
+            color: $black;
+            &:hover {
+                color: $eufracioColor;
+            }
+        }
+    }
+    .post-meta {
+        font-size: 1em;
+        margin: 0 0 10px;
+        color: $black;
+        display: block;
+    }
+    .text {
+        font-size: 1.4em;
+        line-height: 1.5;
+    }
+}
+
+@media (min-width:500px) {
+    .feed {
+        margin: 50px 0;
+        .headline {
+            font-size: 3em;
+        }
+        .feedItem {
+            padding: $spacing-unit;
+        }
+        .post-meta {
+            font-size: 1.4em;
+            margin: 0 0 20px;
+        }
+        .text {
+            font-size: 2em;
+        }
+    }
+}

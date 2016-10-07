@@ -1,0 +1,29 @@
+.post {
+  padding: 30px 0;
+}
+.post_content {
+  padding: $spacing-unit / 2;
+  border: 1px solid lighten($black, 90%);
+  background: $white;
+  h2 {
+    padding: 10px 0 5px;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  p {
+    font-size: 1.4em;
+    line-height: 1.75;
+    margin: 0 0 20px;
+  }
+  ul {
+    padding: 5px 0 0 15px;
+  }
+  li {
+    font-size: 1.4em;
+    margin: 0 0 10px;
+    line-height: 1.25;
+  }
+  a {
+    color: $eufracioColor;
+  }
+}

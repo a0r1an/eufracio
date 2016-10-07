@@ -1,0 +1,78 @@
+/**
+ * Site footer
+ */
+.footer {
+    border-top: 1px solid $black;
+    padding: $spacing-unit/2 0;
+    .text {
+        text-align: center;
+        font-size: 1.2em;
+        line-height: 1.2;
+        padding: 0 0 10px;
+    }
+}
+
+
+.socialMediaList {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .socialMediaListItem {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 1 20%;
+    }
+    .meta {
+        flex: 1 1 100%;
+         margin: 5px;
+    }
+    .icon {
+        flex: 0 1 auto;
+        path {
+            fill: #828282;
+        }
+    }
+    .link {
+        color: $black;
+        padding: 10px 0;
+        background: transparent;
+        border: 2px solid $black;
+        cursor: pointer;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            color: $white;
+            background: $eufracioColor;
+        }
+    }
+    .link-middle {
+        border-right: 1px solid $black;
+        border-left: 1px solid $black;
+    }
+}
+@media (min-width: 480px) {
+    .socialMediaList {
+        .socialMediaListItem {
+            margin: 20px 0;
+            flex: 0 1 140px;
+            .meta {
+                flex: 0 1 auto;
+                margin: 0 0 0 5px;
+            }
+        }
+    }
+}
+@media (min-width: 680px) {
+    .footer {
+        .text {
+            line-height: 1.5;
+            padding: 0 40px;
+        }
+    }
+}
