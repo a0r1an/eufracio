@@ -1,12 +1,12 @@
 ---
 id: 580
-title: Using Jekyll 
+title: Up & Going with Jekyll
 date: 2016-10-15T09:01:00+00:00
 author: Adrian Eufracio
 description: Jekyll provides you with the tools to create a full fledged blog thats static. Its a more simple retro way of making a blog but its great because it really strips out the unnecessary code and the reliance on a database is dissolved.
 layout: post
 guid: http://adrianeufracio.com/?p=580
-permalink: /using-jekyll/
+permalink: /up-and-going-with-jekyll/
 categories:
   - html
 ---
@@ -14,7 +14,7 @@ categories:
 ## Jekyll is a static site generator... static site generator??
 Well a static site is a website that is stores its content on the page it lives on. You see we live in the year 2016, where every website seems to be built off some extremely complicated tech stack. Even simple websites are sometimes over complicated because developers want to use the latest technology available. Using the latest technology does not only increase the level of difficulty of what should be otherwise quite simple but it often increases the load time of your webpage due to the inclusion of extra network requests.
 
-The rise of complexity in basic websites has sparked a new revolution. Well not really that dramatic but developers are pissed off that creating something like a blog in 2016 isn’t easier. This is where static site generators have gained its share in the market place. Static site generators provide developers with a simple solution that uses a low barrier of entry. Most popular of them being Jekyll.
+The rise of complexity in basic websites has sparked a new revolution. Well not really that dramatic but developers are pissed off that creating something like a blog in 2016 isn’t easier. This is where static site generators have gained its share in the market place. Static site generators provide developers with a simple solution that uses a low barrier of entry. Most popular of them being <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.
 
 Jekyll provides you with the tools to create a full fledged blog thats static. This provides us with a couple benefits right off the bat. One of them being that we don’t have to rely on a database. Quick History Lesson: For blogs, its common to store the content of a blog post within a database. This means we rely on the database to send information to users each time they reach a webpage. But if you want a simple blog than Jekyll could be a preferred solution. Jekyll lets you write in markdown and it produces a static web page in a blog friendly manner using a tempting language called liquid. With a static webpage. We don’t have to wait for the database to send us back data, making the web page faster. Its a more simple, retro way of making a blog but its great because it really strips out the unnecessary code and the reliance on a database is dissolved.
 
@@ -73,4 +73,5 @@ If you haven’t worked with sass I suggest you take a look at my previous post 
 ## _site
 Now we have arrived to the final directory. _site actually stores your blog as its viewed in a browser. When Jekyll goes through all of your markdown files and posts within the _posts directory it generates html pages for each of them and places them is the _site directory. Lets view our project in a browser. Let go back into our cli and type in <i class="code-term">jekyll serve</i>. This will create a local server that we can use to view our blog. After running that command Jekyll will spit out a url that you can navigate to. The one it gave me is <a href="http://127.0.0.1:4000/" target="_blank">http://127.0.0.1:4000/</a> If you open that link in a browser we will see our Jekyll project! This is actually the html pages that are within the _site directory. If you wanted to host this project on a website you would just grab everything within the _site directory and place that in the directory your website starts at.
 
+## Take Aways
 There might be a lot of new terms and concepts that were introduced to you but the barrier of entry to this type of setup is much smaller than a Wordpress site or a website that uses a bunch of different technologies. A key idea I want to pass with this tutorial is that we don’t need to overcomplicate things. If you have to complete a task, we should look for a way to complete it to the best of our abilities. Once there is a need for certain functionality that is provided by some other type of tech we can try to integrate it then but not anytime sooner.
