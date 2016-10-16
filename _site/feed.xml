@@ -4,11 +4,84 @@
     <title>Eufrac.io</title>
     <description>My name is Adrian and I am a Front-End Developer. I love creating web products/things. This is a hub for all my creations and and a place where I can share my knowledge.
 </description>
-    <link>http://adrian.io/</link>
-    <atom:link href="http://adrian.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 08 Oct 2016 12:53:28 -0700</pubDate>
-    <lastBuildDate>Sat, 08 Oct 2016 12:53:28 -0700</lastBuildDate>
+    <link>http://eufrac.io/</link>
+    <atom:link href="http://eufrac.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 15 Oct 2016 17:06:42 -0700</pubDate>
+    <lastBuildDate>Sat, 15 Oct 2016 17:06:42 -0700</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Using Jekyll</title>
+        <description>&lt;h2 id=&quot;jekyll-is-a-static-site-generator-static-site-generator&quot;&gt;Jekyll is a static site generator… static site generator??&lt;/h2&gt;
+&lt;p&gt;Well a static site is a website that is stores its content on the page it lives on. You see we live in the year 2016, where every website seems to be built off some extremely complicated tech stack. Even simple websites are sometimes over complicated because developers want to use the latest technology available. Using the latest technology does not only increase the level of difficulty of what should be otherwise quite simple but it often increases the load time of your webpage due to the inclusion of extra network requests.&lt;/p&gt;
+
+&lt;p&gt;The rise of complexity in basic websites has sparked a new revolution. Well not really that dramatic but developers are pissed off that creating something like a blog in 2016 isn’t easier. This is where static site generators have gained its share in the market place. Static site generators provide developers with a simple solution that uses a low barrier of entry. Most popular of them being Jekyll.&lt;/p&gt;
+
+&lt;p&gt;Jekyll provides you with the tools to create a full fledged blog thats static. This provides us with a couple benefits right off the bat. One of them being that we don’t have to rely on a database. Quick History Lesson: For blogs, its common to store the content of a blog post within a database. This means we rely on the database to send information to users each time they reach a webpage. But if you want a simple blog than Jekyll could be a preferred solution. Jekyll lets you write in markdown and it produces a static web page in a blog friendly manner using a tempting language called liquid. With a static webpage. We don’t have to wait for the database to send us back data, making the web page faster. Its a more simple, retro way of making a blog but its great because it really strips out the unnecessary code and the reliance on a database is dissolved.&lt;/p&gt;
+
+&lt;h2 id=&quot;prereqs&quot;&gt;Prereqs!&lt;/h2&gt;
+
+&lt;h3 id=&quot;html-css-sass-markdown&quot;&gt;HTML, CSS, SASS, Markdown&lt;/h3&gt;
+
+&lt;p&gt;Jekyll is really easy to get started with. But there are some prerequisites. If you have a solid grasp of the above you can easily create a fully functional static blog! You don’t technically need to know Sass but the example project we will work with includes Sass by default. You do need to work in the terminal a bit but it should be very minimal.&lt;/p&gt;
+
+&lt;h2 id=&quot;let-get-started&quot;&gt;Let get Started&lt;/h2&gt;
+&lt;p&gt;Before we get started you need to have Ruby installed onto your computer. Once installed, we need to download Jekyll. We do this by going to our CLI of choice, I use &lt;a href=&quot;https://hyper.is/&quot; target=&quot;_blank&quot;&gt;Hyper&lt;/a&gt;. In our CLI we will install Jekyll by typing the following &lt;i class=&quot;code-term&quot;&gt;ruby command gem install jekyll bundler&lt;/i&gt;.
+We know have Jekyll installed on our computer and we can create a Jekyll project. Note the difference the command that we ran in our CLI installed Jekyll which gives us the ability to create projects. It is not actually creating a Jekyll project. To that we will run a different command. First in your CLI we will navigate to a directory where we want to start our Jekyll project. If you haven’t already, lets navigate to the documents directory of your computer using the CLI. When you open your terminal your typically at the root of your account on the computer. Knowing this we can go to the documents directory by typing &lt;i class=&quot;code-term&quot;&gt;cd documents&lt;/i&gt; into your CLI. We should now be in the documents directory and we can create our Jekyll project in here. Back in your CLI, type the following command &lt;i class=&quot;code-term&quot;&gt;jekyll new name-your-project&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;Sweet! We have our project created and now we can begin creating! If you know me I ❤ creating. Lets take a look at our Jekyll Project from a high level.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/posts/jekyll/jekyll-graphic.jpg&quot; width=&quot;250&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;configyml&quot;&gt;_config.yml&lt;/h2&gt;
+&lt;p&gt;This is a YAML file. In this file we can assign variables a value that will be reused often throughout our site. In our html files we can use the variables as an easy way to reference the values we set. You will see a better explanation of this later as we go through the rest of the file structure.&lt;/p&gt;
+
+&lt;h2 id=&quot;front-matter&quot;&gt;Front Matter&lt;/h2&gt;
+&lt;p&gt;Front matter is not a new element found by some scientist in Switzerland. It’s actually what makes Jekyll so cool. When Jekyll reads a page with Front Matter, it will know its a unique page. Front Matter is defined by placing three dashes at the beginning of your file and ended with three dashes on a new line. Between those line two lines we can set values to variables that will tell Jekyll to do specific things with the particular markdown file.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;---
+layout: post
+title:  &quot;Welcome to Jekyll!&quot;
+date:   2016-10-11 21:20:18 -0700
+categories: jekyll update
+---&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;There are predefined variables already created by Jekyll like layout, title, and permalink to name a few. You can also create your own variables that take a value that you give it. We will see in the next pages how Front Matter comes in handy.&lt;/p&gt;
+
+&lt;h2 id=&quot;indexhtml&quot;&gt;index.html&lt;/h2&gt;
+&lt;p&gt;This is not your regular index.html. Jekyll’s index.html provides you with a boilerplate home page for your blog. It is using Jekyll’s unique encoding to spit out a li for every post that you have created. Since this a new project with no new post it is only showing the one post that Jekyll has provided as a boilerplate post. Notice how the anchor element is pulling the baseurl that is set in _config.yml.&lt;/p&gt;
+
+&lt;h2 id=&quot;aboutmd&quot;&gt;about.md&lt;/h2&gt;
+&lt;p&gt;This is a markdown file with a few Jekyll enhancements. At the top of the file we see the variables of layout, title, and permalink being assigned values. Below that, there is basic markdown style text. When Jekyll views this markdown it creates a unique html page out of it with the markdown provides and it uses the values we set at the top to define the layout the html page should use, the title of the html page and the link of the page. This will create an about page and we can copy this markdown file to create the a new page&lt;/p&gt;
+
+&lt;h2 id=&quot;feedxml&quot;&gt;feed.xml&lt;/h2&gt;
+&lt;p&gt;The feed.xml is an xml file that pulls data defined throughout our Jekyll project to create a search engine friendly xml sheet. I would avoid touching this file unless you want to make some adjustments to it but Jekyll provides a greate feed.xml by default.&lt;/p&gt;
+
+&lt;h2 id=&quot;includes&quot;&gt;_includes&lt;/h2&gt;
+&lt;p&gt;The _includes directory houses bits of code that will be reusable throughout our site. These reusable pieces of code are injected onto whichever page its called in. Working very similarly to php includes. Good includes to have handy are header and footer because they are sections of code that are reused often. We will see how they work in the upcoming section.&lt;/p&gt;
+
+&lt;h2 id=&quot;layouts&quot;&gt;_layouts&lt;/h2&gt;
+&lt;p&gt;The _layouts directory stores templates for our md pages to use. We currently have three built-in templates but we can have as many as want. Lets open up default.html. You can see the file starts as a typical html page would start. Within the html element we see a couple includes. head.html, header.html, and footer.html are being injected into this page. The content is where the generated html of the markdown file using this layout will be placed. If we take a look again at our about.md file, it specifies which layout to use by having the values of page assigned. When Jekyll creates a html page out of this markdown file, it will know to use the page layout and to dump the markdown wherever content is called in the page layout.&lt;/p&gt;
+
+&lt;h2 id=&quot;posts&quot;&gt;_posts&lt;/h2&gt;
+&lt;p&gt;The _posts directory will be where we place our blog post! If we open the template blog post that comes with a new Jekyll project we will notice it works similar to how the about.md works. The front matter now contains title, date, and categories. These are useful variables that enhance your posts. By default this post is using the post layout. If we look at the post.html layout within the _layouts directory the template is setup to layout our content within the div with a class of post_content. Also notice the chunk of ruby code within the post. This is placed to show an example of how to write code examples within your code.&lt;/p&gt;
+
+&lt;h2 id=&quot;sass&quot;&gt;_sass&lt;/h2&gt;
+&lt;p&gt;If you haven’t worked with sass I suggest you take a look at my previous post where I can into detail how to use Sass. At a high level, Sass is a CSS extension that lets you do things regular css wouldn’t do. Jekyll provides you with basic Sass files that style your Jekyll project. You can go into the sass files and start writing some css to make your blog unique.&lt;/p&gt;
+
+&lt;h2 id=&quot;site&quot;&gt;_site&lt;/h2&gt;
+&lt;p&gt;Now we have arrived to the final directory. _site actually stores your blog as its viewed in a browser. When Jekyll goes through all of your markdown files and posts within the _posts directory it generates html pages for each of them and places them is the _site directory. Lets view our project in a browser. Let go back into our cli and type in &lt;i class=&quot;code-term&quot;&gt;jekyll serve&lt;/i&gt;. This will create a local server that we can use to view our blog. After running that command Jekyll will spit out a url that you can navigate to. The one it gave me is &lt;a href=&quot;http://127.0.0.1:4000/&quot; target=&quot;_blank&quot;&gt;http://127.0.0.1:4000/&lt;/a&gt; If you open that link in a browser we will see our Jekyll project! This is actually the html pages that are within the _site directory. If you wanted to host this project on a website you would just grab everything within the _site directory and place that in the directory your website starts at.&lt;/p&gt;
+
+&lt;p&gt;There might be a lot of new terms and concepts that were introduced to you but the barrier of entry to this type of setup is much smaller than a Wordpress site or a website that uses a bunch of different technologies. A key idea I want to pass with this tutorial is that we don’t need to overcomplicate things. If you have to complete a task, we should look for a way to complete it to the best of our abilities. Once there is a need for certain functionality that is provided by some other type of tech we can try to integrate it then but not anytime sooner.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 15 Oct 2016 02:01:00 -0700</pubDate>
+        <link>http://eufrac.io/using-jekyll/</link>
+        <guid isPermaLink="true">http://eufrac.io/using-jekyll/</guid>
+        
+        
+        <category>html</category>
+        
+      </item>
     
       <item>
         <title>Loading Content In With Ajax</title>
@@ -74,8 +147,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 10 Feb 2016 01:00:57 -0800</pubDate>
-        <link>http://adrian.io/loading-content-in-with-ajax/</link>
-        <guid isPermaLink="true">http://adrian.io/loading-content-in-with-ajax/</guid>
+        <link>http://eufrac.io/loading-content-in-with-ajax/</link>
+        <guid isPermaLink="true">http://eufrac.io/loading-content-in-with-ajax/</guid>
         
         
         <category>javascript</category>
@@ -133,8 +206,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 03 Feb 2016 01:04:59 -0800</pubDate>
-        <link>http://adrian.io/creating-modular-article-elements/</link>
-        <guid isPermaLink="true">http://adrian.io/creating-modular-article-elements/</guid>
+        <link>http://eufrac.io/creating-modular-article-elements/</link>
+        <guid isPermaLink="true">http://eufrac.io/creating-modular-article-elements/</guid>
         
         
         <category>css</category>
@@ -249,8 +322,8 @@ document.&amp;lt;span class=&quot;blue&quot;&amp;gt;getElementById&amp;lt;/span&
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 29 Jan 2016 09:00:38 -0800</pubDate>
-        <link>http://adrian.io/svg-circle-line-animation/</link>
-        <guid isPermaLink="true">http://adrian.io/svg-circle-line-animation/</guid>
+        <link>http://eufrac.io/svg-circle-line-animation/</link>
+        <guid isPermaLink="true">http://eufrac.io/svg-circle-line-animation/</guid>
         
         
         <category>css</category>
@@ -378,8 +451,8 @@ grunt.loadNpmTasks(&#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;grunt-criti
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 20 Jan 2016 01:00:43 -0800</pubDate>
-        <link>http://adrian.io/deliver-your-site-faster-with-critical-css/</link>
-        <guid isPermaLink="true">http://adrian.io/deliver-your-site-faster-with-critical-css/</guid>
+        <link>http://eufrac.io/deliver-your-site-faster-with-critical-css/</link>
+        <guid isPermaLink="true">http://eufrac.io/deliver-your-site-faster-with-critical-css/</guid>
         
         
         <category>css</category>
@@ -458,8 +531,8 @@ grunt.loadNpmTasks(&#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;grunt-criti
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 06 Jan 2016 01:00:16 -0800</pubDate>
-        <link>http://adrian.io/caching-with-expires-headers/</link>
-        <guid isPermaLink="true">http://adrian.io/caching-with-expires-headers/</guid>
+        <link>http://eufrac.io/caching-with-expires-headers/</link>
+        <guid isPermaLink="true">http://eufrac.io/caching-with-expires-headers/</guid>
         
         
         <category>tooling</category>
@@ -554,8 +627,8 @@ gzip_vary on;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 30 Dec 2015 01:00:55 -0800</pubDate>
-        <link>http://adrian.io/gzip-compression-engaged/</link>
-        <guid isPermaLink="true">http://adrian.io/gzip-compression-engaged/</guid>
+        <link>http://eufrac.io/gzip-compression-engaged/</link>
+        <guid isPermaLink="true">http://eufrac.io/gzip-compression-engaged/</guid>
         
         
         <category>tooling</category>
@@ -655,8 +728,8 @@ gzip_vary on;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 23 Dec 2015 01:00:39 -0800</pubDate>
-        <link>http://adrian.io/the-right-way-to-load-web-fonts/</link>
-        <guid isPermaLink="true">http://adrian.io/the-right-way-to-load-web-fonts/</guid>
+        <link>http://eufrac.io/the-right-way-to-load-web-fonts/</link>
+        <guid isPermaLink="true">http://eufrac.io/the-right-way-to-load-web-fonts/</guid>
         
         
         <category>javascript</category>
@@ -692,8 +765,8 @@ gzip_vary on;
 &lt;p&gt;My job is a constant reminder of a simple fact that I must always try to learn and grow. There is an ego that comes from having more knowledge than your coworkers but I take it more as a responsibility. I have learned that there is always room to grow and different ways to grow. Even though that statement has been said millions of times, most people don’t try to get better. I can’t see a world were I would find this acceptable for myself so hopefully this encourages someone to start looking at things in a new perspective.&lt;/p&gt;
 </description>
         <pubDate>Wed, 16 Dec 2015 01:00:32 -0800</pubDate>
-        <link>http://adrian.io/a-few-things-i-have-learned/</link>
-        <guid isPermaLink="true">http://adrian.io/a-few-things-i-have-learned/</guid>
+        <link>http://eufrac.io/a-few-things-i-have-learned/</link>
+        <guid isPermaLink="true">http://eufrac.io/a-few-things-i-have-learned/</guid>
         
         
         <category>Thoughts</category>
@@ -834,256 +907,11 @@ gzip_vary on;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 09 Dec 2015 12:59:01 -0800</pubDate>
-        <link>http://adrian.io/responsive-images-today/</link>
-        <guid isPermaLink="true">http://adrian.io/responsive-images-today/</guid>
+        <link>http://eufrac.io/responsive-images-today/</link>
+        <guid isPermaLink="true">http://eufrac.io/responsive-images-today/</guid>
         
         
         <category>html</category>
-        
-      </item>
-    
-      <item>
-        <title>My Git Cheat Sheet</title>
-        <description>&lt;p&gt;Git is god. Not really but it is a powerful Version Control System (VCS). VCS’s can be hard to manage and understand but Git makes this relatively easy. On web projects, Git can be both a handy tool and a lifesaver in a developers arsenal . It is also a must have for any project with multiple collaborators. Git can be used right in the Command Line Interface. Here is my cheat sheet to start using git today.&lt;/p&gt;
-
-&lt;h2 id=&quot;git-terminology&quot;&gt;Git Terminology&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Repository&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;A Repository, often called a repo, is basically the folder containing all of the projects files.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Staging Area&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The Staging Area is a file in git that contains the information that will be added to your next commit.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Commit&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;A commit is a save to your project that takes a snapshot of all your projects files and records it with a unique ID. This makes it possible to go back in time if you need to make changes or revert to older version of your project.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Branch&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;A branch is a replicated repository. Branches make it possible to alter files without effecting the master branch or primary branch, creating something like an alternate reality of that repo. Branches come in handy when you want to experiment on a project or when adding a new feature to a product.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Merge&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Merging grabs the changes from one branch and applies them to another. Once your branch is ready to make it to the big time, merging will add all your changes to your project to the primary branch.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Push&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Push refers to uploading your local repository to your remote repository. Remote repositories are hosted on sites like &lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot;&gt;github.com&lt;/a&gt;, &lt;a href=&quot;https://bitbucket.org/&quot; target=&quot;_blank&quot;&gt;bitbucket.com&lt;/a&gt;, or &lt;a href=&quot;http://beanstalkapp.com/&quot; target=&quot;_blank&quot;&gt;beanstalkapp.com&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Pull&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Pull refers to pulling down any changes from a remote repository and merging them in to your local repository. Pulling is common when you have changes being pushed to the remote repository and you need to add those changes to your local repository.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Fetch&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Fetch pulls the latest changes in a remote repository but does not merge them into your local repository. Instead of merging you can compare the changes made on the remote and integrate them when ready.&lt;/p&gt;
-
-&lt;h2 id=&quot;git-commands&quot;&gt;Git Commands&lt;/h2&gt;
-
-&lt;p&gt;Initializes git in project folder&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git init
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Returns files that are in/out of staging area&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git status
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Returns list of commits&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git log
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;The way to add files to the staging area. Add file by typing file name at the end of the command &lt;i class=&quot;code-term&quot;&gt;git add text.html&lt;/i&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;The way to remove files from the project. Remove file by typing file name at the end of the command &lt;i class=&quot;code-term&quot;&gt;git rm text.html&lt;/i&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git rm
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Takes a snapshot of current staging area and saves it with a unique ID.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Performs &lt;i class=&quot;code-term&quot;&gt;git add&lt;/i&gt; on all changed files while making a commit.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -a
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Adding &lt;i class=&quot;code-term&quot;&gt;-m&lt;/i&gt; with text in parenthesis leaves a message that describes why this commit is being made.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -m &quot;Message goes here&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Display history of commits&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git log
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Lists branches&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Creates a branch with the name passed at the end of the command&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch &amp;lt;name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Switches to branch with the name passed at the end of the command. Can also be used to revert to older commits &lt;i class=&quot;code-term&quot;&gt;git checkout &lt;commit&gt;&amp;lt;/i&amp;gt;&lt;/commit&gt;&lt;/i&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout &amp;lt;name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Create and switch to branch with the name passed at the end of the command&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout -b &amp;lt;name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Deletes the branch that is passed at the end of the command&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch -D &amp;lt;name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Undoes a commit. It undoes the changes that are associated with that commit while creating a new commit acknowledging the revert&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git revert
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Undoes changes and resets project to the last commit. It is similar to git revert but it does not create a commit which makes it impossible to keep track of this reset or go bring back a file to a previous state if need be.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git reset
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Removes untracked files from directory.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clean
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Merges the branch that is passed at the end of the command to the branch you are currently in.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git merge &amp;lt;name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Duplicates an existing repository. The repository is located by the url passed at the end of the command&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone &amp;lt;url&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;List all remote repo associated with the current repo, can also add, &lt;i class=&quot;code-term&quot;&gt;git remote add &lt;name&gt;&amp;lt;/i&amp;gt;, and remove, &lt;i class=&quot;code-term&quot;&gt;git remote rm &lt;name&gt;&amp;lt;/i&amp;gt;, remote repos from project.&lt;/name&gt;&lt;/i&gt;&lt;/name&gt;&lt;/i&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Pulls the latest changes in a remote repository but does not merge them into your local repository&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git fetch
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Pulls the latest changes in a remote repository and merges them into your local repository&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git pull
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Uploading your local repository to your remote repository&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Git has many more commands that can be used in your project but these should be enough to get you started. I will be posting an article soon on proper git workflow with multiple collaborators.&lt;/p&gt;
-
-&lt;h2 id=&quot;git-resources&quot;&gt;Git Resources&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://git-scm.com/&quot; target=&quot;_blank&quot;&gt;Official Git Website&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.atlassian.com/git/tutorials&quot; target=&quot;_blank&quot;&gt;Atlassian Git Tutorials&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/github-glossary/&quot; target=&quot;_blank&quot;&gt;Github’s Git Glossary&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 02 Dec 2015 01:00:09 -0800</pubDate>
-        <link>http://adrian.io/my-git-cheat-sheet/</link>
-        <guid isPermaLink="true">http://adrian.io/my-git-cheat-sheet/</guid>
-        
-        
-        <category>tooling</category>
         
       </item>
     

@@ -130,3 +130,8 @@ pre {
     padding-left: $spacing-unit;
     @extend %clearfix;
 }
+
+img {
+    display: block;
+    margin: 0 auto;
+}

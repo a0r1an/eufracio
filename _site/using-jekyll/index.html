@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Using Jekyll</title>
+  <meta name="description" content="Jekyll is a static site generator… static site generator??Well a static site is a website that is stores its content on the page it lives on. You see we live...">
+  <link href='https://fonts.googleapis.com/css?family=Bungee|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://eufrac.io/using-jekyll/">
+  <link rel="alternate" type="application/rss+xml" title="Eufrac.io" href="http://eufrac.io/feed.xml">
+</head>
+
+  <body>
+    <header class="header">
+  <div class="wrapper">
+    <a class="link logo" href="/">Eufrac.io</a>
+  </div>
+</header>
+
+    <header class="hero hero-post">
+      <h1 class="headline" itemprop="name headline">Using Jekyll</h1>
+      <p class="text">
+        <time class="time" datetime="2016-10-15T02:01:00-07:00" itemprop="datePublished">Oct 15, 2016</time>
+      </p>
+    </header>
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post_content" itemprop="articleBody">
+          <h2 id="jekyll-is-a-static-site-generator-static-site-generator">Jekyll is a static site generator… static site generator??</h2>
+<p>Well a static site is a website that is stores its content on the page it lives on. You see we live in the year 2016, where every website seems to be built off some extremely complicated tech stack. Even simple websites are sometimes over complicated because developers want to use the latest technology available. Using the latest technology does not only increase the level of difficulty of what should be otherwise quite simple but it often increases the load time of your webpage due to the inclusion of extra network requests.</p>
+
+<p>The rise of complexity in basic websites has sparked a new revolution. Well not really that dramatic but developers are pissed off that creating something like a blog in 2016 isn’t easier. This is where static site generators have gained its share in the market place. Static site generators provide developers with a simple solution that uses a low barrier of entry. Most popular of them being Jekyll.</p>
+
+<p>Jekyll provides you with the tools to create a full fledged blog thats static. This provides us with a couple benefits right off the bat. One of them being that we don’t have to rely on a database. Quick History Lesson: For blogs, its common to store the content of a blog post within a database. This means we rely on the database to send information to users each time they reach a webpage. But if you want a simple blog than Jekyll could be a preferred solution. Jekyll lets you write in markdown and it produces a static web page in a blog friendly manner using a tempting language called liquid. With a static webpage. We don’t have to wait for the database to send us back data, making the web page faster. Its a more simple, retro way of making a blog but its great because it really strips out the unnecessary code and the reliance on a database is dissolved.</p>
+
+<h2 id="prereqs">Prereqs!</h2>
+
+<h3 id="html-css-sass-markdown">HTML, CSS, SASS, Markdown</h3>
+
+<p>Jekyll is really easy to get started with. But there are some prerequisites. If you have a solid grasp of the above you can easily create a fully functional static blog! You don’t technically need to know Sass but the example project we will work with includes Sass by default. You do need to work in the terminal a bit but it should be very minimal.</p>
+
+<h2 id="let-get-started">Let get Started</h2>
+<p>Before we get started you need to have Ruby installed onto your computer. Once installed, we need to download Jekyll. We do this by going to our CLI of choice, I use <a href="https://hyper.is/" target="_blank">Hyper</a>. In our CLI we will install Jekyll by typing the following <i class="code-term">ruby command gem install jekyll bundler</i>.
+We know have Jekyll installed on our computer and we can create a Jekyll project. Note the difference the command that we ran in our CLI installed Jekyll which gives us the ability to create projects. It is not actually creating a Jekyll project. To that we will run a different command. First in your CLI we will navigate to a directory where we want to start our Jekyll project. If you haven’t already, lets navigate to the documents directory of your computer using the CLI. When you open your terminal your typically at the root of your account on the computer. Knowing this we can go to the documents directory by typing <i class="code-term">cd documents</i> into your CLI. We should now be in the documents directory and we can create our Jekyll project in here. Back in your CLI, type the following command <i class="code-term">jekyll new name-your-project</i></p>
+
+<p>Sweet! We have our project created and now we can begin creating! If you know me I ❤ creating. Lets take a look at our Jekyll Project from a high level.</p>
+
+<p><img src="../img/posts/jekyll/jekyll-graphic.jpg" width="250" /></p>
+
+<h2 id="configyml">_config.yml</h2>
+<p>This is a YAML file. In this file we can assign variables a value that will be reused often throughout our site. In our html files we can use the variables as an easy way to reference the values we set. You will see a better explanation of this later as we go through the rest of the file structure.</p>
+
+<h2 id="front-matter">Front Matter</h2>
+<p>Front matter is not a new element found by some scientist in Switzerland. It’s actually what makes Jekyll so cool. When Jekyll reads a page with Front Matter, it will know its a unique page. Front Matter is defined by placing three dashes at the beginning of your file and ended with three dashes on a new line. Between those line two lines we can set values to variables that will tell Jekyll to do specific things with the particular markdown file.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">---
+layout: post
+title:  "Welcome to Jekyll!"
+date:   2016-10-11 21:20:18 -0700
+categories: jekyll update
+---</code></pre></figure>
+
+<p>There are predefined variables already created by Jekyll like layout, title, and permalink to name a few. You can also create your own variables that take a value that you give it. We will see in the next pages how Front Matter comes in handy.</p>
+
+<h2 id="indexhtml">index.html</h2>
+<p>This is not your regular index.html. Jekyll’s index.html provides you with a boilerplate home page for your blog. It is using Jekyll’s unique encoding to spit out a li for every post that you have created. Since this a new project with no new post it is only showing the one post that Jekyll has provided as a boilerplate post. Notice how the anchor element is pulling the baseurl that is set in _config.yml.</p>
+
+<h2 id="aboutmd">about.md</h2>
+<p>This is a markdown file with a few Jekyll enhancements. At the top of the file we see the variables of layout, title, and permalink being assigned values. Below that, there is basic markdown style text. When Jekyll views this markdown it creates a unique html page out of it with the markdown provides and it uses the values we set at the top to define the layout the html page should use, the title of the html page and the link of the page. This will create an about page and we can copy this markdown file to create the a new page</p>
+
+<h2 id="feedxml">feed.xml</h2>
+<p>The feed.xml is an xml file that pulls data defined throughout our Jekyll project to create a search engine friendly xml sheet. I would avoid touching this file unless you want to make some adjustments to it but Jekyll provides a greate feed.xml by default.</p>
+
+<h2 id="includes">_includes</h2>
+<p>The _includes directory houses bits of code that will be reusable throughout our site. These reusable pieces of code are injected onto whichever page its called in. Working very similarly to php includes. Good includes to have handy are header and footer because they are sections of code that are reused often. We will see how they work in the upcoming section.</p>
+
+<h2 id="layouts">_layouts</h2>
+<p>The _layouts directory stores templates for our md pages to use. We currently have three built-in templates but we can have as many as want. Lets open up default.html. You can see the file starts as a typical html page would start. Within the html element we see a couple includes. head.html, header.html, and footer.html are being injected into this page. The content is where the generated html of the markdown file using this layout will be placed. If we take a look again at our about.md file, it specifies which layout to use by having the values of page assigned. When Jekyll creates a html page out of this markdown file, it will know to use the page layout and to dump the markdown wherever content is called in the page layout.</p>
+
+<h2 id="posts">_posts</h2>
+<p>The _posts directory will be where we place our blog post! If we open the template blog post that comes with a new Jekyll project we will notice it works similar to how the about.md works. The front matter now contains title, date, and categories. These are useful variables that enhance your posts. By default this post is using the post layout. If we look at the post.html layout within the _layouts directory the template is setup to layout our content within the div with a class of post_content. Also notice the chunk of ruby code within the post. This is placed to show an example of how to write code examples within your code.</p>
+
+<h2 id="sass">_sass</h2>
+<p>If you haven’t worked with sass I suggest you take a look at my previous post where I can into detail how to use Sass. At a high level, Sass is a CSS extension that lets you do things regular css wouldn’t do. Jekyll provides you with basic Sass files that style your Jekyll project. You can go into the sass files and start writing some css to make your blog unique.</p>
+
+<h2 id="site">_site</h2>
+<p>Now we have arrived to the final directory. _site actually stores your blog as its viewed in a browser. When Jekyll goes through all of your markdown files and posts within the _posts directory it generates html pages for each of them and places them is the _site directory. Lets view our project in a browser. Let go back into our cli and type in <i class="code-term">jekyll serve</i>. This will create a local server that we can use to view our blog. After running that command Jekyll will spit out a url that you can navigate to. The one it gave me is <a href="http://127.0.0.1:4000/" target="_blank">http://127.0.0.1:4000/</a> If you open that link in a browser we will see our Jekyll project! This is actually the html pages that are within the _site directory. If you wanted to host this project on a website you would just grab everything within the _site directory and place that in the directory your website starts at.</p>
+
+<p>There might be a lot of new terms and concepts that were introduced to you but the barrier of entry to this type of setup is much smaller than a Wordpress site or a website that uses a bunch of different technologies. A key idea I want to pass with this tutorial is that we don’t need to overcomplicate things. If you have to complete a task, we should look for a way to complete it to the best of our abilities. Once there is a need for certain functionality that is provided by some other type of tech we can try to integrate it then but not anytime sooner.</p>
+
+        </div>
+      </article>
+      </div>
+    </div>
+    <footer class="footer">
+  <div class="wrapper">
+        <p class="text">My name is Adrian and I am a Front-End Developer. I love creating web products/things.</p> 
+        <p class="text">This is a hub for all my creations and and a place where I can share my knowledge.</p>
+        <ul class="socialMediaList">
+          <li class="socialMediaListItem">
+            <a class="link" href="mailto:eufracioadrian@gmail.com" target="_blank">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 485.211 485.211"><path d="M485.21 363.906c0 10.637-2.99 20.498-7.784 29.174l-153.2-171.41 151.54-132.584c5.894 9.355 9.445 20.344 9.445 32.22v242.6zM242.607 252.793l210.863-184.5c-8.654-4.737-18.398-7.642-28.91-7.642H60.65c-10.523 0-20.27 2.906-28.888 7.643l210.844 184.5zm58.787-11.162l-48.81 42.735c-2.854 2.487-6.41 3.73-9.977 3.73-3.57 0-7.125-1.243-9.98-3.73l-48.82-42.736-155.14 173.6c9.3 5.834 20.198 9.33 31.984 9.33h363.91c11.785 0 22.688-3.496 31.984-9.33l-155.15-173.6zM9.448 89.086C3.554 98.44 0 109.43 0 121.305v242.602c0 10.637 2.978 20.498 7.79 29.174L160.97 221.64 9.448 89.086z"/></svg>
+                <span class="meta">adrian@eufrac.io</span>
+            </a>
+          </li>
+          <li class="socialMediaListItem">
+            <a class="link link-middle" href="https://github.com/" target="_blank">
+                <svg class="icon" viewBox="0 0 16 16" width="24" height="24" ><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+                <span class="meta">@a0r1an</span>
+            </a>
+          </li>
+          <li class="socialMediaListItem">
+            <a class="link" href="https://twitter.com/" target="_blank">
+                <svg class="icon icon--twitter" viewBox="0 0 16 16" width="24" height="24" ><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+                <span class="meta">@adrianeufracio</span>
+              </a>
+          </li>
+        </ul>
+  </div>
+</footer>
+
+  </body>
+
+</html>
