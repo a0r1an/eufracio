@@ -3,4 +3,8 @@
 .jekyll-metadata
 .vscode
 .DS_Store
+img/
+img/**/*
+
+img/**
 **/.DS_Store
