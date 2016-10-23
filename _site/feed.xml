@@ -6,9 +6,51 @@
 </description>
     <link>http://eufrac.io/</link>
     <atom:link href="http://eufrac.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 16 Oct 2016 12:18:22 -0700</pubDate>
-    <lastBuildDate>Sun, 16 Oct 2016 12:18:22 -0700</lastBuildDate>
+    <pubDate>Sun, 23 Oct 2016 14:14:14 -0700</pubDate>
+    <lastBuildDate>Sun, 23 Oct 2016 14:14:14 -0700</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>The Internets</title>
+        <description>&lt;p&gt;The Internet is part of our life and for many of us it is our lives. Every infrastructure you can think about uses the Internet in some way. We use it to send money, talk to relatives, make money and pretty much anything else conceivable to the imagination. If we really take a step back and understand what the Internet is. It begins to boggle the mind of how something has been able to enhance our current life as much as the Internet has.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-the-internet&quot;&gt;What is the Internet?&lt;/h2&gt;
+&lt;p&gt;The Internet is a network of connected devices. This network let’s us send snapchats to our friends. Email our doctor. Order sneakers from a website and snoop on other people’s lives on facebook. Don’t act like you don’t do that.
+This network was first theorized about in the 1960s when a man named J.C.R. Licklider conceived of a Galactic Network which sounds pretty awesome. The galactic network was a network of interconnected computers. His theory inspired an American Computer Scientist, Leonard Kleinrock to theorize a way in which communication of data passes through packets instead of through circuits. Packet switching played a huge part in the creation of the internet but its a large discussion that deserves its own video.&lt;/p&gt;
+
+&lt;p&gt;This packet switching theory gave another American computer scientist, Lawrence Roberts the ability to plan and create ARPANET. ARPANET was a packet switching network that is the foundation for the modern day internet. ARPANET was Lickliders concept come to  life. A network of computers that would be able to send each other information.&lt;/p&gt;
+
+&lt;h2 id=&quot;its-alive&quot;&gt;It’s Alive!&lt;/h2&gt;
+&lt;p&gt;The first connection using ARPANET was between a computer at UCLA and a computer in Stanfords Research Institute. They were able to send the first message from one computer to another. The message they sent was Lo. Why Lo? They tried to send the word login but the computers crashed when they tried to send the letter g.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.giphy.com/l0MYEqEzwMWFCg8rm.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Imagine that. They were having difficulty sending the letter g from one computer to another. Meanwhile 50 years later. Your are sending your girlfriend a text message while listening to the some songs on Spotify. These tasks are infinitely harder than sending one letter! Shows you how far we’ve come in a little over 50 years.&lt;/p&gt;
+
+&lt;h2 id=&quot;back-to-the-subject-at-hand&quot;&gt;Back to the Subject at Hand.&lt;/h2&gt;
+&lt;p&gt;ARPANET grew. By the early 1980’s over 200 computers were connected to ARPANET. In that time ARPANET standardized the internet protocol suite. IP or better known as TCP/IP were a series of protocols that established the way internet works and should work. The stadardization of TCP/IP led to the proliferation of Internet Service Providers. Enabling the consuming population access to the internet.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-birth-of-the-world-wide-webgit-st&quot;&gt;The Birth of the World Wide Webgit st&lt;/h2&gt;
+&lt;p&gt;Like with any type of technology, there was constant innovation to make the Internet better and tools to make it more useful.
+Tim Berners-Lee was working at CERN and was deseperate for a more efficient way of sharing information between scientists at CERN. CERN at the time had the largest network node in Europe. He built a program that utilized TCP/IP and Hypertext. This program was called the world wide web, the very first web browser. The browser utilized a markup language called HTML which Lee also invented.  Hypertext was used in a variety of different manners before Lee implemented it but it wasn’t until it was attached to the browser that the true power of hypertext was realized. Hypertext allowed for text to link to other text. With the browser and HTML, documents were able to link to other html documents using hypertext or more specifically hyperlinks. Not only did Lee solve the issue that he was dealing with at CERN but he also created a program in which the entire world can use to access information using the internet.&lt;/p&gt;
+
+&lt;p&gt;The internet was ripe for expansion with the it being available to consumers through ISP’s and the creation of the web browser. The immediate websites were basic and sometimes unusuable but it encouraged creation as the internet was a free space where your voice could be heard as long as someone had your web address. It was the wild west.&lt;/p&gt;
+
+&lt;h2 id=&quot;present-day&quot;&gt;Present Day&lt;/h2&gt;
+&lt;p&gt;Flash fowards to present day 2016, Like I said earlier we use and rely on the internet for everything. Buying, selling communicating, productivity, entertainment, watching cat videos and everything in between. The conversion of the worlds population on to the internet has created an incredible demand of innovation. The internet and more importantly the web browser is now an extremely complex and ever changing tool that is becoming a modern version of the swiss army knife.&lt;/p&gt;
+
+&lt;p&gt;As you can see the web is beast. It is an amazing piece of technology that has grown in size faster than any other technology in history. And it won’t stop here Virtual Reality and Augmented Reality or penetrating the worlds culture. An even greater yet scary technology built on top of the internet is something called &lt;del&gt;skynet&lt;/del&gt; artificial intelligence. Even though I am deathly afraid of the future of AI. Its the kind of fear that gets me excited.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.giphy.com/yoJC2Grr9JJXz5I9cA.gif&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 23 Oct 2016 02:01:00 -0700</pubDate>
+        <link>http://eufrac.io/the-internets/</link>
+        <guid isPermaLink="true">http://eufrac.io/the-internets/</guid>
+        
+        
+        <category>html, internet</category>
+        
+      </item>
     
       <item>
         <title>Up &amp; Going with Jekyll</title>
@@ -771,148 +813,6 @@ gzip_vary on;
         
         
         <category>Thoughts</category>
-        
-      </item>
-    
-      <item>
-        <title>Responsive Images Today</title>
-        <description>&lt;p&gt;Is your idea of responsive images &lt;i class=&quot;code-term&quot;&gt;max-width: 100%&lt;/i&gt;? That’s all it takes for your images to look somewhat decent on all devices but there is much much more to responsive images. Responsive images on web apps is a complicated subject that if done right can positively effect your sites aesthetics and performance.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;/h2&gt;
-
-&lt;p&gt;While max-width:100% is an effective way to make images resize according to the images container, it does not fix some of the problems developers have encountered since the advent of smartphones and high resolution devices. When we insert an image that is a resolution of 1000px X 500px like so&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;img src=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;raptor.jpg&amp;lt;/span&amp;gt;&quot; width=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;1000&amp;lt;/span&amp;gt;&quot; height=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;500&amp;lt;/span&amp;gt;&quot; /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;We have to take into account that we are also serving this image to devices that have a viewport smaller than 1000px. iPhones, Android phones, tablets all come in sizes less than 1000px. Why serve a 1000px image when certain devices only need a 320px image? What if you want to accommodate users with high resolution displays? Ever since the introduction of Retina Display by Apple, high resolution displays have become an industry standard. The need for high resolution images has given web developers another riddle to solve.&lt;/p&gt;
-
-&lt;h2 id=&quot;solution8230-put-a-srcset-on-it&quot;&gt;Solution… Put a srcset on it&lt;/h2&gt;
-
-&lt;p&gt;HTML5.1 introduces &lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt; into the our web standards. &lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt; is an attribute applied on the img tag that takes a comma separated list of images with a description of the image. The description can be either a pixel ratio descriptor or a width descriptor. Using the pixel ratio descriptor, we can tell the browser what image to display depending on the pixel ratio of the current device.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;img src=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;dino.jpg&amp;lt;/span&amp;gt;&quot; alt=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;dino&amp;lt;/span&amp;gt;&quot; srcset=“&amp;lt;span class=&quot;orange&quot;&amp;gt;dino.jpg, dino-hr.jpg 2x&amp;lt;/span&amp;gt;&quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt; contains strings seperated by commas. Strings are comprised of two values; one being the url of the image and the other being the pixel ratio this image should be displayed at. In this img tag, &lt;i class=&quot;code-term&quot;&gt;dino.jpg&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;dino-hr.jpg&lt;/i&gt; are image locations and 2x signifies the image is meant for devices with a twice the amount of pixels.&lt;/p&gt;
-
-&lt;p&gt;The browser sees the img tag, determines the pixel ratio of the viewport and then determines which image to use. If the user is on a high resolution device, the browser will serve the 2x image, &lt;i class=&quot;code-term&quot;&gt;dino-hr.jpg&lt;/i&gt;.&lt;/p&gt;
-
-&lt;p&gt;This is a straight-forward syntax that offers instant functionality however it does not take into account changing widths of the viewport. Therefore this syntax should only be used for fixed width images.&lt;/p&gt;
-
-&lt;h2 id=&quot;images-come-in-different-width-and-sizes&quot;&gt;Images Come In Different Width And Sizes&lt;/h2&gt;
-
-&lt;p&gt;A better solution for truly responsive images is a combination of the &lt;strong&gt;width descriptor&lt;/strong&gt; and the &lt;strong&gt;sizes&lt;/strong&gt; attribute. The width descriptor like the pixel descriptor is applied to the end of a string in the srcset attribute. Its value is the actual width of the image. For example, I have an image large.jpg which is 1024 x 500 pixels so we apply the width descriptor of 1024w. The w always follows the width of the image.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;large.jpg 1024w
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;So now we can pass srcset something like this that includes smaller versions of our original large.jpg&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;srcset=“&amp;lt;span class=&quot;orange&quot;&amp;gt;large.jpg 1024w, medium.jpg 640w, small.jpg 320w&amp;lt;/span&amp;gt;&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now that we offer the browser a set of images it can choose from, we can now provide even more information that will help the browser select the best possible option. This is possible using the &lt;strong&gt;sizes&lt;/strong&gt; attribute. &lt;strong&gt;sizes&lt;/strong&gt; takes a set of strings separated by commas. Each string contains a &lt;i class=&quot;code-term&quot;&gt;media condition&lt;/i&gt; and a &lt;i class=&quot;code-term&quot;&gt;length&lt;/i&gt; value. The &lt;i class=&quot;code-term&quot;&gt;media condition&lt;/i&gt; is the same syntax that is used in a media query.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(min-width: 800px)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The &lt;i class=&quot;code-term&quot;&gt;length&lt;/i&gt; value is the size the image in regards to the viewport. Since the size is in relation to the viewport, it’s best to apply a length value using the &lt;i class=&quot;code-term&quot;&gt;vw&lt;/i&gt; viewport unit. &lt;i class=&quot;code-term&quot;&gt;vw&lt;/i&gt; is the viewport width where &lt;i class=&quot;code-term&quot;&gt;1vw&lt;/i&gt; is equal to one percent of the viewport and &lt;i class=&quot;code-term&quot;&gt;33vw&lt;/i&gt; is equal to 33 percent of the viewport. Thus a string can look like this…&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(max-width:800px) 33vw
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This string says at 800px and below, the image take up 33% of the viewport width. Our sizes attribute will look like…&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sizes=“&amp;lt;span class=&quot;orange&quot;&amp;gt;(max-width:320px) 100vw, (max-width:800px) 33vw, 279px&amp;lt;/span&amp;gt;&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The final string omits the media condition and gives a default length of an image. Now pulling all our code together to create the final img element.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;img srcset=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;large.jpg 1024w, medium.jpg 640w, small.jpg 320w&amp;lt;/span&amp;gt;&quot;
-     sizes=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;(min-width: 320em) 100vw,(max-width:800px) 33vw, 279px&amp;lt;/span&amp;gt;&quot;
-     src=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;small.jpg&amp;lt;/span&amp;gt;&quot;
-&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now the browser has three image choices with a defined width to each. It also has the size of the image at different viewport widths. Using this information the browser will pick an image that best suits the user depending on the pixel density, zoom level and also the network connection of the user.&lt;/p&gt;
-
-&lt;h2 id=&quot;srcset-browser-support&quot;&gt;srcset Browser Support&lt;/h2&gt;
-
-&lt;p&gt;&lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt; is part of the HTML 5.1 working draft which means it will soon be a standardized part of HTML 5. There is wide support for &lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt; among newer browsers but it lacks support in all versions of IE. Therefore all img elements are recommended to have the &lt;i class=&quot;code-term&quot;&gt;src&lt;/i&gt; attribute as a fallback. For more information regarding browser support visit &lt;a href=&quot;http://caniuse.com/#search=srcset&quot; target=&quot;_blank&quot;&gt;caniuse.com&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;picture-element&quot;&gt;picture element&lt;/h2&gt;
-
-&lt;p&gt;Using the &lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;sizes&lt;/i&gt; attributes give the browser the option on the best image for the user. But what if you want to provide a specific image for the user at a certain breakpoint? This is called the art direction conundrum. Thankfully there is an element that lets developers do exactly this, the &lt;i class=&quot;code-term&quot;&gt;picture&lt;/i&gt; element. The &lt;i class=&quot;code-term&quot;&gt;picture&lt;/i&gt; element is a container for the &lt;i class=&quot;code-term&quot;&gt;source&lt;/i&gt; element and an &lt;i class=&quot;code-term&quot;&gt;img&lt;/i&gt; element.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;picture&amp;gt;
-&amp;lt;source&amp;gt;
-&amp;lt;img&amp;gt;
-&amp;lt;/picture&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The &lt;i class=&quot;code-term&quot;&gt;source&lt;/i&gt; element has two attributes; &lt;i class=&quot;code-term&quot;&gt;media&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt;. The &lt;i class=&quot;code-term&quot;&gt;media&lt;/i&gt; attribute takes a media condition&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;source media=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;(min-width: 45em)&amp;lt;/span&amp;gt;&quot; &amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The srcset attribute is just like the srcset attribute for the img element.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//these are all valid values for srcset in the picture element.
-&amp;lt;source media=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;(min-width: 45em)&amp;lt;/span&amp;gt;&quot; srcset=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;large.jpg&amp;lt;/span&amp;gt;&quot; &amp;gt;
-&amp;lt;source  media=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;(min-width: 32em)&amp;lt;/span&amp;gt;&quot; srcset=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;med.jpg&amp;lt;/span&amp;gt;&quot; &amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Finally, we can provide a fallback img element.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;img src=&quot;small.jpg&quot; alt=&quot;A small image.&quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;All in all, are picture element will look like this&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;picture&amp;gt;
-  &amp;lt;source media=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;(min-width: 45em)&amp;lt;/span&amp;gt;&quot; srcset=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;large.jpg&amp;lt;/span&amp;gt;&quot;&amp;gt;
-  &amp;lt;source media=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;(min-width: 32em)&amp;lt;/span&amp;gt;&quot; srcset=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;med.jpg&amp;lt;/span&amp;gt;&quot;&amp;gt;
-  &amp;lt;img src=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;small.jpg&amp;lt;/span&amp;gt;&quot; alt=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;A small image&amp;lt;/span&amp;gt;&quot;&amp;gt;
-&amp;lt;/picture&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;picture-browser-support&quot;&gt;picture Browser Support&lt;/h2&gt;
-
-&lt;p&gt;The picture element is also part of the HTML 5.1 working draft and the browsers that don’t except the picture will fallback nicely to the img element.&lt;/p&gt;
-
-&lt;h2 id=&quot;implement-and-test&quot;&gt;Implement And Test&lt;/h2&gt;
-
-&lt;p&gt;&lt;i class=&quot;code-term&quot;&gt;srcset&lt;/i&gt;, &lt;i class=&quot;code-term&quot;&gt;sizes&lt;/i&gt;, and &lt;i class=&quot;code-term&quot;&gt;pictur&lt;/i&gt;e element gets us one step closer to a solution for responsive images. Try implementing this in your next project and test what works. You have to consider what images should use the &lt;i class=&quot;code-term&quot;&gt;img&lt;/i&gt; element rather than the &lt;i class=&quot;code-term&quot;&gt;picture&lt;/i&gt; element. Also make note of your web apps breakpoints and the variety of images you need to create to accommodate those breakpoints. As I said before, responsive images are not an easy task but implementing and testing will get you on the right track.&lt;/p&gt;
-
-&lt;h2 id=&quot;responsive-image-resources&quot;&gt;Responsive Image Resources&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://responsiveimages.org/&quot; target=&quot;_blank&quot;&gt;Responsiveimages.org&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://alistapart.com/article/using-responsive-images-now&quot; target=&quot;_blank&quot;&gt;A List Apart’s Using Responsive Images Now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blog.cloudfour.com/responsive-images-101-part-4-srcset-width-descriptors/&quot; target=&quot;_blank&quot;&gt;Cloudfour’s Responsive Image 101&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-picture-element&quot; target=&quot;_blank&quot;&gt;W3C HTML 5.1 Working Draft&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 09 Dec 2015 12:59:01 -0800</pubDate>
-        <link>http://eufrac.io/responsive-images-today/</link>
-        <guid isPermaLink="true">http://eufrac.io/responsive-images-today/</guid>
-        
-        
-        <category>html</category>
         
       </item>
     
