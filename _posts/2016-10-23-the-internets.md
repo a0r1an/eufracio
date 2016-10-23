@@ -28,7 +28,7 @@ Imagine that. They were having difficulty sending the letter g from one computer
 ## Back to the Subject at Hand.
 ARPANET grew. By the early 1980’s over 200 computers were connected to ARPANET. In that time ARPANET standardized the internet protocol suite. IP or better known as TCP/IP were a series of protocols that established the way internet works and should work. The stadardization of TCP/IP led to the proliferation of Internet Service Providers. Enabling the consuming population access to the internet.
 
-## The Birth of the World Wide Webgit st
+## The Birth of the World Wide Web
 Like with any type of technology, there was constant innovation to make the Internet better and tools to make it more useful.
 Tim Berners-Lee was working at CERN and was deseperate for a more efficient way of sharing information between scientists at CERN. CERN at the time had the largest network node in Europe. He built a program that utilized TCP/IP and Hypertext. This program was called the world wide web, the very first web browser. The browser utilized a markup language called HTML which Lee also invented.  Hypertext was used in a variety of different manners before Lee implemented it but it wasn’t until it was attached to the browser that the true power of hypertext was realized. Hypertext allowed for text to link to other text. With the browser and HTML, documents were able to link to other html documents using hypertext or more specifically hyperlinks. Not only did Lee solve the issue that he was dealing with at CERN but he also created a program in which the entire world can use to access information using the internet.
 
