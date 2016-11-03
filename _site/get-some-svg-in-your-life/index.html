@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Get Some SVG In Your Life</title>
+  <meta name="description" content="Scalable Vector Graphics, or SVGs, are two dimensional vector graphics that are created using the xml language. They were created specifically for the web an...">
+  <link href='https://fonts.googleapis.com/css?family=Bungee|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://eufrac.io/get-some-svg-in-your-life/">
+  <link rel="alternate" type="application/rss+xml" title="Eufrac.io" href="http://eufrac.io/feed.xml">
+</head>
+
+  <body>
+    <header class="header">
+  <div class="wrapper">
+    <a class="link logo" href="/">Eufrac.io</a>
+  </div>
+</header>
+
+    <header class="hero hero-post">
+      <h1 class="headline" itemprop="name headline">Get Some SVG In Your Life</h1>
+      <p class="text">
+        <time class="time" datetime="2016-11-01T02:01:00-07:00" itemprop="datePublished">Nov 1, 2016</time>
+      </p>
+    </header>
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post_content" itemprop="articleBody">
+          <p>Scalable Vector Graphics, or SVGs, are two dimensional vector graphics that are created using the xml language. They were created specifically for the web and give web developers the ability to display vector graphics in an editable format.</p>
+
+<p>Lets take a look at a circle created with an SVG.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;svg</span> <span class="na">viewBox=</span><span class="s">"0 0 200 200"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">"100"</span> <span class="na">cy=</span><span class="s">"100"</span> <span class="na">r=</span><span class="s">"100"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></code></pre></figure>
+
+<p>Before we worry about the details of the attributes and values in the SVG element, I want to explain the theory behind the code above. We create an SVG element with a few attributes. Then we create a circle element within that SVG element. The circle element applies a couple attributes that define where to place the element and how large it should be.</p>
+
+<p>But now let’s take a look at a more complex SVG.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">viewBox=</span><span class="s">"0 0 300 300"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#804D35"</span> <span class="na">d=</span><span class="s">"M35 254.6l9.7 28.8 211 1.7 12-34L35 255"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#2F2B33"</span> <span class="na">d=</span><span class="s">"M40 288c1.3 1.2 221 0 221 0s5.3-6.4-50.2-10c-34.4.8-55.7 6-55.7 6s-25-6-47-6c-91 4-69 8.8-68 10z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#EE304E"</span> <span class="na">d=</span><span class="s">"M15.2 187.8s20.3-30 36.2-35.4c3.6 1.2 189 1.5 198.3 1.2 26.8 5.8 23.5 24 31.6 26.4 1.8-.3 11 79.6-19.8 77.6-1.3 2.5-50.6 4-55.7 4.5s-21.4 10-43 13c-4.6 1-78.7 0-78.7 0s-34-4-55-26c-1-2 0-9-13-60z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;ellipse</span> <span class="na">cx=</span><span class="s">"151.3"</span> <span class="na">cy=</span><span class="s">"128.9"</span> <span class="na">fill=</span><span class="s">"#FFEDC3"</span> <span class="na">rx=</span><span class="s">"109.8"</span> <span class="na">ry=</span><span class="s">"76.8"</span><span class="nt">/&gt;&lt;path</span> <span class="na">fill=</span><span class="s">"#00B8C3"</span> <span class="na">d=</span><span class="s">"M43 114.6c0-49 58-81 107-82 82.7-2 106.5 68.2 105.3 67.6C133.3 44.7 43 114.6 43 114.6z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FCEE21"</span> <span class="na">d=</span><span class="s">"M44.3 117.7c43.7-26 94-35.7 144.5-30.4 16 1.7 32 5 47.6 9.8 4.5 2 9 3 13.4 5l3.5 2c-1 0 .3 0 .6 1 4 2 8-4.2 3-6.2-22-10-46-14.6-69-17-51-6.5-103 4.5-148 31-4 2.3-1 9 4 6.3zm72.4-84.4s9-4.8 10.4-3.8 2-2.3 2-2.3l9-2h11l1-2.3s12-1 13 2c0 4 15.7 4 15 10-2.5 8-12 2-13 4-11.4 6-17 0-17 0l-13 4-1-7s-3 5-8 5.3c-17.3 4-9-8.5-9-8.5zm-100.5 155C6 189.3-7 221 24 227.3c10.4-2.6 40 2 36-13s-33.8-24.2-44-26zm267.4-7s5-1 8 4 4.7 22.2 4 27.6-.6 10-13.8 11-18.8-9-19.8-8-14.2 1-14.2 1-7.4-7 1.3-12c4-3 4-8 4-8s5-12 9-14 22-2 22-2z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#000"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span> <span class="na">d=</span><span class="s">"M68 167.3c11 12 91 71 170.3-5.6m-73 45.6c2 36.4-1.3 65.6-1.3 65.6"</span><span class="nt">/&gt;&lt;ellipse</span> <span class="na">cx=</span><span class="s">"157.1"</span> <span class="na">cy=</span><span class="s">"213.4"</span> <span class="na">rx=</span><span class="s">"1"</span> <span class="na">ry=</span><span class="s">"3"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;ellipse</span> <span class="na">cx=</span><span class="s">"159.7"</span> <span class="na">cy=</span><span class="s">"238.7"</span> <span class="na">rx=</span><span class="s">"1.2"</span> <span class="na">ry=</span><span class="s">"3.3"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;ellipse</span> <span class="na">cx=</span><span class="s">"157.2"</span> <span class="na">cy=</span><span class="s">"262.7"</span> <span class="na">rx=</span><span class="s">"2"</span> <span class="na">ry=</span><span class="s">"3.4"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#000"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span> <span class="na">d=</span><span class="s">"M139 188.5c15.7 5.5 38 0 38 0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;ellipse</span> <span class="na">cx=</span><span class="s">"182.5"</span> <span class="na">cy=</span><span class="s">"119.1"</span> <span class="na">fill=</span><span class="s">"#FFF"</span> <span class="na">transform=</span><span class="s">"matrix(.81 -.587 .587 .81 -35.153 129.678)"</span> <span class="na">rx=</span><span class="s">"26.7"</span> <span class="na">ry=</span><span class="s">"30.5"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;ellipse</span> <span class="na">cx=</span><span class="s">"126.5"</span> <span class="na">cy=</span><span class="s">"119.1"</span> <span class="na">fill=</span><span class="s">"#FFF"</span> <span class="na">transform=</span><span class="s">"matrix(.884 .467 -.467 .884 70.21 -45.287)"</span> <span class="na">rx=</span><span class="s">"26.7"</span> <span class="na">ry=</span><span class="s">"30.5"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">"138.6"</span> <span class="na">cy=</span><span class="s">"117.9"</span> <span class="na">r=</span><span class="s">"3.3"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">"170.6"</span> <span class="na">cy=</span><span class="s">"117.9"</span> <span class="na">r=</span><span class="s">"3.3"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">"M134.7 172.4c3.4-3.5 7.7-3.2 7.7-3.2s24.2-.2 25.5.3 2 3 2 4.2c-1 1.4-5 10.7-7 13.3-2 1.8-9 0-9 0s-4-1-5-1.8c-.7-.3-3.4 0-4-.2s-11.5-10.6-12-12.3"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFF"</span> <span class="na">d=</span><span class="s">"M149 172.3c-.2-1-1-1.7-1.8-1.5l-3 .5c-.8 0-1.3 1-1.2 2 .2 1 1 1.7 1.8 1.5l3-.5c1 0 1.4-1 1.2-2zm9 1.5c.2-.8-.3-1.6-1-1.8l-4.2-.8c-.7 0-1.5.4-1.6 1.2v.3c-.3.8.2 1.6 1 1.8l4 .8c.8 0 1.6-.4 1.7-1.2zm9-.4c0-1-.8-1.7-1.6-1.6l-5 .4c-.8 0-1.4 1-1.3 1.8 1 1 1 1.7 2 1.6l5-.4c1 0 2-1 2-1.8z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></code></pre></figure>
+
+<p>This code will create an SVG that is familiar to a lot of you, Cartman. Wowzers. This code might look complex and intimidating and that’s because it is! But let’s dig into the code a bit. So just like the SVG before, we set an SVG element with a couple attributes. Within that SVG element we have a bunch of other elements. Each one of those elements creates a shape that make up Cartman. The intimidating part are the numbers that are attached to each element. The numbers are creating paths on an invisible plain. <strong>????</strong> Follow me for a second please. Like I said before SVGs are created using the xml language. The SVG uses a coordinate system to define where paths are created within the given SVG. Elements within SVGs like path and circle use the coordinate system to define their shape.</p>
+
+<p>Knowing this, we will take a look at one of the more complicated looking paths in the cartman SVG.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#EE304E"</span> <span class="na">d=</span><span class="s">"M15.2 187.8s20.3-30 36.2-35.4c3.6 1.2 189 1.5 198.3 1.2 26.8 5.8 23.5 24 31.6 26.4 1.8-.3 11 79.6-19.8 77.6-1.3 2.5-50.6 4-55.7 4.5s-21.4 10-43 13c-4.6 1-78.7 0-78.7 0s-34-4-55-26c-1-2 0-9-13-60z"</span><span class="nt">/&gt;</span></code></pre></figure>
+
+<p>The d attribute within the path defines the shape that is about to be created. We also see a more familiar attribute called fill with a hex code value. This value will fill the shape with the color that the hex code produces.</p>
+
+<h2 id="ok-but-">OK, but …</h2>
+<p>That explains the way SVGs work but it doesn’t necessarily make creating a cartman that much easier. If would be extremely difficult to create paths using the d attribute. Fortunately for us there is a much easier way. There are programs that let you create vector elements and export those vectors into a SVG. The exported SVG can then be popped into your html document and bam you got your very first cute SVG!</p>
+
+<h2 id="exporting-an-svg">Exporting an SVG</h2>
+<p>When creating an SVG in illustrator, we should make sure to pick the correct settings when exporting the svg. These our the settings that you want to go with.</p>
+
+<p><img src="../img/posts/getSvg/svgSettings.png" width="250" /></p>
+
+<p>When exporting SVGs from illustrator and most other svg makers you get code bloat that is safe to remove. I like to use Jake Archibald’s SVG optimizer. It strips out the code bloat and gives you an optimized version of the SVG.
+https://jakearchibald.github.io/svgomg/</p>
+
+<h2 id="cool-feature-bro---scalable">Cool Feature Bro - Scalable</h2>
+<p>One of the best features of SVG is it’s scalability. To appreciate this feature we must know why its so important. The issue with assets like jpegs, gifs, and pngs are that they don’t scale. If the asset is 300px by 300px then the asset cannot scale to a larger size without losing resolution aka looking shitty. Even if you downscale the image to 100px by 100px using CSS you will still lose quality. SVGs solve this problem. An SVG can be 100px by 100px or 100000px by 100000px and retain its quality. Plus the file size doesnt change so you can use the same 250 byte svg whether it be 100px or 100000px.</p>
+
+<h2 id="cool-feature-2-bro---css-editable">Cool Feature 2 Bro - CSS Editable</h2>
+<p>Another awesome feature of SVGs are that they are editable with CSS. You can use CSS to change colors and the size of SVGs. This is an incredible useful feature as it removes the need to have multiple versions of assets in different sizes and colors. Or the need to use an vector program to make minor tweaks.</p>
+
+<p>With the ability to edit SVGs using CSS it gives us the ability to create awesome animations. Want to morph a circle into a square? You can do that! Want to make a spinning loader? You can do that! Want to morph Trump’s face to Hillary Clinton’s Face. You can do that! Actually not sure if you can do that but that doesn’t seem out of the question. We can animate SVGs using CSS3 animation properties like keyframes and animate.</p>
+
+<h3 id="animate-time">Animate Time</h3>
+<p>We will start with a SVG I created. Just a real cute looking circle with multiple faces SVG.</p>
+
+<p data-height="300" data-theme-id="20621" data-slug-hash="KgbWWG" data-default-tab="css,result" data-user="adrianeufracio" data-embed-version="2" data-pen-title="KgbWWG" class="codepen">See the Pen <a href="http://codepen.io/adrianeufracio/pen/KgbWWG/">KgbWWG</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>Lets make this cutier and make the smiling half-circle fill in with its intended fill color.</p>
+<p data-height="300" data-theme-id="20621" data-slug-hash="bBbbBE" data-default-tab="html,result" data-user="adrianeufracio" data-embed-version="2" data-pen-title="Still Super Duper Simple SVG Animation" class="codepen">See the Pen <a href="http://codepen.io/adrianeufracio/pen/bBbbBE/">Still Super Duper Simple SVG Animation</a> by Adrian Eufracio (<a href="http://codepen.io/adrianeufracio">@adrianeufracio</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h4 id="boom">Boom</h4>
+<p>Super simple example of animating an SVG, the same way you would animate any other html element.</p>
+
+<h2 id="keep-it-responsive">Keep it responsive</h2>
+<p>Certain attributes need to be set on SVG elements for them to be responsive and scale appropriately. The <i class="code-term">viewbox</i> and <i class="code-term">preserveAspectRatio</i> are your Batman and Robin when it comes to creating responsive SVGs.</p>
+
+<p><img src="http://i.giphy.com/KClrIEFayJMiI.gif" /></p>
+
+<p>Remember how I said, SVGs use their own coordinate system to define where shapes are created and positioned. Well the viewbox is what defines that coordinate system. The viewbox takes four values: min-x, min-y, width, and height. The min-x and min-y values define where to start drawing on the coordinate system. The width and height define the amount of space available to us in the coordinate system. A simple and ideal responsive SVG would have the viewport values of <i class="code-term">0 0 100 100</i>.</p>
+
+<p>The preserveAspectRatio defines how to enforce the aspect ratio. By leaving this attribute empty the value defaults to <i class="code-term">xMidyMid</i> which centers the SVG within the viewport of the SVG, no matter the size the SVG has.</p>
+
+<p>If you want to scale the SVG to the size of its container than we will need to use the image tag and set the src to the SVG file. The SVG should have the viewport set and the img element will resize the SVG to the containing element.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">”circle.svg”</span> <span class="nt">/&gt;</span></code></pre></figure>
+
+<h2 id="make-it-accessible">Make it Accessible</h2>
+<p>Just how the img element has an alt attribute, SVGs can have elements within it that make them accessible for disabled web users.
+Title and Description elements can more accurately describe your SVG while the aria attributes of <i class="code-term">aria-labelledby=”title” aria-describedby=”desc”</i>, maximize screen reader support.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">aria-labelledby=</span><span class="s">"title desc"</span> <span class="na">role=</span><span class="s">"img"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title</span> <span class="na">id=</span><span class="s">"title"</span><span class="nt">&gt;</span>Circle<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;desc</span> <span class="na">id=</span><span class="s">"desc"</span><span class="nt">&gt;</span>A simple circle to show an SVG examlple.<span class="nt">&lt;/desc&gt;</span>
+  <span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">"100"</span> <span class="na">cy=</span><span class="s">"100"</span> <span class="na">r=</span><span class="s">"100"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></code></pre></figure>
+
+<p>There is really a lot that you can do with SVGs and a lot to learn when implementing SVGs depending on your particular implementation. I plan on doing more tutorials on SVGs but I also highly recommend the following blog posts that go more into detail regarding SVGs.</p>
+
+<h3 id="recommended-articles">Recommended Articles</h3>
+<ul>
+  <li><a href="https://www.smashingmagazine.com/2014/11/styling-and-animating-svgs-with-css/" target="_blank">Styling and Animating SVGs</a></li>
+  <li><a href="https://abookapart.com/products/practical-svg" target="_blank">Practical SVG</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox" target="_blank">Viewbox explained</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio" target="_blank">PreserveAspectRatio explained</a></li>
+</ul>
+
+        </div>
+      </article>
+      </div>
+    </div>
+    <footer class="footer">
+  <div class="wrapper">
+        <p class="text">My name is Adrian and I am a Front-End Developer. I love creating web products/things.</p> 
+        <p class="text">This is a hub for all my creations and and a place where I can share my knowledge.</p>
+        <ul class="socialMediaList">
+          <li class="socialMediaListItem">
+            <a class="link" href="mailto:eufracioadrian@gmail.com" target="_blank">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 485.211 485.211"><path d="M485.21 363.906c0 10.637-2.99 20.498-7.784 29.174l-153.2-171.41 151.54-132.584c5.894 9.355 9.445 20.344 9.445 32.22v242.6zM242.607 252.793l210.863-184.5c-8.654-4.737-18.398-7.642-28.91-7.642H60.65c-10.523 0-20.27 2.906-28.888 7.643l210.844 184.5zm58.787-11.162l-48.81 42.735c-2.854 2.487-6.41 3.73-9.977 3.73-3.57 0-7.125-1.243-9.98-3.73l-48.82-42.736-155.14 173.6c9.3 5.834 20.198 9.33 31.984 9.33h363.91c11.785 0 22.688-3.496 31.984-9.33l-155.15-173.6zM9.448 89.086C3.554 98.44 0 109.43 0 121.305v242.602c0 10.637 2.978 20.498 7.79 29.174L160.97 221.64 9.448 89.086z"/></svg>
+                <span class="meta">adrian@eufrac.io</span>
+            </a>
+          </li>
+          <li class="socialMediaListItem">
+            <a class="link link-middle" href="https://github.com/" target="_blank">
+                <svg class="icon" viewBox="0 0 16 16" width="24" height="24" ><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+                <span class="meta">@a0r1an</span>
+            </a>
+          </li>
+          <li class="socialMediaListItem">
+            <a class="link" href="https://twitter.com/" target="_blank">
+                <svg class="icon icon--twitter" viewBox="0 0 16 16" width="24" height="24" ><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+                <span class="meta">@adrianeufracio</span>
+              </a>
+          </li>
+        </ul>
+  </div>
+</footer>
+
+  </body>
+
+</html>

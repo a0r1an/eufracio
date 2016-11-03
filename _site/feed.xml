@@ -6,9 +6,123 @@
 </description>
     <link>http://eufrac.io/</link>
     <atom:link href="http://eufrac.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Oct 2016 14:18:56 -0700</pubDate>
-    <lastBuildDate>Sun, 23 Oct 2016 14:18:56 -0700</lastBuildDate>
+    <pubDate>Wed, 02 Nov 2016 20:44:14 -0700</pubDate>
+    <lastBuildDate>Wed, 02 Nov 2016 20:44:14 -0700</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Get Some SVG In Your Life</title>
+        <description>&lt;p&gt;Scalable Vector Graphics, or SVGs, are two dimensional vector graphics that are created using the xml language. They were created specifically for the web and give web developers the ability to display vector graphics in an editable format.&lt;/p&gt;
+
+&lt;p&gt;Lets take a look at a circle created with an SVG.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;svg&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;viewBox=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0 0 200 200&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/2000/svg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;circle&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cy=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;r=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/svg&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Before we worry about the details of the attributes and values in the SVG element, I want to explain the theory behind the code above. We create an SVG element with a few attributes. Then we create a circle element within that SVG element. The circle element applies a couple attributes that define where to place the element and how large it should be.&lt;/p&gt;
+
+&lt;p&gt;But now let’s take a look at a more complex SVG.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;svg&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/2000/svg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;viewBox=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0 0 300 300&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#804D35&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M35 254.6l9.7 28.8 211 1.7 12-34L35 255&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#2F2B33&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M40 288c1.3 1.2 221 0 221 0s5.3-6.4-50.2-10c-34.4.8-55.7 6-55.7 6s-25-6-47-6c-91 4-69 8.8-68 10z&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#EE304E&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M15.2 187.8s20.3-30 36.2-35.4c3.6 1.2 189 1.5 198.3 1.2 26.8 5.8 23.5 24 31.6 26.4 1.8-.3 11 79.6-19.8 77.6-1.3 2.5-50.6 4-55.7 4.5s-21.4 10-43 13c-4.6 1-78.7 0-78.7 0s-34-4-55-26c-1-2 0-9-13-60z&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ellipse&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;151.3&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cy=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;128.9&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FFEDC3&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;109.8&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ry=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;76.8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#00B8C3&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M43 114.6c0-49 58-81 107-82 82.7-2 106.5 68.2 105.3 67.6C133.3 44.7 43 114.6 43 114.6z&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FCEE21&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M44.3 117.7c43.7-26 94-35.7 144.5-30.4 16 1.7 32 5 47.6 9.8 4.5 2 9 3 13.4 5l3.5 2c-1 0 .3 0 .6 1 4 2 8-4.2 3-6.2-22-10-46-14.6-69-17-51-6.5-103 4.5-148 31-4 2.3-1 9 4 6.3zm72.4-84.4s9-4.8 10.4-3.8 2-2.3 2-2.3l9-2h11l1-2.3s12-1 13 2c0 4 15.7 4 15 10-2.5 8-12 2-13 4-11.4 6-17 0-17 0l-13 4-1-7s-3 5-8 5.3c-17.3 4-9-8.5-9-8.5zm-100.5 155C6 189.3-7 221 24 227.3c10.4-2.6 40 2 36-13s-33.8-24.2-44-26zm267.4-7s5-1 8 4 4.7 22.2 4 27.6-.6 10-13.8 11-18.8-9-19.8-8-14.2 1-14.2 1-7.4-7 1.3-12c4-3 4-8 4-8s5-12 9-14 22-2 22-2z&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;none&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;stroke=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#000&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;stroke-miterlimit=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M68 167.3c11 12 91 71 170.3-5.6m-73 45.6c2 36.4-1.3 65.6-1.3 65.6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&amp;lt;ellipse&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;157.1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cy=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;213.4&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ry=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ellipse&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;159.7&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cy=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;238.7&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.2&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ry=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;3.3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ellipse&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;157.2&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cy=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;262.7&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ry=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;3.4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;none&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;stroke=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#000&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;stroke-miterlimit=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M139 188.5c15.7 5.5 38 0 38 0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ellipse&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;182.5&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cy=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;119.1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FFF&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;transform=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;matrix(.81 -.587 .587 .81 -35.153 129.678)&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;26.7&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ry=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;30.5&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ellipse&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;126.5&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cy=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;119.1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FFF&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;transform=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;matrix(.884 .467 -.467 .884 70.21 -45.287)&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;26.7&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ry=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;30.5&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;circle&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;138.6&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cy=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;117.9&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;r=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;3.3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;circle&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;170.6&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cy=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;117.9&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;r=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;3.3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M134.7 172.4c3.4-3.5 7.7-3.2 7.7-3.2s24.2-.2 25.5.3 2 3 2 4.2c-1 1.4-5 10.7-7 13.3-2 1.8-9 0-9 0s-4-1-5-1.8c-.7-.3-3.4 0-4-.2s-11.5-10.6-12-12.3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FFF&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M149 172.3c-.2-1-1-1.7-1.8-1.5l-3 .5c-.8 0-1.3 1-1.2 2 .2 1 1 1.7 1.8 1.5l3-.5c1 0 1.4-1 1.2-2zm9 1.5c.2-.8-.3-1.6-1-1.8l-4.2-.8c-.7 0-1.5.4-1.6 1.2v.3c-.3.8.2 1.6 1 1.8l4 .8c.8 0 1.6-.4 1.7-1.2zm9-.4c0-1-.8-1.7-1.6-1.6l-5 .4c-.8 0-1.4 1-1.3 1.8 1 1 1 1.7 2 1.6l5-.4c1 0 2-1 2-1.8z&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/svg&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This code will create an SVG that is familiar to a lot of you, Cartman. Wowzers. This code might look complex and intimidating and that’s because it is! But let’s dig into the code a bit. So just like the SVG before, we set an SVG element with a couple attributes. Within that SVG element we have a bunch of other elements. Each one of those elements creates a shape that make up Cartman. The intimidating part are the numbers that are attached to each element. The numbers are creating paths on an invisible plain. &lt;strong&gt;????&lt;/strong&gt; Follow me for a second please. Like I said before SVGs are created using the xml language. The SVG uses a coordinate system to define where paths are created within the given SVG. Elements within SVGs like path and circle use the coordinate system to define their shape.&lt;/p&gt;
+
+&lt;p&gt;Knowing this, we will take a look at one of the more complicated looking paths in the cartman SVG.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#EE304E&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M15.2 187.8s20.3-30 36.2-35.4c3.6 1.2 189 1.5 198.3 1.2 26.8 5.8 23.5 24 31.6 26.4 1.8-.3 11 79.6-19.8 77.6-1.3 2.5-50.6 4-55.7 4.5s-21.4 10-43 13c-4.6 1-78.7 0-78.7 0s-34-4-55-26c-1-2 0-9-13-60z&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The d attribute within the path defines the shape that is about to be created. We also see a more familiar attribute called fill with a hex code value. This value will fill the shape with the color that the hex code produces.&lt;/p&gt;
+
+&lt;h2 id=&quot;ok-but-&quot;&gt;OK, but …&lt;/h2&gt;
+&lt;p&gt;That explains the way SVGs work but it doesn’t necessarily make creating a cartman that much easier. If would be extremely difficult to create paths using the d attribute. Fortunately for us there is a much easier way. There are programs that let you create vector elements and export those vectors into a SVG. The exported SVG can then be popped into your html document and bam you got your very first cute SVG!&lt;/p&gt;
+
+&lt;h2 id=&quot;exporting-an-svg&quot;&gt;Exporting an SVG&lt;/h2&gt;
+&lt;p&gt;When creating an SVG in illustrator, we should make sure to pick the correct settings when exporting the svg. These our the settings that you want to go with.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/posts/getSvg/svgSettings.png&quot; width=&quot;250&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When exporting SVGs from illustrator and most other svg makers you get code bloat that is safe to remove. I like to use Jake Archibald’s SVG optimizer. It strips out the code bloat and gives you an optimized version of the SVG.
+https://jakearchibald.github.io/svgomg/&lt;/p&gt;
+
+&lt;h2 id=&quot;cool-feature-bro---scalable&quot;&gt;Cool Feature Bro - Scalable&lt;/h2&gt;
+&lt;p&gt;One of the best features of SVG is it’s scalability. To appreciate this feature we must know why its so important. The issue with assets like jpegs, gifs, and pngs are that they don’t scale. If the asset is 300px by 300px then the asset cannot scale to a larger size without losing resolution aka looking shitty. Even if you downscale the image to 100px by 100px using CSS you will still lose quality. SVGs solve this problem. An SVG can be 100px by 100px or 100000px by 100000px and retain its quality. Plus the file size doesnt change so you can use the same 250 byte svg whether it be 100px or 100000px.&lt;/p&gt;
+
+&lt;h2 id=&quot;cool-feature-2-bro---css-editable&quot;&gt;Cool Feature 2 Bro - CSS Editable&lt;/h2&gt;
+&lt;p&gt;Another awesome feature of SVGs are that they are editable with CSS. You can use CSS to change colors and the size of SVGs. This is an incredible useful feature as it removes the need to have multiple versions of assets in different sizes and colors. Or the need to use an vector program to make minor tweaks.&lt;/p&gt;
+
+&lt;p&gt;With the ability to edit SVGs using CSS it gives us the ability to create awesome animations. Want to morph a circle into a square? You can do that! Want to make a spinning loader? You can do that! Want to morph Trump’s face to Hillary Clinton’s Face. You can do that! Actually not sure if you can do that but that doesn’t seem out of the question. We can animate SVGs using CSS3 animation properties like keyframes and animate.&lt;/p&gt;
+
+&lt;h3 id=&quot;animate-time&quot;&gt;Animate Time&lt;/h3&gt;
+&lt;p&gt;We will start with a SVG I created. Just a real cute looking circle with multiple faces SVG.&lt;/p&gt;
+
+&lt;p data-height=&quot;300&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;KgbWWG&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;adrianeufracio&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;KgbWWG&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/KgbWWG/&quot;&gt;KgbWWG&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Lets make this cutier and make the smiling half-circle fill in with its intended fill color.&lt;/p&gt;
+&lt;p data-height=&quot;300&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;bBbbBE&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;adrianeufracio&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Still Super Duper Simple SVG Animation&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/bBbbBE/&quot;&gt;Still Super Duper Simple SVG Animation&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;boom&quot;&gt;Boom&lt;/h4&gt;
+&lt;p&gt;Super simple example of animating an SVG, the same way you would animate any other html element.&lt;/p&gt;
+
+&lt;h2 id=&quot;keep-it-responsive&quot;&gt;Keep it responsive&lt;/h2&gt;
+&lt;p&gt;Certain attributes need to be set on SVG elements for them to be responsive and scale appropriately. The &lt;i class=&quot;code-term&quot;&gt;viewbox&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;preserveAspectRatio&lt;/i&gt; are your Batman and Robin when it comes to creating responsive SVGs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.giphy.com/KClrIEFayJMiI.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Remember how I said, SVGs use their own coordinate system to define where shapes are created and positioned. Well the viewbox is what defines that coordinate system. The viewbox takes four values: min-x, min-y, width, and height. The min-x and min-y values define where to start drawing on the coordinate system. The width and height define the amount of space available to us in the coordinate system. A simple and ideal responsive SVG would have the viewport values of &lt;i class=&quot;code-term&quot;&gt;0 0 100 100&lt;/i&gt;.&lt;/p&gt;
+
+&lt;p&gt;The preserveAspectRatio defines how to enforce the aspect ratio. By leaving this attribute empty the value defaults to &lt;i class=&quot;code-term&quot;&gt;xMidyMid&lt;/i&gt; which centers the SVG within the viewport of the SVG, no matter the size the SVG has.&lt;/p&gt;
+
+&lt;p&gt;If you want to scale the SVG to the size of its container than we will need to use the image tag and set the src to the SVG file. The SVG should have the viewport set and the img element will resize the SVG to the containing element.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;”circle.svg”&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;make-it-accessible&quot;&gt;Make it Accessible&lt;/h2&gt;
+&lt;p&gt;Just how the img element has an alt attribute, SVGs can have elements within it that make them accessible for disabled web users.
+Title and Description elements can more accurately describe your SVG while the aria attributes of &lt;i class=&quot;code-term&quot;&gt;aria-labelledby=”title” aria-describedby=”desc”&lt;/i&gt;, maximize screen reader support.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;svg&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;version=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;300&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;200&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;aria-labelledby=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title desc&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;img&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Circle&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;desc&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;desc&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;A simple circle to show an SVG examlple.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/desc&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;circle&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cy=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;r=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/svg&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;There is really a lot that you can do with SVGs and a lot to learn when implementing SVGs depending on your particular implementation. I plan on doing more tutorials on SVGs but I also highly recommend the following blog posts that go more into detail regarding SVGs.&lt;/p&gt;
+
+&lt;h3 id=&quot;recommended-articles&quot;&gt;Recommended Articles&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2014/11/styling-and-animating-svgs-with-css/&quot; target=&quot;_blank&quot;&gt;Styling and Animating SVGs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://abookapart.com/products/practical-svg&quot; target=&quot;_blank&quot;&gt;Practical SVG&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox&quot; target=&quot;_blank&quot;&gt;Viewbox explained&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio&quot; target=&quot;_blank&quot;&gt;PreserveAspectRatio explained&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 01 Nov 2016 02:01:00 -0700</pubDate>
+        <link>http://eufrac.io/get-some-svg-in-your-life/</link>
+        <guid isPermaLink="true">http://eufrac.io/get-some-svg-in-your-life/</guid>
+        
+        
+        <category>html, svg, css</category>
+        
+      </item>
     
       <item>
         <title>The Internets</title>
@@ -776,43 +890,6 @@ gzip_vary on;
         
         
         <category>javascript</category>
-        
-      </item>
-    
-      <item>
-        <title>A Few Things I Have Learned</title>
-        <description>&lt;p&gt;I have been working at a small digital agency for a little over three years now. My knowledge of the web and the web industry has grown leaps and bounds. When I started this job I referred to myself as a web designer and today I call myself a Front-End Developer. To say that I have learned a lot since starting here is a gross understatement. The funny thing is that I feel like I learned in an unconventional way. A way were you I was required to want to learn rather than forced to learn.&lt;/p&gt;
-
-&lt;p&gt;At this digital agency, I will call it Joe’s to keep their privacy, we have a full stack developer, a designer and myself. I was hired as a web designer but as time went on the owner realized I had a knack for code and that I purposely shy away from design work. Something that became evident within the first couple of months is that my knowledge regarding HTML, CSS and emerging web technologies was superior then my coworkers. My coworkers came from a print background and a networking background. At first, my knowledge gave me confidence but it didn’t take long for me to see things differently.&lt;/p&gt;
-
-&lt;p&gt;My skills also came with its own set of responsibilities. See, when you are at bigger agency with more than one developer, it is typical to have another developer look at your code for quality. They might make a suggestion on how to create cleaner code, give requirements on how fast the page should load, and other best practices for web development. I did not have that kind of supervision. If I didn’t feel like creating a clean code base then I didn’t have to. As long as the website worked I did not have to worry about being reprimanded. Sites were not tested on devices other than desktop browsers and not required to be responsive. By no way is this me bashing Joe’s but with a small team on tight deadlines and a targeted user base it was clear why they followed this manner of creating websites. So at the end of the day, if I wanted to create a clean code base, a responsive website or use a new web technology, it would be at my discretion.&lt;/p&gt;
-
-&lt;h2 id=&quot;choosing-to-be-better&quot;&gt;Choosing To Be Better&lt;/h2&gt;
-
-&lt;p&gt;I could of gone two different ways with this responsibility. I could either turn in mediocre work that just got the job done or I could push myself to create the best product possible. Thankfully I went with the latter option. I wanted to create things that were cool and that I was proud of. Without that feeling, I didn’t see the purpose. Taking this responsibility meant that I had to do many things on my own.&lt;/p&gt;
-
-&lt;h2 id=&quot;always-learning&quot;&gt;Always Learning&lt;/h2&gt;
-
-&lt;p&gt;The web, whatever that means, has been growing constantly every year. This means new standards to use and new ways to make your website faster and work better. I learned some stuff in college but the real learning come after college. If I stopped learning after college I would have no chance to keep making modern websites. To create websites that are up-to-date it would be up to me learn the latest technology. This is not as easy as it seems. It takes motivation to learn and to grow your skills. I had to push myself at work to learn for both my personal interest and my companies interest. So that is what I did. I learned about css preprocessors, responsive design, task runners, modern front-end workflows, optimizing page load speed and everything else I can get my hands on.&lt;/p&gt;
-
-&lt;h2 id=&quot;getting-better-on-my-own&quot;&gt;Getting Better On My Own&lt;/h2&gt;
-
-&lt;p&gt;My team is small and we are expected to finish projects quick. This often led to sub-par code. One thing that became a habit was going back into projects and refactoring my HTML, CSS, and JavaScript. Cleaning up code is not a pretty job but it is necessary. Reducing code bloat in css and modularizing javascript is something that became second nature to me.&lt;/p&gt;
-
-&lt;h2 id=&quot;empathy&quot;&gt;Empathy&lt;/h2&gt;
-
-&lt;p&gt;The hardest time to show empathy is when no one shows empathy. Empathy can be applied to anything as long as you can see and create a connection it. With any of my projects I attach a certain level of empathy. I acknowledge that it is a representative of my own empathy and skills. Both of these matter deeply to me. By taking on these projects as micro-representations of myself, my effort and motivation to create the best product has been relentless.&lt;/p&gt;
-
-&lt;h2 id=&quot;tl--dr-8211-learn-and-grow&quot;&gt;TL ; DR – Learn And Grow&lt;/h2&gt;
-
-&lt;p&gt;My job is a constant reminder of a simple fact that I must always try to learn and grow. There is an ego that comes from having more knowledge than your coworkers but I take it more as a responsibility. I have learned that there is always room to grow and different ways to grow. Even though that statement has been said millions of times, most people don’t try to get better. I can’t see a world were I would find this acceptable for myself so hopefully this encourages someone to start looking at things in a new perspective.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 16 Dec 2015 01:00:32 -0800</pubDate>
-        <link>http://eufrac.io/a-few-things-i-have-learned/</link>
-        <guid isPermaLink="true">http://eufrac.io/a-few-things-i-have-learned/</guid>
-        
-        
-        <category>Thoughts</category>
         
       </item>
     
