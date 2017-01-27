@@ -1193,11 +1193,44 @@ img {
   width: 100%;
   background: #ffb081 url(../img/shapesBackground.png);
   background-image: url(../img/shapesBackground.png), linear-gradient(to bottom, #ffb081 1%, #fe7277 100%);
+  background-size: contain;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   min-height: 130px; }
+  .hero .hero_container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap; }
+  .hero .imgContainer {
+    flex: 0 1 350px;
+    margin: 0 50px 0 0;
+    display: none; }
+    .hero .imgContainer img {
+      border: 5px solid white; }
+  .hero .textContainer {
+    margin: 0 0 0 25px;
+    margin: 0;
+    flex: 1 1 auto; }
+    .hero .textContainer .headline {
+      margin: 20px 0 15px;
+      text-align: center;
+      font-size: 1.5em; }
+    .hero .textContainer .button {
+      display: block;
+      margin: 0 auto 20px;
+      background: red;
+      width: 140px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      height: 50px;
+      font-size: 16px;
+      text-transform: uppercase;
+      line-height: 50px;
+      border-radius: 5px; }
   .hero .headline {
     color: #ffffff;
     font-size: 1.2em;
@@ -1207,9 +1240,6 @@ img {
     text-align: center;
     text-transform: uppercase;
     margin: 0 10px 0; }
-  .hero .text {
-    text-align: center;
-    color: #ffffff; }
 
 .hero-post {
   min-height: 80px; }
@@ -1226,6 +1256,16 @@ img {
 
   .hero-post {
     min-height: 160px; } }
+@media (min-width: 768px) {
+  .hero .textContainer .headline {
+    font-size: 3.2em; } }
+@media (min-width: 1000px) {
+  .hero .imgContainer {
+    display: block; }
+  .hero .textContainer .headline {
+    text-align: left; }
+  .hero .textContainer .button {
+    margin: 0; } }
 .feed {
   margin: 20px 0;
   list-style: none;
