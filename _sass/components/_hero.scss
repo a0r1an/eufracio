@@ -1,12 +1,50 @@
 .hero {
     width: 100%;
-    background: $eufracioColor2 url(../img/shapesBackground.png);
-    background-image: url(../img/shapesBackground.png), linear-gradient(to bottom,  $eufracioColor2 1%, $eufracioColor3 100%) ;
+    background: #7919e5 url(../img/shapesBackground.png);
+    background-size: contain;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     min-height: 130px;
+    .hero_container {
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+   .imgContainer {
+       flex: 0 1 350px;
+       margin: 0 50px 0 0;
+       display: none;
+       img {
+           border: 5px solid white;
+       }
+   }
+   .textContainer {
+       margin: 0 0 0 25px;
+       margin: 0;
+       flex: 1 1 auto;
+       .headline {
+           margin: 20px 0 15px;
+           text-align: center;
+           font-size: 1.5em;
+       }
+       .button {
+           display: block;
+           margin: 0 auto 20px;
+           background: red;
+           width: 140px;
+           text-align: center;
+           text-decoration: none;
+           color: #fff;
+           height: 50px;
+           font-size: 16px;
+           text-transform: uppercase;
+           line-height: 50px;
+           border-radius: 5px;
+       }
+   }
     .headline {
         color: $white;
         font-size: 1.2em;
@@ -34,12 +72,37 @@
 
 @media (min-width:480px) {
     .hero {
-        min-height: 260px;
+        min-height: 250px;
         .headline {
             font-size:3.6em;
         }
     }
-     .hero-post {
+    .hero-post {
         min-height: 160px;
+    }
+}
+@media (min-width:768px) {
+    .hero {
+        min-height: 350px;
+        .textContainer {
+            .headline {
+                font-size: 3.2em;
+            }
+        }
+    }
+}
+@media (min-width: 1000px) {
+    .hero {
+        .imgContainer {
+            display: block;
+        }
+        .textContainer {
+            .headline {
+                text-align: left;
+            }
+            .button {
+                margin: 0;
+            }
+        }
     }
 }
