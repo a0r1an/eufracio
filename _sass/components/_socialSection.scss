@@ -1,0 +1,64 @@
+.socialSection {
+  background: $eufracioColor4;
+  padding: 20px 0;
+  .headline {
+    text-decoration: underline;
+    flex: 1 0 100%;
+    font-size: 2em;
+  }
+  .flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+  }
+  .oneFifthColumn {
+    flex: 1 0 33%;
+    text-align: center;
+    margin: 0 0 10px;
+  }
+  .imgContainer {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 50%;
+    border: 3px solid #000;
+  }
+  img {
+    width: 60%;
+    padding: 10px 0 0;
+  }
+  p {
+    color: black;
+    font-size: 10px;
+    padding: 10px 20px 0;
+    line-height: 1.25;
+  }
+}
+
+@media (min-width: 769px) {
+  .socialSection {
+    height: 200px;
+    .oneFifthColumn {
+      flex: 1 0 20%;
+      text-align: center;
+    }
+    p {
+      font-size: 14px;
+    }
+    .flexContainer {
+      align-items: center;
+    }
+    img {
+      width: 50px;
+      padding: 25px 0 0;
+    }
+    .imgContainer {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
