@@ -1,0 +1,44 @@
+.newsletterContainer {
+  background: $eufracioColor5;
+  padding: 40px; 
+  margin-bottom: $spacing-unit;
+  label {
+    display: block;
+    font-size: 2em;
+    color: white;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+  .helperText {
+    font-size: 1em;
+    color: #fff;
+    font-style: italic;
+    margin: 0 0 20px;
+  }
+  .email {
+    color: #000;
+    line-height: 44px;
+    padding: 0 10px;
+    flex: 0 0 150px;
+    &:focus {
+      outline: none;
+    }
+  }
+  .button {
+    flex: 0 0 100px;
+    -webkit-appearance: none;
+    border: 0;
+    background: red;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+  .flex {
+    display: flex;
+    width: 300px;
+    margin: 0 auto;
+  }
+}
