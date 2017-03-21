@@ -6,7 +6,7 @@ layout: home
 
 
   <ul class="feed">
-    {% for post in site.posts %}
+    {% for post in site.posts show the first limit:3 %}
       <li class="feedItem">
         <h2 class="headline">
           <a class="link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
@@ -15,6 +15,19 @@ layout: home
         <p class="text">{{ post.description }}</p>
       </li>
     {% endfor %}
+    <li class="newsletterContainer">
+      {% include newsletter.html %}
+    </li>
+    {% for post in site.posts show the first offset:3 %}
+      <li class="feedItem">
+        <h2 class="headline">
+          <a class="link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <p class="text">{{ post.description }}</p>
+      </li>
+    {% endfor %}
+
   </ul>
 
 
