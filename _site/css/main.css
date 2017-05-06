@@ -1221,11 +1221,10 @@ img {
     cursor: pointer; }
     .newsletterContainer .button:focus {
       outline: none; }
-
-.flex {
-  display: flex;
-  width: 300px;
-  margin: 0 auto; }
+  .newsletterContainer .flex {
+    display: flex;
+    width: 300px;
+    margin: 0 auto; }
 
 .hero {
   width: 100%;
