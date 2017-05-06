@@ -6,9 +6,30 @@
 </description>
     <link>http://eufrac.io/</link>
     <atom:link href="http://eufrac.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Mar 2017 20:59:11 -0700</pubDate>
-    <lastBuildDate>Mon, 20 Mar 2017 20:59:11 -0700</lastBuildDate>
+    <pubDate>Fri, 05 May 2017 19:09:51 -0700</pubDate>
+    <lastBuildDate>Fri, 05 May 2017 19:09:51 -0700</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Be a developer... IT&#39;S EASY!</title>
+        <description>&lt;p&gt;Do you know how easy we have it? Let me back it up a little. We used to live in a time where jobs were scarce, money was a distant object that was impossible to grasp. To put it simply times were fucking tough but now there’s the Internet and with the Internet we have chances that we never had before.&lt;/p&gt;
+
+&lt;p&gt;We can do things on Internet that make us money! We can make things on the Internet, cook on the internet, do a hobby on the internet, learn how to code on the Internet or learn how to develop the Internet itself. And then there are companies hiring people to make stuff on the Internet or make stuff to sell on the internet. By stuff I mean websites, web apps, stuffed toy pandas, tshirts, pants for weightligters, anime videos.&lt;/p&gt;
+
+&lt;p&gt;There so many opportunities and people do not understand. People don’t understand this because they’re not aware of it or not exposed to it. Most of society is still stuck in a culture where they are living a life based off old ideals. You’re gonna be a lawyer or you’re gonna be a doctor but that’s a narrow minded way to look at your career options. Thats because you don’t know how easy the Internet is and how much opportunity the Internet has. The chances of you becoming successful on the Internet are a 1,000,000 times greater than being successful as a Doctor or Lawyer. When I talk about success I am talking about happiness.  You’re gonna be a lot happier at something you love and you can do that on the Internet.&lt;/p&gt;
+
+&lt;p&gt;Now if you go on the Internet and go to a website of any company, they will have a job openings link. Look at how many developers are hiring. They’re always trying to hire developers because the Internet is where all the money is at. The future is in the Internet whether that be artificial intelligence, virtual reality, communication. Almost every job relies on the Internet so understand this open your mind and realize you’re just a couple of months of studying away from a entry level developer job. Oh and guess what?! You will learn how to become a developer on the Internet because if you want it bad enough and you are dedicated there is nothing you can’t learn on the world wide web that you can learn at a University. School is a system that works for some people and doesn’t work for others. We have the chance to do anything we want and use our imagination and our natural skills.&lt;/p&gt;
+
+&lt;p&gt;If you want to do something go on the internet there’s a job for it. This started off as post about how easy it is to become a developer today in 2017 but it turned into how easy it is to make a living on the internet doing what you love.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 05 May 2017 08:01:00 -0700</pubDate>
+        <link>http://eufrac.io/be-a-developer/</link>
+        <guid isPermaLink="true">http://eufrac.io/be-a-developer/</guid>
+        
+        
+        <category>life, web-development, internet</category>
+        
+      </item>
     
       <item>
         <title>Get Some SVG In Your Life</title>
@@ -789,107 +810,6 @@ gzip_vary on;
         
         
         <category>tooling</category>
-        
-      </item>
-    
-      <item>
-        <title>The Right Way To Load Web Fonts</title>
-        <description>&lt;p&gt;Fonts are a crucial design element for any website. In the beginning of the web, if we wanted a certain font family or font style that was not available, we were forced to use an image of a font. More images meant more server requests causing a slower web experience. The web has grown and with that has come the ability to use fonts that were previously unattainable via resources such as Google Fonts and Typekit as well as the &lt;i class=&quot;code-term&quot;&gt;@font-face&lt;/i&gt; css rule. This has allowed designers and developers to incorporate fonts that were previously unattainable on websites, creating an experience that relied less on images which in turn helps with the load time.&lt;/p&gt;
-
-&lt;h2 id=&quot;web-fonts-are-a-resource-too&quot;&gt;Web Fonts Are A Resource Too&lt;/h2&gt;
-
-&lt;p&gt;Loading a web font is a gazillion times better than loading images of fonts but in the never ending world of web page optimization we are constantly looking for ways to make the web experience even faster. Ultimately, web fonts are loaded from a CSS file which is another resource. Depending on how large the file size of your web font, you will find that your website will take a performance hit. Let me take a step back, back in college, in HTML 101 class, we learned to load our CSS in the head of our web page. This is all peaches and cream until your CSS file size is getting increasingly large. This caused Google to recommend ‘eliminating render blocking CSS’ to speed up load time. CSS, by design, has to be completely parsed before the browser can render the html and load additional resources. This prevents the user from seeing any un-styled elements. So the question now is how can we load our web font without block the rendering of the rest of the web page.&lt;/p&gt;
-
-&lt;h2 id=&quot;going-async&quot;&gt;Going Async!&lt;/h2&gt;
-
-&lt;p&gt;Async is usually a term we hear with JavaScript but fret not as the geniuses at Google and Typekit have given us the ability to load our web fonts async as well. Web Font Loader is a 12kb JavaScript file that gives developers more control over the fonts they load with the ability to load asynchronously. Lets start by creating our async solution.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;WebFontConfig = {
-          typekit: { &amp;lt;span class=&quot;green&quot;&amp;gt;id&amp;lt;/span&amp;gt;: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;xxxxxx&amp;lt;/span&amp;gt;’ },
-          google: {
-               &amp;lt;span class=&quot;green&quot;&amp;gt;families&amp;lt;/span&amp;gt;: [‘&amp;lt;span class=&quot;orange&quot;&amp;gt;Droid Sans&amp;lt;/span&amp;gt;’]
-          },
-          custom: {
-               &amp;lt;span class=&quot;green&quot;&amp;gt;families&amp;lt;/span&amp;gt;: [‘&amp;lt;span class=&quot;orange&quot;&amp;gt;My Font&amp;lt;/span&amp;gt;&#39;],
-               &amp;lt;span class=&quot;green&quot;&amp;gt;url&amp;lt;/span&amp;gt;: [‘&amp;lt;span class=&quot;orange&quot;&amp;gt;/fonts.css&amp;lt;/span&amp;gt;’];
-          } 
-     };
-
-   (function(d) {
-      &amp;lt;span class=&quot;pink&quot;&amp;gt;var&amp;lt;/span&amp;gt; wf = d.createElement(&#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;script&amp;lt;/span&amp;gt;&#39;), s = d.scripts[0];
-      wf.src = &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js&amp;lt;/span&amp;gt;&#39;;
-      s.parentNode.insertBefore(wf, s);
-   })(document);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Adding this code to the head of our web page will load the web font without blocking the rendering of the web page whether the font is a Typekit font, Google font or our own web font. Seems simple enough until we see our page load.&lt;/p&gt;
-
-&lt;h2 id=&quot;fout&quot;&gt;FOUT&lt;/h2&gt;
-
-&lt;p&gt;When are page loads we witness something strange, a Flash Of Un-styled Text or what developers call FOUT. FOUT is caused by the asynchronous load of our web fonts. Since the fonts are rendered async with the rest of the page we are creating a situation where the browser searches and uses a fallback font since the web font is not loaded. Once loaded, the web font replaces the default font, or un-styled text, to achieve the intended font style.&lt;/p&gt;
-
-&lt;h2 id=&quot;fight-against-fout&quot;&gt;Fight Against FOUT&lt;/h2&gt;
-
-&lt;p&gt;Web Font Loader combats FOUT by applying classes while your webpage is loading the web fonts. These classes are applied to the html element of your webpage.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-loading&amp;lt;/span&amp;gt; // when fonts are requested, this class will be applied
-&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-active&amp;lt;/span&amp;gt; // when fonts have been rendered, this class will be applied
-&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-inactive&amp;lt;/span&amp;gt; // when fonts fail to render, this class will be applied
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;If our &lt;i class=&quot;code-term&quot;&gt;html&lt;/i&gt; element has a class of &lt;i class=&quot;code-term&quot;&gt;.wf-loading&lt;/i&gt;, we can apply styles that will minimize the FOUT. For example, if we are using the Google font Playfair Display, we would use use the &lt;i class=&quot;code-term&quot;&gt;.wf-loading&lt;/i&gt; class to apply a fallback font that looks similar to Playfair Display. Then once the &lt;i class=&quot;code-term&quot;&gt;.wf-loading&lt;/i&gt; class is replaced with &lt;i class=&quot;code-term&quot;&gt;.wf-active&lt;/i&gt; class, we would see our intended styles roll through.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-loading&amp;lt;/span&amp;gt; {
-     font-family: &amp;lt;span class=&quot;orange&quot;&amp;gt;georgia&amp;lt;/span&amp;gt;;
-}
-&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-active&amp;lt;/span&amp;gt; {
-     font-family: &amp;lt;span class=&quot;orange&quot;&amp;gt;&#39;playfair display&#39;&amp;lt;/span&amp;gt;;
-}
-&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-loading h1&amp;lt;/span&amp;gt; {
-     font-size: &amp;lt;span class=&quot;orange&quot;&amp;gt;20px&amp;lt;/span&amp;gt;;
-}
-&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-active h1&amp;lt;/span&amp;gt; {
-     font-size: &amp;lt;span class=&quot;orange&quot;&amp;gt;24px&amp;lt;/span&amp;gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;We can utilize &lt;i class=&quot;code-term&quot;&gt;.wf-inactive&lt;/i&gt; class to apply a more reliable fallback experience&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-inactive&amp;lt;/span&amp;gt; {
-     font-family: &amp;lt;span class=&quot;orange&quot;&amp;gt;georgia&amp;lt;/span&amp;gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;For web pages that are requesting multiple font families, there are classes that specifically state the current status of a font family.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-&amp;lt;familyname&amp;gt;-&amp;lt;fvd&amp;gt;-loading&amp;lt;/span&amp;gt; // when this font is requested, this class will be applied
-&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-&amp;lt;familyname&amp;gt;-&amp;lt;fvd&amp;gt;-active&amp;lt;/span&amp;gt; // when this font has been rendered, this class will be applied
-&amp;lt;span class=&quot;pink&quot;&amp;gt;.wf-&amp;lt;familyname&amp;gt;-&amp;lt;fvd&amp;gt;-inactive&amp;lt;/span&amp;gt; // when this font fails to render, this class will be applied
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;i class=&quot;code-term&quot;&gt;&lt;familyname&gt;&amp;lt;/i&amp;gt; would be the font family and &lt;i class=&quot;code-term&quot;&gt;&lt;fvd&gt;&amp;lt;/i&amp;gt; would be the font style and font weight of the given font.&lt;/fvd&gt;&lt;/i&gt;&lt;/familyname&gt;&lt;/i&gt;&lt;/p&gt;
-
-&lt;p&gt;When using Web Font Loader, it is imperative to collaborate with your designer to find a well supported fallback font that looks as close to the web font as possible. It is important to do this as it prevents the user from seeing the jarring web experience that FOUT causes. Web fonts are a great asset for designers and developers alike that come with their own quirks and caveats. Our goal as developers is to minimize these quirks and we can do just that with Web Font Loader.&lt;/p&gt;
-
-&lt;h2 id=&quot;web-font-resources&quot;&gt;Web Font Resources&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/typekit/webfontloader&quot; target=&quot;_blank&quot;&gt;Web Font Loader&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.google.com/fonts&quot; target=&quot;_blank&quot;&gt;Google Fonts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://typekit.com/&quot; target=&quot;_blank&quot;&gt;TypeKit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 23 Dec 2015 01:00:39 -0800</pubDate>
-        <link>http://eufrac.io/the-right-way-to-load-web-fonts/</link>
-        <guid isPermaLink="true">http://eufrac.io/the-right-way-to-load-web-fonts/</guid>
-        
-        
-        <category>javascript</category>
         
       </item>
     
