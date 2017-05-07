@@ -6,9 +6,36 @@
 </description>
     <link>http://eufrac.io/</link>
     <atom:link href="http://eufrac.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 05 May 2017 19:09:51 -0700</pubDate>
-    <lastBuildDate>Fri, 05 May 2017 19:09:51 -0700</lastBuildDate>
+    <pubDate>Sat, 06 May 2017 17:04:30 -0700</pubDate>
+    <lastBuildDate>Sat, 06 May 2017 17:04:30 -0700</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>I Survived a Week of DevOps Hell 🔥</title>
+        <description>&lt;p&gt;If you don’t know yet by the title I am not a DevOps engineer, a Sysadmin or someone even fairly familiar with AWS.  I am a front end developer. A innocent law abiding front end developer that likes to make cute interfaces on the internet. I am happy playing with JavaScript and CSS. But this week I had to take a nose dive deep into the murky waters of DevOps.&lt;/p&gt;
+
+&lt;p&gt;Long story short, the company that I work for is at a critical juncture point and they need me to take on the responsibilities of creating the deployment infrastructure for our new Drupal App. I took on the task with quite the excitement because the idea of spinning up servers just sounds awesome to me. I imagine pressing a button and a warehouse in an undisclosed part of the country turns on. Green lights are flashing. Some type of boot up noise is made and for some reason the server has an exhaust and the noise coming from it rivals a Shelby mustang.&lt;/p&gt;
+
+&lt;p&gt;The only thing I got that lived up to that hype was a click of a button on the AWS interface. Other than it was complete confusion as terms zinged by my head. Cidr, Subnet, RDS, Elastic Beanstalk, EC2, S3. Nothing sticked the first day. Nothing.&lt;/p&gt;
+
+&lt;p&gt;Second day came and I booted up my own elastic beanstalk environment with the help of our in house devops enginner. I went back to my desk to play with the environment but honestly I had no idea what to do with it. It’s like giving a one year old an Xbox and expecting him to know that it plays video games.&lt;/p&gt;
+
+&lt;p&gt;The next two days were failed attempt after failed attempt to recreate the environment that I previously made with the devops engineer help. I recently saw Get Out, the mind bending/hilarious/creepy movie by Jordan Peele, and there is a scene where the main character slips into the “the sunken place”.  I think that’s what I felt those two days while I kept repeating step after step. Not seeing any progress. No emotion coming from my face. Just slipping into a dark place repeating the same fucking steps that I did the first time when it just worked.&lt;/p&gt;
+
+&lt;p&gt;Finally at the end of Thursday after crying loud enough for the DevOps engineer to hear me he helped me create an environment and we realized that I was clicking on a link that was a url parameter necessary to make my environment work correctly. Rage ensued. I cursed Zeus. I became an atheist. I contemplated anarachy. The rational side came back to me though.&lt;/p&gt;
+
+&lt;p&gt;Friday turned out to be the day I made the most progress. I was able to spin up new environments that actually workwd within 15 minutes! I felt like a fucking magician. I even installed Composer and Drush by ssh’ing into my environment. Swag, literally swag.&lt;/p&gt;
+
+&lt;p&gt;This week has put me through the ringer. I for sure have a gray hair coming out soon, life span shortened by 5 years, some type of negative health consequence is coming from this. Now I’m sitting here reflecting over the week and I can’t help to feel some type of way, shout out Rich Homie Quan. I’m actually hungry for more pain. I want to suffer more with DevOps because I learned more than I thought I would and at the end of the day isn’t this way to learn the fastest. With your superiors breathing hot funky air on your neck. I don’t know I know. I’m sort of crazy but I can look back on this and say this week was low-key amazing.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 05 May 2017 08:01:00 -0700</pubDate>
+        <link>http://eufrac.io/survived-devops-hell/</link>
+        <guid isPermaLink="true">http://eufrac.io/survived-devops-hell/</guid>
+        
+        
+        <category>devops, aws, elastic bean stalk</category>
+        
+      </item>
     
       <item>
         <title>Be a developer... IT&#39;S EASY!</title>
@@ -711,102 +738,6 @@ grunt.loadNpmTasks(&#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;grunt-criti
         <pubDate>Wed, 06 Jan 2016 01:00:16 -0800</pubDate>
         <link>http://eufrac.io/caching-with-expires-headers/</link>
         <guid isPermaLink="true">http://eufrac.io/caching-with-expires-headers/</guid>
-        
-        
-        <category>tooling</category>
-        
-      </item>
-    
-      <item>
-        <title>Gzip Compression Engaged!</title>
-        <description>&lt;p&gt;As Front-End Developers, we need to always focus on creating web apps that are fast. Speed kills on the web and it is our duty to provide the fastest experience possible. There are many tasks that go into creating this experience, one of them being Gzip compression.&lt;/p&gt;
-
-&lt;h2 id=&quot;gzip-compression&quot;&gt;GZIP Compression&lt;/h2&gt;
-
-&lt;p&gt;Gzip enables HTTP compression by compressing most file types. Compressing files using Gzip has proven to reduce files sizes up to 70%! Most browsers support Gzip and it’s extremely simple to set-up. The code below can be copied and pasted into your &lt;i class=&quot;code-term&quot;&gt;.htaccess file&lt;/i&gt; which is located in the root folder of your project.&lt;/p&gt;
-
-&lt;h2 id=&quot;for-apache-servers-13-up-to-20&quot;&gt;For Apache Servers 1.3 up to 2.0&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;ifModule mod_gzip.c&amp;gt;
-mod_gzip_on Yes
-mod_gzip_dechunk Yes
-mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
-mod_gzip_item_include handler ^cgi-script$
-mod_gzip_item_include mime ^text/.*
-mod_gzip_item_include mime ^application/x-javascript.*
-mod_gzip_item_exclude mime ^image/.*
-mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
-&amp;lt;/ifModule&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;for-apache-servers-20-and-above&quot;&gt;For Apache Servers 2.0 and above&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;IfModule mod_filter.c&amp;gt;
-        AddOutputFilterByType DEFLATE &quot;application/atom+xml&quot; \
-                                      &quot;application/javascript&quot; \
-                                      &quot;application/json&quot; \
-                                      &quot;application/ld+json&quot; \
-                                      &quot;application/manifest+json&quot; \
-                                      &quot;application/rdf+xml&quot; \
-                                      &quot;application/rss+xml&quot; \
-                                      &quot;application/schema+json&quot; \
-                                      &quot;application/vnd.geo+json&quot; \
-                                      &quot;application/vnd.ms-fontobject&quot; \
-                                      &quot;application/x-font-ttf&quot; \
-                                      &quot;application/x-javascript&quot; \
-                                      &quot;application/x-web-app-manifest+json&quot; \
-                                      &quot;application/xhtml+xml&quot; \
-                                      &quot;application/xml&quot; \
-                                      &quot;font/eot&quot; \
-                                      &quot;font/opentype&quot; \
-                                      &quot;image/bmp&quot; \
-                                      &quot;image/svg+xml&quot; \
-                                      &quot;image/vnd.microsoft.icon&quot; \
-                                      &quot;image/x-icon&quot; \
-                                      &quot;text/cache-manifest&quot; \
-                                      &quot;text/css&quot; \
-                                      &quot;text/html&quot; \
-                                      &quot;text/javascript&quot; \
-                                      &quot;text/plain&quot; \
-                                      &quot;text/vcard&quot; \
-                                      &quot;text/vnd.rim.location.xloc&quot; \
-                                      &quot;text/vtt&quot; \
-                                      &quot;text/x-component&quot; \
-                                      &quot;text/x-cross-domain-policy&quot; \
-                                      &quot;text/xml&quot;
-    &amp;lt;/IfModule&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;for-nginx-servers&quot;&gt;For Nginx Servers&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gzip on;
-gzip_buffers 16 8k;
-gzip_comp_level 2;
-gzip_min_length 1100;
-gzip_http_version 1.0;
-gzip_proxied any;
-gzip_types text/plain text/html text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript;
-# Disable for IE &amp;lt; 6 due to compatibility issues
-gzip_disable &quot;MSIE [1-6].(?!.*SV1)&quot;;
-gzip_vary on;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Gzip is a standard practice for websites but it’s not uncommon to see websites that don’t use this great tool. Your just a &lt;i class=&quot;code-term&quot;&gt;Ctrl+C&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;Ctrl+V&lt;/i&gt; away from starting to see some major performance improvements.&lt;/p&gt;
-
-&lt;h2 id=&quot;gzip-resources&quot;&gt;Gzip Resources&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Gzip&quot; target=&quot;_blank&quot;&gt;Gzip&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developers.google.com/speed/docs/insights/EnableCompression&quot; target=&quot;_blank&quot;&gt;Google’s Enable Compression&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://varvy.com/pagespeed/enable-compression.html&quot; target=&quot;_blank&quot;&gt;Varvy’s Enable Gzip compression&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 30 Dec 2015 01:00:55 -0800</pubDate>
-        <link>http://eufrac.io/gzip-compression-engaged/</link>
-        <guid isPermaLink="true">http://eufrac.io/gzip-compression-engaged/</guid>
         
         
         <category>tooling</category>
