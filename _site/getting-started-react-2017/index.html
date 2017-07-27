@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GETTING STARTED WITH REACT IN 2017</title>
+  <meta name="description" content="Lets set the scene. You are starting on your new path called web developer and you know HTML and CSS. You have heard of this thing called React that every de...">
+  <link href='https://fonts.googleapis.com/css?family=Bungee|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://eufrac.io/getting-started-react-2017/">
+  <link rel="alternate" type="application/rss+xml" title="Eufrac.io" href="http://eufrac.io/feed.xml">
+</head>
+
+  <body>
+    <header class="header">
+  <div class="wrapper">
+    <a class="link logo" href="/">Eufrac.io</a>
+  </div>
+</header>
+
+    <header class="hero hero-post">
+      <h1 class="headline" itemprop="name headline">GETTING STARTED WITH REACT IN 2017</h1>
+      <p class="text">
+        <time class="time" datetime="2017-07-25T08:01:00-07:00" itemprop="datePublished">Jul 25, 2017</time>
+      </p>
+    </header>
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post_content" itemprop="articleBody">
+          <p>Lets set the scene. You are starting on your new path called web developer and you know HTML and CSS. You have heard of this thing called React that every developer and their mother is using. But what is it and how do you start using it today?</p>
+
+<p><img src="../img/posts/gettingStartedReact/1.jpg" /></p>
+
+<p>React is a Javascript user interface framework. Its become the most popular out of all the other JS UI frameworks because of its great performance, ease of use, and its ability to handle data. It also makes you a better Javascript developer because it forces you to write JavaScript code, not its own proprietary mumbo jumbo like reactDoMagic.</p>
+
+<p>There are a couple of ways to start using react in your web app which I will show you and you can pick whatever tickles your fancy.</p>
+
+<h2 id="option-1-the-ghetto-way">Option 1: The ghetto way</h2>
+
+<p><img src="../img/posts/gettingStartedReact/2.jpg" /></p>
+
+<p>I like to call things that are done quick and dirty ghetto and thats exactly what we will do now to start. Paste this script tags before the body tag of your any html page.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">”https://unpkg.com/react@15/dist/react.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span> <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">”https://unpkg.com/react-dom@15/dist/react-dom.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+
+<p>Told you it was the ghetto way! This is obviously not the best way to use react in your web app but if you want to start goofing around the react library there is no quicker, and dirtier 🤐, way.</p>
+
+<h2 id="option-2-use-npm">Option 2: Use NPM</h2>
+<p><img src="../img/posts/gettingStartedReact/3.jpg" /></p>
+
+<p>If you are ready to get serious about adding react to a web project use NPM and require it as a dependency. There is a lot more that goes into getting react into your project then just requiring it a dependency using NPM so I created a github repo that includes everything you need to get this show going.</p>
+
+<p><a href="https://github.com/a0r1an/React-Starter-Template" target="_blank">My React Starter Template</a></p>
+
+<p>Once you have cloned that repo to your computer</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">git clone git@github.com:a0r1an/React-Starter-Template.git</code></pre></figure>
+
+<p>Using your terminal,</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">type npm install</code></pre></figure>
+
+<p>After all modules have finished installing you can simply type npm run start This will get a local server up and running with your new web app. The repo uses webpack to bundle up all your modules, and then shoots bundled code through babel which does some compiling to get your code to work in the browsers you need it to. We are looking at you Internet Explorer!</p>
+
+<h2 id="option-3-create-react-app">Option 3: Create React App</h2>
+<p><img src="../img/posts/gettingStartedReact/4.jpg" /></p>
+
+<p>Lets do a little history lesson! In the beginning we had HTML, CSS, and Flash. Then JavaScript became big. The bigger it got the more complex web development got. Developers complained about JS fatigue and how much it is to even get a project up and running. This same predicament holds true with react. Like I said before it takes a lot of setup before you can actually start seeing the benefits of using a library like react. You need Node.js, NPM, a module bundler like webpack. Not to mention other libraries you need to make your web app. Luckily, the web developer community can do greate things and some developers came together and decided to create a tool that makes developing react apps easy and less time consuming. Thus we have Create react app.</p>
+
+<p>https://github.com/facebookincubator/create-react-app</p>
+
+<p>It has support from the creators of react and its a much more robust starter template than my rinky dink starter template. The setup process for it similar to my project. Run the following commands in your terminal.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">npm install -g create-react-app
+
+create-react-app my-app
+cd my-app/
+npm start</code></pre></figure>
+
+<p>Create a directory called components inside the app directory. Now create a file within the components directory called Header.js In this file will create the basic structure of a component.</p>
+
+<script src="https://gist.github.com/a0r1an/ca724d966961760c45c78ef756ffefd3.js"></script>
+
+<p>Now within your index.js you need to pull in that component by requiring it and adding the component in your markup.</p>
+
+<script src="https://gist.github.com/a0r1an/8ec89fa1965d615747d20d74c157f5a0.js"></script>
+
+<p>You can use Header.js as a template to create as many components as you want to. Just require and call them in the index.js file and they will appear.</p>
+
+<p>React is great for handling information and the app I just made, if I can call it that, doesn’t really utilize react for any other reason but to render the components to the DOM.</p>
+
+<p>Hopefully this wets your appetite enough to get you started with react. I continue to make more tutorials like this and more react tutorials too. Thanks for reading. Peace out 🖖🏼</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Vud8VfOy2cA" frameborder="0" allowfullscreen=""></iframe>
+
+        </div>
+      </article>
+      </div>
+    </div>
+    <footer class="footer">
+  <div class="wrapper">
+        <p class="text">Made with ❤️ by Adrian Eufracio</p>
+  </div>
+</footer>
+
+  </body>
+
+</html>

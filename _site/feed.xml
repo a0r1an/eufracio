@@ -6,9 +6,85 @@
 </description>
     <link>http://eufrac.io/</link>
     <atom:link href="http://eufrac.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 06 May 2017 17:04:30 -0700</pubDate>
-    <lastBuildDate>Sat, 06 May 2017 17:04:30 -0700</lastBuildDate>
+    <pubDate>Wed, 26 Jul 2017 00:01:15 -0700</pubDate>
+    <lastBuildDate>Wed, 26 Jul 2017 00:01:15 -0700</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>GETTING STARTED WITH REACT IN 2017</title>
+        <description>&lt;p&gt;Lets set the scene. You are starting on your new path called web developer and you know HTML and CSS. You have heard of this thing called React that every developer and their mother is using. But what is it and how do you start using it today?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/posts/gettingStartedReact/1.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;React is a Javascript user interface framework. Its become the most popular out of all the other JS UI frameworks because of its great performance, ease of use, and its ability to handle data. It also makes you a better Javascript developer because it forces you to write JavaScript code, not its own proprietary mumbo jumbo like reactDoMagic.&lt;/p&gt;
+
+&lt;p&gt;There are a couple of ways to start using react in your web app which I will show you and you can pick whatever tickles your fancy.&lt;/p&gt;
+
+&lt;h2 id=&quot;option-1-the-ghetto-way&quot;&gt;Option 1: The ghetto way&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/posts/gettingStartedReact/2.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I like to call things that are done quick and dirty ghetto and thats exactly what we will do now to start. Paste this script tags before the body tag of your any html page.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;”https://unpkg.com/react@15/dist/react.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;”https://unpkg.com/react-dom@15/dist/react-dom.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Told you it was the ghetto way! This is obviously not the best way to use react in your web app but if you want to start goofing around the react library there is no quicker, and dirtier 🤐, way.&lt;/p&gt;
+
+&lt;h2 id=&quot;option-2-use-npm&quot;&gt;Option 2: Use NPM&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;../img/posts/gettingStartedReact/3.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you are ready to get serious about adding react to a web project use NPM and require it as a dependency. There is a lot more that goes into getting react into your project then just requiring it a dependency using NPM so I created a github repo that includes everything you need to get this show going.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/a0r1an/React-Starter-Template&quot; target=&quot;_blank&quot;&gt;My React Starter Template&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you have cloned that repo to your computer&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;git clone git@github.com:a0r1an/React-Starter-Template.git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Using your terminal,&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;type npm install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;After all modules have finished installing you can simply type npm run start This will get a local server up and running with your new web app. The repo uses webpack to bundle up all your modules, and then shoots bundled code through babel which does some compiling to get your code to work in the browsers you need it to. We are looking at you Internet Explorer!&lt;/p&gt;
+
+&lt;h2 id=&quot;option-3-create-react-app&quot;&gt;Option 3: Create React App&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;../img/posts/gettingStartedReact/4.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets do a little history lesson! In the beginning we had HTML, CSS, and Flash. Then JavaScript became big. The bigger it got the more complex web development got. Developers complained about JS fatigue and how much it is to even get a project up and running. This same predicament holds true with react. Like I said before it takes a lot of setup before you can actually start seeing the benefits of using a library like react. You need Node.js, NPM, a module bundler like webpack. Not to mention other libraries you need to make your web app. Luckily, the web developer community can do greate things and some developers came together and decided to create a tool that makes developing react apps easy and less time consuming. Thus we have Create react app.&lt;/p&gt;
+
+&lt;p&gt;https://github.com/facebookincubator/create-react-app&lt;/p&gt;
+
+&lt;p&gt;It has support from the creators of react and its a much more robust starter template than my rinky dink starter template. The setup process for it similar to my project. Run the following commands in your terminal.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;npm install -g create-react-app
+
+create-react-app my-app
+cd my-app/
+npm start&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Create a directory called components inside the app directory. Now create a file within the components directory called Header.js In this file will create the basic structure of a component.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/a0r1an/ca724d966961760c45c78ef756ffefd3.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Now within your index.js you need to pull in that component by requiring it and adding the component in your markup.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/a0r1an/8ec89fa1965d615747d20d74c157f5a0.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;You can use Header.js as a template to create as many components as you want to. Just require and call them in the index.js file and they will appear.&lt;/p&gt;
+
+&lt;p&gt;React is great for handling information and the app I just made, if I can call it that, doesn’t really utilize react for any other reason but to render the components to the DOM.&lt;/p&gt;
+
+&lt;p&gt;Hopefully this wets your appetite enough to get you started with react. I continue to make more tutorials like this and more react tutorials too. Thanks for reading. Peace out 🖖🏼&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Vud8VfOy2cA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Tue, 25 Jul 2017 08:01:00 -0700</pubDate>
+        <link>http://eufrac.io/getting-started-react-2017/</link>
+        <guid isPermaLink="true">http://eufrac.io/getting-started-react-2017/</guid>
+        
+        
+        <category>React, JavaScript, Node, Web Development, NPM</category>
+        
+      </item>
     
       <item>
         <title>I Survived a Week of DevOps Hell 🔥</title>
@@ -661,86 +737,6 @@ grunt.loadNpmTasks(&#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;grunt-criti
         
         
         <category>css</category>
-        
-      </item>
-    
-      <item>
-        <title>Caching With Expires Headers</title>
-        <description>&lt;p&gt;Caching is the process of storing data for future use in the cache’s memory. The stored data is used to serve the same data even faster for future requests. On the web we can store our websites CSS, JavaScript, Images, fonts and many more file types to the browsers cache. The browser won’t request the same file over and over again from the server if the file is stored in the cache. Configuring browser caching can be done within your &lt;i class=&quot;code-term&quot;&gt;.htaccess&lt;/i&gt; file on Apache servers using &lt;strong&gt;Expires Headers&lt;/strong&gt;. You can modify the code below to increase the length of time the files are stored and the types of files that are stored.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# ----------------------------------------------------------------------
-# | Expires headers                                                    |
-# ----------------------------------------------------------------------
-
-&amp;lt;IfModule mod_expires.c&amp;gt;
-
-    ExpiresActive on
-    ExpiresDefault                                      &quot;access plus 1 month&quot;
-
-  # CSS
-    ExpiresByType text/css                              &quot;access plus 1 year&quot;
-
-  # HTML
-    ExpiresByType text/html                             &quot;access plus 0 seconds&quot;
-
-  # JavaScript
-    ExpiresByType application/javascript                &quot;access plus 1 year&quot;
-    ExpiresByType application/x-javascript              &quot;access plus 1 year&quot;
-    ExpiresByType text/javascript                       &quot;access plus 1 year&quot;
-
-  # Media files
-
-    ExpiresByType audio/ogg                             &quot;access plus 1 month&quot;
-    ExpiresByType image/bmp                             &quot;access plus 1 month&quot;
-    ExpiresByType image/gif                             &quot;access plus 1 month&quot;
-    ExpiresByType image/jpeg                            &quot;access plus 1 month&quot;
-    ExpiresByType image/png                             &quot;access plus 1 month&quot;
-    ExpiresByType image/svg+xml                         &quot;access plus 1 month&quot;
-    ExpiresByType image/webp                            &quot;access plus 1 month&quot;
-    ExpiresByType video/mp4                             &quot;access plus 1 month&quot;
-    ExpiresByType video/ogg                             &quot;access plus 1 month&quot;
-    ExpiresByType video/webm                            &quot;access plus 1 month&quot;
-
-
-  # Web fonts
-
-    # Embedded OpenType (EOT)
-    ExpiresByType application/vnd.ms-fontobject         &quot;access plus 1 month&quot;
-    ExpiresByType font/eot                              &quot;access plus 1 month&quot;
-    # OpenType
-    ExpiresByType font/opentype                         &quot;access plus 1 month&quot;
-    # TrueType
-    ExpiresByType application/x-font-ttf                &quot;access plus 1 month&quot;
-    # Web Open Font Format (WOFF) 1.0
-    ExpiresByType application/font-woff                 &quot;access plus 1 month&quot;
-    ExpiresByType application/x-font-woff               &quot;access plus 1 month&quot;
-    ExpiresByType font/woff                             &quot;access plus 1 month&quot;
-
-    # Web Open Font Format (WOFF) 2.0
-    ExpiresByType application/font-woff2                &quot;access plus 1 month&quot;
-
-&amp;lt;/IfModule&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;implement-and-audit&quot;&gt;Implement and Audit&lt;/h2&gt;
-
-&lt;p&gt;As always, it’s best to audit the performance of your site once you implement new code. Some file types can be cached longer than others if they don’t change regularly where as files that do change regularly, like stylesheets and JavaScript files, should be cached for a shorter amount of time.&lt;/p&gt;
-
-&lt;h2 id=&quot;caching-resources&quot;&gt;Caching Resources&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching&quot; target=&quot;_blank&quot;&gt;HTTP Caching&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://gtmetrix.com/add-expires-headers.html&quot; target=&quot;_blank&quot;&gt;Add Expires Headers&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/h5bp/server-configs-apache/blob/master/dist/.htaccess&quot; target=&quot;_blank&quot;&gt;H5BP’S Server Configs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 06 Jan 2016 01:00:16 -0800</pubDate>
-        <link>http://eufrac.io/caching-with-expires-headers/</link>
-        <guid isPermaLink="true">http://eufrac.io/caching-with-expires-headers/</guid>
-        
-        
-        <category>tooling</category>
         
       </item>
     
