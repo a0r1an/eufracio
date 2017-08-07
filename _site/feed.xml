@@ -6,9 +6,63 @@
 </description>
     <link>http://eufrac.io/</link>
     <atom:link href="http://eufrac.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 26 Jul 2017 00:01:15 -0700</pubDate>
-    <lastBuildDate>Wed, 26 Jul 2017 00:01:15 -0700</lastBuildDate>
+    <pubDate>Sun, 06 Aug 2017 23:51:45 -0700</pubDate>
+    <lastBuildDate>Sun, 06 Aug 2017 23:51:45 -0700</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>How To Start Using NPM</title>
+        <description>&lt;p&gt;Npm is a node package manager. Lets dissect these words first. Node.js is a javascript runtime for executing javascript code. Package manager is a resource that helps to distribute packages of code as easily as possible. NPM is the industry leader in package managing for javascript. To understand NPM lets use a grocery store as an example.&lt;/p&gt;
+
+&lt;p&gt;A grocery store sells a bunch of different types of items. Vegetables, Fruits, Meat, Cookies, Milk, Eggs, Sugar, Chocolate. They get these items from different companies around the world and make them accessible to those who visit the store.&lt;/p&gt;
+
+&lt;p&gt;Npm does the same thing but with javascript libraries. They have tons of libraries like React, Jquery, Angular, D3, andGulp to name a few. They get these libraries from other developers all around the world. And make them publicly accessible to those who use NPM.
+They way you can start using NPM is by installing node.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;brew install node&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Installing Node.js also installs NPM just double check by running&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;npm -v&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;So back to the grocery store example. Lets say you buy some groceries. You buy Salmon, Pepper, Syrup and Pecans. You can be a savage and eat these items individually but chances are that if you combine all of these items you will get a dish that tastes much better.&lt;/p&gt;
+
+&lt;p&gt;The same thing goes with JavaScript libraries. You can use individual libraries to make your next web project but chances are that if you use multiple libraries in the right combination then your web app will perform better.&lt;/p&gt;
+
+&lt;p&gt;Groceries lists are a way to keep track of the things you need to get at the grocery store. NPM has something similar to a grocery list and its called package.json. package.json contains a list of javascript libraries you need for the project you are working on. To make a package.json run the following command in your terminal&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;npm init&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The NPM cli will ask you a series of questions which will be inserted into your package.json file. Now if you want to add a javascript library to your package.json then run the following command into your terminal.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;npm install package_name&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;It would be advantageous for you to have a package.json that you can use throughout your projects like as a blueprint. If you have a package.json with a list of packages you can run npm install and it will download all of those packages to your local project.&lt;/p&gt;
+
+&lt;p&gt;Before NPM, developers would have to manually keep track of JavaScript library updates. With NPM, you can update your library by running the following command.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;npm update react&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You can also see all of your libraries that need be to be updated by running this command&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;npm outdate&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you have a JavaScript library that you want to share with the world you can publish it to NPM’s repository of libraries. This would make your library available to any developer using NPM. That is a lot of developers. Just run the following command within your project that contains package.json.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;npm publish&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now that you have a basic understanding of NPM go out there and make an awesome web app that utilizes NPM. It will make your experience as a developer much more pleasant.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/hKrXJZvbD2E&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Thu, 03 Aug 2017 08:01:00 -0700</pubDate>
+        <link>http://eufrac.io/How-To-Start-Using-NPM/</link>
+        <guid isPermaLink="true">http://eufrac.io/How-To-Start-Using-NPM/</guid>
+        
+        
+        <category>React, JavaScript, Node, Web Development, NPM</category>
+        
+      </item>
     
       <item>
         <title>GETTING STARTED WITH REACT IN 2017</title>
@@ -605,135 +659,6 @@ document.&amp;lt;span class=&quot;blue&quot;&amp;gt;getElementById&amp;lt;/span&
         <pubDate>Fri, 29 Jan 2016 09:00:38 -0800</pubDate>
         <link>http://eufrac.io/svg-circle-line-animation/</link>
         <guid isPermaLink="true">http://eufrac.io/svg-circle-line-animation/</guid>
-        
-        
-        <category>css</category>
-        
-      </item>
-    
-      <item>
-        <title>Deliver Your Site Faster With Critical CSS</title>
-        <description>&lt;p&gt;The modern day web experience is much more complicated and robust then it was ten years ago which means are CSS stylesheets have grown in size. A large CSS file will slow down a site but we need this CSS to create the user interface.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1.png&quot; alt=&quot;A user interface&quot; width=&quot;400&quot; class=&quot;alignnone size-full wp-image-508&quot; srcset=&quot;http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1-300x200.png 300w, http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1-419x279.png 419w, http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1-460x307.png 460w, http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1-240x160.png 240w, http://adrianeufracio.com/wp-content/uploads/2016/01/Untitled-1.png 600w&quot; sizes=&quot;(max-width: 600px) 100vw, 600px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;But do we need an entire CSS file to create the user interface. What about the rest of the UI that isn’t visible to the user? Like the UI as you scroll down the page or the UI on a completely different page. We are loading CSS to create UI components that are not needed when a page loads. CSS is a render blocking resource which means that the entire CSS file needs to be parsed before the browser can load anything else. Loading a large resource where only part of it is needed creates a web experience that is begging for a solution. Wouldn’t it be better to load the necessary, critical CSS that is visible to the user and load the rest when it’s needed. While this solution is not achievable, there is a something we can do to create a similar experience. Instead we can load the CSS that is needed to compose the initial user interface and then load the rest of the CSS asynchronously. This way we render the visible user interface quickly while avoiding a render blocking resource. We can do this with two tools that are available today, &lt;strong&gt;Critical&lt;/strong&gt; and &lt;strong&gt;loadCSS&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;critical&quot;&gt;Critical&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/addyosmani/critical&quot; target=&quot;_blank&quot;&gt;Critical&lt;/a&gt;, created by &lt;a href=&quot;https://addyosmani.com/&quot;&gt;Addy Osmani&lt;/a&gt;, is a node.js package that uses &lt;a href=&quot;http://casperjs.org/&quot; target=&quot;_blank&quot;&gt;CasperJS&lt;/a&gt; to scan a page of your website and returns an output of the necessary CSS for the page.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//lets take a look at the code
-critical.&amp;lt;span class=&quot;blue&quot;&amp;gt;generate&amp;lt;/span&amp;gt;({
-    base: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;test/&amp;lt;/span&amp;gt;&#39;,
-    src: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;index.html&amp;lt;/span&amp;gt;&#39;,
-    dest: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;styles/critical.css&amp;lt;/span&amp;gt;&#39;,
-    width: 1300,
-    height: 900
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The above code looks for &lt;i class=&quot;code-term&quot;&gt;index.html&lt;/i&gt;, scans it using &lt;a href=&quot;https://www.google.com/webhp?sourceid=chrome-instant&amp;amp;ion=1&amp;amp;espv=2&amp;amp;ie=UTF-8#q=phantomjs&quot;&gt;Phantomjs&lt;/a&gt;, and returns &lt;i class=&quot;code-term&quot;&gt;critical.css&lt;/i&gt; in the styles folder which is the CSS that is necessary for the user interface to render properly. The UI is defined with width and height parameters of 1300 x 900. All we need to do now is remove our &lt;i class=&quot;code-term&quot;&gt;main.css&lt;/i&gt; from the head of our web document and place &lt;i class=&quot;code-term&quot;&gt;critical.css&lt;/i&gt; in the head.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;head&amp;gt;
-&amp;lt;link href=&quot;styles/critical.css&quot; rel=&quot;stylesheet&quot;&amp;gt;
-...
-...
-&amp;lt;/head&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;loadcss&quot;&gt;loadCSS&lt;/h2&gt;
-
-&lt;p&gt;We still need to find a way to load our &lt;i class=&quot;code-term&quot;&gt;main.css&lt;/i&gt; asynchronously. This is where &lt;a href=&quot;https://github.com/filamentgroup/loadCSS&quot;&gt;loadCSS&lt;/a&gt; comes into play. loadCSS is a JavaScript function, created by &lt;a href=&quot;https://www.filamentgroup.com/&quot; target=&quot;_blank&quot;&gt;Filament Group&lt;/a&gt;, that loads CSS asynchronously. All we need to do is place the function in the head of the document and then pass our &lt;i class=&quot;code-term&quot;&gt;main.css&lt;/i&gt; as an argument in that function.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;head&amp;gt;
-&amp;lt;script&amp;gt;
-  // include loadCSS here...
-  &amp;lt;span class=&quot;blue&quot;&amp;gt;function loadCSS&amp;lt;/span&amp;gt;( href, before, media ){ ... }
-  // load a file
-  &amp;lt;span class=&quot;blue&quot;&amp;gt;loadCSS&amp;lt;/span&amp;gt;( &quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;styles/style.css&amp;lt;/span&amp;gt;&quot; );
-&amp;lt;/script&amp;gt;
-&amp;lt;head&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;going-a-little-further&quot;&gt;Going A Little further&lt;/h2&gt;
-
-&lt;p&gt;It is recommended to inline the critical CSS that is generated using Critical in the head of the web document as it eliminates a round-trip for the server. So instead of this…&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;head&amp;gt;
-&amp;lt;link href=&quot;styles/critical.css&quot; rel=&quot;stylesheet&quot;&amp;gt;
-...
-...
-&amp;lt;/head&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;We do this…&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;head&amp;gt;
-&amp;lt;style&amp;gt;
-body{line-height:1}ol,ul{list-style:none}....
-&amp;lt;/style&amp;gt;
-...
-...
-&amp;lt;/head&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Also it is safe to assume that the layout for the home page looks different then the layout for the about page. For this reason it would be best to have a different critical stylesheet for each of these pages. I use grunt and a grunt plugin called grunt-critical to produce these results.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// in our gruntfile.js, install grunt critical via cli
-npm install grunt-critical --save-dev
-
-//Add the critical task for multiple pages
-criticalcss: {
-      home: {
-        options: {
-          url: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;index.html&amp;lt;/span&amp;gt;&#39;,
-          width: 1200,
-          height: 736,
-          filename: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;css/style.css&amp;lt;/span&amp;gt;&#39;,
-          outputfile: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;css/critical-home.min.css&amp;lt;/span&amp;gt;&#39;,
-          //add some minification magic :)
-          minify: &amp;lt;span class=&quot;green&quot;&amp;gt;true&amp;lt;/span&amp;gt;
-        }
-      },
-      about: {
-        options: {
-          url: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;about.html&amp;lt;/span&amp;gt;&#39;,
-          width: 1200,
-          height: 736,
-          filename: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;css/style.css&amp;lt;/span&amp;gt;&#39;,
-          outputfile: &#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;css/critical-about.min.css&amp;lt;/span&amp;gt;&#39;,
-          //add some minification magic :)
-          minify: &amp;lt;span class=&quot;green&quot;&amp;gt;true&amp;lt;/span&amp;gt;
-        }
-      }
-    }
-//Load our grunt-critical dependency
-grunt.loadNpmTasks(&#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;grunt-critical&amp;lt;/span&amp;gt;&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;It is best to implement and test your results with Critical. As noted by &lt;a href=&quot;https://chrisruppel.com/&quot; target=&quot;_blank&quot;&gt;Chris Ruppel&lt;/a&gt; over at &lt;a href=&quot;http://fourkitchens.com/&quot; target=&quot;_blank&quot;&gt;Four Kitchens&lt;/a&gt;, the inlined css should not exceed 10kb due to HTTP packet size restrictions. An interface that loads quickly is the end result of implementing Critical which yields major benefits. Adding Critical to your ever expanding workflow is a tool vital tool in a webdev toolkit.&lt;/p&gt;
-
-&lt;h2 id=&quot;critical-resources&quot;&gt;Critical Resources&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://fourkitchens.com/blog/article/use-gulp-automate-your-critical-path-css&quot; target=&quot;_blank&quot;&gt;Use Gulp Automate Your Critical Path CSS By Four Kitchens&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/addyosmani/critical&quot; target=&quot;_blank&quot;&gt;Critical By Addy Osmani&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/bezoerb/grunt-critical&quot; target=&quot;_blank&quot;&gt;Grunt Plugin CriticalCSS&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2015/08/understanding-critical-css/&quot; target=&quot;_blank&quot;&gt;Understanding Critical CSS By Dean Hume&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 20 Jan 2016 01:00:43 -0800</pubDate>
-        <link>http://eufrac.io/deliver-your-site-faster-with-critical-css/</link>
-        <guid isPermaLink="true">http://eufrac.io/deliver-your-site-faster-with-critical-css/</guid>
         
         
         <category>css</category>
