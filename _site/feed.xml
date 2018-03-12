@@ -6,9 +6,30 @@
 </description>
     <link>http://eufrac.io/</link>
     <atom:link href="http://eufrac.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 06 Aug 2017 23:51:45 -0700</pubDate>
-    <lastBuildDate>Sun, 06 Aug 2017 23:51:45 -0700</lastBuildDate>
+    <pubDate>Sun, 11 Mar 2018 19:56:12 -0700</pubDate>
+    <lastBuildDate>Sun, 11 Mar 2018 19:56:12 -0700</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>I&#39;m Going To Make Video Games</title>
+        <description>&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/9djDcMc_TEE&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;What’s up stranger! My name is Adrian Eufracio. Now that your not a stranger let me tell you what I am doing here on Patreon in my life. I am Web Developer by trade but I have a secret. I really want to make an amazing video game.&lt;/p&gt;
+
+&lt;p&gt;I have never tried to make a game or even wanted to until just recently. I came across a series of Game Animators and Programmers twitters profiles (nonplayercat, minionsart, and ionlands) and I have fallen in love with Video games all over again.&lt;/p&gt;
+
+&lt;p&gt;On Patreon I plan to share my journey of game development the good and the bad. I will be live streaming all of my learning and game dev. process and I will make a weekly development vlog or dvlog to give a summary of the progress I made that week.&lt;/p&gt;
+
+&lt;p&gt;I am going to fudge up a lot but I am passionate about building my own little worlds with the power of code, voxels, and hopefully you.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 03 Aug 2017 08:01:00 -0700</pubDate>
+        <link>http://eufrac.io/Im-going-to-make-video-games/</link>
+        <guid isPermaLink="true">http://eufrac.io/Im-going-to-make-video-games/</guid>
+        
+        
+        <category>Unity, C++, Game Development</category>
+        
+      </item>
     
       <item>
         <title>How To Start Using NPM</title>
@@ -543,122 +564,6 @@ categories: jekyll update
         <pubDate>Wed, 03 Feb 2016 01:04:59 -0800</pubDate>
         <link>http://eufrac.io/creating-modular-article-elements/</link>
         <guid isPermaLink="true">http://eufrac.io/creating-modular-article-elements/</guid>
-        
-        
-        <category>css</category>
-        
-      </item>
-    
-      <item>
-        <title>SVG Circle Line Animation</title>
-        <description>&lt;p&gt;SVG is an incredibly useful web element that can take many forms and sizes. Whether you want to create a complex chart or a simple shape. SVG can also be animated! Today I will show you how to do exactly that by drawing a circle using a little CSS and some JavaScript to help us out.&lt;/p&gt;
-
-&lt;h2 id=&quot;lets-make-a-circle&quot;&gt;Lets make a circle!&lt;/h2&gt;
-
-&lt;p&gt;We will start off by creating an SVG element within our HTML document. The code below will create an SVG that is compatible with most modern browsers.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;svg xml:space=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;preserve&amp;lt;/span&amp;gt;&quot; xmlns=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;http://www.w3.org/2000/svg&amp;lt;/span&amp;gt;&quot;&amp;gt;&amp;lt;/svg&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Next we will add the width and height attributes to our SVG that will help us define our circle.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;svg viewBox=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;0 0 220 220&amp;lt;/span&amp;gt;&quot; xml:space=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;preserve&amp;lt;/span&amp;gt;&quot; xmlns=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;http://www.w3.org/2000/svg&amp;lt;/span&amp;gt;&quot;
-width=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;220&amp;lt;/span&amp;gt;&quot; height=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;220&amp;lt;/span&amp;gt;&quot;&amp;gt;
-&amp;lt;/svg&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;With the svg out of our way we can go ahead and create our circle element within the SVG.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;circle&amp;gt;&amp;lt;/circle&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Lets start spicing up the circle with some additional attributes. We will add an &lt;i class=&quot;code-term&quot;&gt;id&lt;/i&gt; name for styling purposes and for some JavaScript we will use later on. We will also add &lt;i class=&quot;code-term&quot;&gt;cx&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;cy&lt;/i&gt; values. These will set the coordinates of the circle within the SVG. To center the circle within the SVG I divided the width and height by 2 and placed the value within the &lt;i class=&quot;code-term&quot;&gt;cx&lt;/i&gt; and &lt;i class=&quot;code-term&quot;&gt;cy&lt;/i&gt; attributes, which in this case is &lt;i class=&quot;code-term&quot;&gt;110&lt;/i&gt;. Finally, we will add a radius of &lt;i class=&quot;code-term&quot;&gt;100&lt;/i&gt; using the &lt;i class=&quot;code-term&quot;&gt;r&lt;/i&gt; attribute.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;circle id=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;path&amp;lt;/span&amp;gt;&quot; cx=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;110&amp;lt;/span&amp;gt;&quot; cy=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;110&amp;lt;/span&amp;gt;&quot; r=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;100&amp;lt;/span&amp;gt;&quot;&amp;gt;&amp;lt;/circle&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now we can start styling the circle. For our example, we need a &lt;i class=&quot;code-term&quot;&gt;stroke&lt;/i&gt; and we will set a &lt;i class=&quot;code-term&quot;&gt;stroke-width&lt;/i&gt; of 10 for the circle.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;circle id=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;path&amp;lt;/span&amp;gt;&quot; class=&quot;&quot; cx=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;110&amp;lt;/span&amp;gt;&quot; cy=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;110&amp;lt;/span&amp;gt;&quot; r=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;100&amp;lt;/span&amp;gt;&quot; stroke=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;#000000&amp;lt;/span&amp;gt;&quot; fill=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;none&amp;lt;/span&amp;gt;&quot; stroke-width=&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;10&amp;lt;/span&amp;gt;&quot;&amp;gt;&amp;lt;/circle&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;draw-it&quot;&gt;Draw it&lt;/h2&gt;
-
-&lt;p&gt;We finally have our complete circle but now comes the tricky part. &lt;a href=&quot;https://twitter.com/chriscoyier&quot; target=&quot;_blank&quot;&gt;Chris Coyier&lt;/a&gt; has a great &lt;a href=&quot;https://css-tricks.com/svg-line-animation-works/&quot; target=&quot;_blank&quot;&gt;article&lt;/a&gt; on how line animation works so I suggest you go read that but for now I will give you a brief explanation. What we need is to animate the stroke on circle element. To do this we need to create a dash that is long enough to hide and reveal our stroke. To figure out the dash length we need to figure out the stroke length of our circle. This is where JavaScript will help us.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// collect our radius value
-&amp;lt;span class=&quot;pink&quot;&amp;gt;var&amp;lt;/span&amp;gt; radius = document.&amp;lt;span class=&quot;blue&quot;&amp;gt;getElementById&amp;lt;/span&amp;gt;(&#39;&amp;lt;span class=&quot;orange&quot;&amp;gt;path&amp;lt;/span&amp;gt;&#39;).&amp;lt;span class=&quot;blue&quot;&amp;gt;getAttribute&amp;lt;/span&amp;gt;(&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;r&amp;lt;/span&amp;gt;&quot;);
-// collect circle length value using basic math
-&amp;lt;span class=&quot;pink&quot;&amp;gt;var&amp;lt;/span&amp;gt; circleLength = 2 * Math.PI * radius;
-// output length some where we can see it
-document.&amp;lt;span class=&quot;blue&quot;&amp;gt;getElementById&amp;lt;/span&amp;gt;(&quot;&amp;lt;span class=&quot;orange&quot;&amp;gt;length-container&amp;lt;/span&amp;gt;&quot;).innerHTML = circleLength;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now we should have something like this&lt;/p&gt;
-
-&lt;p data-height=&quot;450&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;yeEJEB&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
-  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/yeEJEB/&quot;&gt;SVG DRAW CIRCLE step 1&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;Now we use css3 to create our animation. As I mentioned before we needed to create a dash that is long enough to hide and reveal our stroke. We can set the dash length equal to the circle length.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;#path&amp;lt;/span&amp;gt; {
-  stroke-dasharray: &amp;lt;span class=&quot;orange&quot;&amp;gt;628.3185307179587&amp;lt;/span&amp;gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This will hide our circle completely. To reveal it we need to animiate the position of our dash. We do this by creating a keyframe that changes the dash position from its original position of &lt;i class=&quot;code-term&quot;&gt;628.3185307179587&lt;/i&gt; to &lt;i class=&quot;code-term&quot;&gt;&lt;/i&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;@keyframes dash&amp;lt;/span&amp;gt; {
-  &amp;lt;span class=&quot;pink&quot;&amp;gt;from&amp;lt;/span&amp;gt; {
-    stroke-dashoffset: &amp;lt;span class=&quot;orange&quot;&amp;gt;628.3185307179587&amp;lt;/span&amp;gt;;
-  }
-  &amp;lt;span class=&quot;pink&quot;&amp;gt;to&amp;lt;/span&amp;gt; {
-    stroke-dashoffset: &amp;lt;span class=&quot;orange&quot;&amp;gt;0&amp;lt;/span&amp;gt;;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now to finish up we add this keyframe animation to our #path.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;pink&quot;&amp;gt;#path&amp;lt;/span&amp;gt; {
-  stroke-dasharray: &amp;lt;span class=&quot;orange&quot;&amp;gt;628.3185307179587&amp;lt;/span&amp;gt;;
-  animation: &amp;lt;span class=&quot;orange&quot;&amp;gt;dash 5s linear forwards&amp;lt;/span&amp;gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;our-final-product&quot;&gt;Our final product&lt;/h2&gt;
-
-&lt;p data-height=&quot;450&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;LGrZBL&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
-  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/LGrZBL/&quot;&gt;SVG DRAW CIRCLE step 2&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;This is a cool little element you can use on a website and extend to your requirements. Here is the same element with some added functionality.&lt;/p&gt;
-
-&lt;p data-height=&quot;600&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;zrjzqr&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
-  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/zrjzqr/&quot;&gt;SVG DRAW CIRCLE&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;h2 id=&quot;svg-animation-resources&quot;&gt;SVG Animation Resources&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://css-tricks.com/svg-line-animation-works/&quot; target=&quot;_blank&quot;&gt;How SVG Line Animation Works&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jakearchibald.com/2013/animated-line-drawing-svg/&quot; target=&quot;_blank&quot;&gt;Animated line drawing in SVG&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://sarasoueidan.com/tags/svg/index.html&quot; target=&quot;_blank&quot;&gt;Sara Soueidan’s SVG Articles&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 29 Jan 2016 09:00:38 -0800</pubDate>
-        <link>http://eufrac.io/svg-circle-line-animation/</link>
-        <guid isPermaLink="true">http://eufrac.io/svg-circle-line-animation/</guid>
         
         
         <category>css</category>
