@@ -6,9 +6,33 @@
 </description>
     <link>http://eufrac.io/</link>
     <atom:link href="http://eufrac.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 11 Mar 2018 19:56:12 -0700</pubDate>
-    <lastBuildDate>Sun, 11 Mar 2018 19:56:12 -0700</lastBuildDate>
+    <pubDate>Tue, 13 Mar 2018 22:29:14 -0700</pubDate>
+    <lastBuildDate>Tue, 13 Mar 2018 22:29:14 -0700</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>I Created A Messenger Bot</title>
+        <description>&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/70neKBf40ho&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br /&gt;
+This is my process of creating a facebook messenger bot. I live streamed the entire process on Twitch and Youtube.&lt;/p&gt;
+
+&lt;p&gt;I had tons of fun doing this project. I learned a shit ton about the powerful Facebook Graph API. I utilized AWS Lambda which was handy because I can just throw some code into the Cloud 9 IDE and not have to worry about setting up any servers. Other than that it was a pretty basic bot. :)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;twitch.tv/eufracio/&quot;&gt;TWITCH LIVE STREAMS&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCEXc49__z8-6zAujyBZLGsQ&quot;&gt;YOUTUBE LIVE STREAMS&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;CODE — https://github.com/a0r1an/messengerbot&lt;/p&gt;
+</description>
+        <pubDate>Tue, 13 Mar 2018 08:01:00 -0700</pubDate>
+        <link>http://eufrac.io/I-CREATED-A-FACEBOOK-MESSENGER-BOT/</link>
+        <guid isPermaLink="true">http://eufrac.io/I-CREATED-A-FACEBOOK-MESSENGER-BOT/</guid>
+        
+        
+        <category>messenger, lambda, facebook, api</category>
+        
+      </item>
     
       <item>
         <title>I&#39;m Going To Make Video Games</title>
@@ -22,7 +46,7 @@
 
 &lt;p&gt;I am going to fudge up a lot but I am passionate about building my own little worlds with the power of code, voxels, and hopefully you.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 03 Aug 2017 08:01:00 -0700</pubDate>
+        <pubDate>Sun, 11 Mar 2018 08:01:00 -0700</pubDate>
         <link>http://eufrac.io/Im-going-to-make-video-games/</link>
         <guid isPermaLink="true">http://eufrac.io/Im-going-to-make-video-games/</guid>
         
@@ -508,65 +532,6 @@ categories: jekyll update
         
         
         <category>javascript</category>
-        
-      </item>
-    
-      <item>
-        <title>Creating Modular Article Elements</title>
-        <description>&lt;p&gt;Creating a modular code base is key to the extensibility of any web app. A modular code base requires involvement from both the design team and the development team as the interface should be designed in a way that promotes modularity. Today I will show you how to create a modular HTML and CSS component that is seen throughout the web.&lt;/p&gt;
-
-&lt;h2 id=&quot;i-classcode-termarticlei-element&quot;&gt;&lt;i class=&quot;code-term&quot;&gt;article&lt;/i&gt; Element&lt;/h2&gt;
-
-&lt;p&gt;&lt;i class=&quot;code-term&quot;&gt;article&lt;/i&gt; is an HTML5 element that can be found all over the web. It represents an independent item section of content. It’s often used as an element to represent blog post teasers among other things. These blog teasers can come in many sizes and shapes. This is exactly where modular components shine.&lt;/p&gt;
-
-&lt;h2 id=&quot;going-modular&quot;&gt;Going Modular&lt;/h2&gt;
-
-&lt;p&gt;If the design team gives us three types of article layouts it is our job as Front End Developers to dissect the design and look for ways to create modular components.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock.jpg&quot; alt=&quot;A three article design mock&quot; width=&quot;1000&quot; height=&quot;600&quot; class=&quot;alignnone size-full wp-image-557&quot; srcset=&quot;http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock-300x180.jpg 300w, http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock-768x461.jpg 768w, http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock-460x276.jpg 460w, http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock-240x144.jpg 240w, http://adrianeufracio.com/wp-content/uploads/2016/02/modular-mock.jpg 1000w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As you can see these three article layouts share the same design elements. A title, a post date, an author byline and an article image. The best way to code these components is by creating a HTML and CSS architecture that can be reused. There are many CSS naming conventions which I described in my &lt;a href=&quot;http://adrianeufracio.com/go-modular-with-your-css/&quot; target=&quot;_blank&quot;&gt;article regarding modular CSS&lt;/a&gt;, but for this tutorial I will use a naming convention that resembles BEM.&lt;/p&gt;
-
-&lt;h2 id=&quot;lets-start&quot;&gt;Lets start!&lt;/h2&gt;
-
-&lt;p&gt;When you look at this design you can start seeing the individual elements as Lego pieces that are used to comprise the entire component. With this mentality, lets start coding out our component and learn as we go.&lt;/p&gt;
-
-&lt;p data-height=&quot;400&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;vLazxj&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
-  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/vLazxj/&quot;&gt;Modular Component&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;We have created our first component pretty easily using the article element. If another developer or designer looks at our HTML and CSS markup, they will be able to understand what they mean since it is written in a semantic manner. Our next task will be to create our second component using the same HTML structure while adding CSS classes when needed to help modify the look of the element.&lt;/p&gt;
-
-&lt;p data-height=&quot;400&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;obMaBm&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
-  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/obMaBm/&quot;&gt;Modular Component 2&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;As you can see, just by adding a one class to our existing element, &lt;i class=&quot;code-term&quot;&gt;.article-medium&lt;/i&gt;, we can alter the appearance of our component to create the modified component. Lets do the same for our last component.&lt;/p&gt;
-
-&lt;p data-height=&quot;350&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;GoBYYo&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
-  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/GoBYYo/&quot;&gt;Modular Component 3&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;This component was just as easy to make. Using the BEM inspired methodology it is a breeze to create modularized components. To wrap this tutorial up, I will place all the elements together and use the section element to help with the layout.&lt;/p&gt;
-
-&lt;p data-height=&quot;500&quot; data-theme-id=&quot;20621&quot; data-slug-hash=&quot;mVjQwW&quot; data-default-tab=&quot;result&quot; data-user=&quot;adrianeufracio&quot; class=&quot;codepen&quot;&gt;
-  See the Pen &lt;a href=&quot;http://codepen.io/adrianeufracio/pen/mVjQwW/&quot;&gt;Modular Component Complete&lt;/a&gt; by Adrian Eufracio (&lt;a href=&quot;http://codepen.io/adrianeufracio&quot;&gt;@adrianeufracio&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;h2 id=&quot;modular-resources&quot;&gt;Modular Resources&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.bem.info/&quot; target=&quot;_blank&quot;&gt;BEM&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.lego.com/en-us/&quot; target=&quot;_blank&quot;&gt;LEGO&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://smacss.com/&quot; target=&quot;_blank&quot;&gt;SMACSS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 03 Feb 2016 01:04:59 -0800</pubDate>
-        <link>http://eufrac.io/creating-modular-article-elements/</link>
-        <guid isPermaLink="true">http://eufrac.io/creating-modular-article-elements/</guid>
-        
-        
-        <category>css</category>
         
       </item>
     
